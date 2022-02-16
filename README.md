@@ -75,3 +75,14 @@ TT2.initiateFloorLevel(
             }
         }
 ```
+
+## Navigation
+
+You can access the navigation functionalities by calling:
+
+```
+TT2.navigation.start()
+TT2.navigation.stop()
+TT2.navigation.syncPosition()
+...
+```
