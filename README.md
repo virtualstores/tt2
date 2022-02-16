@@ -59,3 +59,19 @@ TT2.initialize(
             }
         }
   ```
+
+## Changing the floor
+
+If you need to change the current floor manually:
+```
+TT2.initiateFloorLevel(
+            context = //applicationContext,
+            floorLevelId = // The floor level to start navigation with
+        ) { error->
+            if (error != null) {
+                // Show error to user in case of any exception happened during initialization including network exception
+            } else  {
+                // Safe to do the next steps
+            }
+        }
+```
