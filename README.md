@@ -3,7 +3,7 @@
    
    
    
-documentaion  [./html/index.html]
+documentaion  [Docs](./html/index.html)
    
    
 The TT2 SDK provides a powerful indoor positioning system that doesn’t need any external hardware. It contains tools for accurate live positioning, position based analytics, interactive and customizable map, zone based messages and more.
