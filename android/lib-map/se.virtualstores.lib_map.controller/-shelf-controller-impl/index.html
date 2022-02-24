@@ -1,0 +1,380 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ShelfControllerImpl</title>
+</head><body><link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><link href="../../../styles/prism.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script><script type="text/javascript" src="../../../scripts/main.js" defer></script><script type="text/javascript" src="../../../scripts/prism.js" async></script><script>const storage = localStorage.getItem("dokka-dark-mode")
+const savedDarkMode = storage ? JSON.parse(storage) : false
+if(savedDarkMode === true){
+    document.getElementsByTagName("html")[0].classList.add("theme-dark")
+}</script>
+
+  
+    <div class="navigation-wrapper" id="navigation-wrapper">
+      <div id="leftToggler"><span class="icon-toggler"></span></div>
+      <div class="library-name"><a href="../../../index.html"><span>tt2-android</span></a></div>
+      <div></div>
+      <div class="pull-right d-flex"><button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+      </div>
+    </div>
+    <div id="container">
+      <div id="leftColumn">
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <div class="main-content" id="content" pageids="lib-map::se.virtualstores.lib_map.controller/ShelfControllerImpl///PointingToDeclaration//-458957359">
+          <div class="breadcrumbs"><a href="../../index.html">lib-map</a>/<a href="../index.html">se.virtualstores.lib_map.controller</a>/<a href="index.html">ShelfControllerImpl</a></div>
+          <div class="cover ">
+            <h1 class="cover"><span>Shelf</span><wbr><span>Controller</span><wbr><span><span>Impl</span></span></h1>
+            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ShelfControllerImpl</a><span class="token punctuation">(</span>map<span class="token operator">: </span><span data-unresolved-link="com.mapbox.mapboxsdk.maps/MapboxMap///PointingToDeclaration/">MapboxMap</span><span class="token punctuation">, </span>style<span class="token operator">: </span><span data-unresolved-link="com.mapbox.mapboxsdk.maps/Style///PointingToDeclaration/">Style</span><span class="token punctuation">, </span>mapOptions<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain/MapOptions///PointingToDeclaration/">MapOptions</span><span class="token punctuation">, </span>converter<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.converter/CoordinateConverter///PointingToDeclaration/">CoordinateConverter</span><span class="token punctuation">, </span>shelfGroups<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/ShelfGroup///PointingToDeclaration/">ShelfGroup</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> : <span data-unresolved-link="se.virtualstores.tt2_domain.map/ShelfController///PointingToDeclaration/">ShelfController</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+          </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
+            <div class="tabs-section-body">
+              <h2 class="">Types</h2>
+              <div class="table" data-togglable="Types"><a data-name="1138789095%2FClasslikes%2F-458957359" anchor-label="Companion" id="1138789095%2FClasslikes%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1138789095%2FClasslikes%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="-688083144%2FFunctions%2F-458957359" anchor-label="clearAllMarkedShelves" id="-688083144%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="clear-all-marked-shelves.html"><span>clear</span><wbr><span>All</span><wbr><span>Marked</span><wbr><span><span>Shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-688083144%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="clear-all-marked-shelves.html"><span class="token function">clearAllMarkedShelves</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-831177181%2FFunctions%2F-458957359" anchor-label="clearMarkedShelf" id="-831177181%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="clear-marked-shelf.html"><span>clear</span><wbr><span>Marked</span><wbr><span><span>Shelf</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-831177181%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="clear-marked-shelf.html"><span class="token function">clearMarkedShelf</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1274755148%2FFunctions%2F-458957359" anchor-label="deselect" id="-1274755148%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="deselect.html"><span><span>deselect</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1274755148%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="deselect.html"><span class="token function">deselect</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1785634236%2FFunctions%2F-458957359" anchor-label="deselectAll" id="1785634236%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="deselect-all.html"><span>deselect</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1785634236%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="deselect-all.html"><span class="token function">deselectAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1916196588%2FFunctions%2F-458957359" anchor-label="hide" id="-1916196588%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide.html"><span><span>hide</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1916196588%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="673652289%2FFunctions%2F-458957359" anchor-label="hideAll" id="673652289%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide-all.html"><span>hide</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="673652289%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide-all.html"><span class="token function">hideAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-815746995%2FFunctions%2F-458957359" anchor-label="hideAllShelfLayers" id="-815746995%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide-all-shelf-layers.html"><span>hide</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-815746995%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide-all-shelf-layers.html"><span class="token function">hideAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1435066478%2FFunctions%2F-458957359" anchor-label="hideShelvesFillLayer" id="-1435066478%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide-shelves-fill-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1435066478%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide-shelves-fill-layer.html"><span class="token function">hideShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1757921725%2FFunctions%2F-458957359" anchor-label="hideShelvesLineLayer" id="-1757921725%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide-shelves-line-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1757921725%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide-shelves-line-layer.html"><span class="token function">hideShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-2083531940%2FFunctions%2F-458957359" anchor-label="hideShelvesMarkLayer" id="-2083531940%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="hide-shelves-mark-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2083531940%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hide-shelves-mark-layer.html"><span class="token function">hideShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1803062473%2FFunctions%2F-458957359" anchor-label="markShelf" id="1803062473%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="mark-shelf.html"><span>mark</span><wbr><span><span>Shelf</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1803062473%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="mark-shelf.html"><span class="token function">markShelf</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1809340565%2FFunctions%2F-458957359" anchor-label="select" id="1809340565%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="select.html"><span><span>select</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1809340565%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="select.html"><span class="token function">select</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-790995872%2FFunctions%2F-458957359" anchor-label="setOnShelfClickedListener" id="-790995872%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="set-on-shelf-clicked-listener.html"><span>set</span><wbr><span>On</span><wbr><span>Shelf</span><wbr><span>Clicked</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-790995872%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="set-on-shelf-clicked-listener.html"><span class="token function">setOnShelfClickedListener</span></a><span class="token punctuation">(</span>listener<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1634827441%2FFunctions%2F-458957359" anchor-label="setShelves" id="1634827441%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="set-shelves.html"><span>set</span><wbr><span><span>Shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1634827441%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="set-shelves.html"><span class="token function">setShelves</span></a><span class="token punctuation">(</span>shelves<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/ShelfGroup///PointingToDeclaration/">ShelfGroup</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-932316977%2FFunctions%2F-458957359" anchor-label="show" id="-932316977%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show.html"><span><span>show</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-932316977%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-598047364%2FFunctions%2F-458957359" anchor-label="showAll" id="-598047364%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show-all.html"><span>show</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-598047364%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-all.html"><span class="token function">showAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-859306446%2FFunctions%2F-458957359" anchor-label="showAllShelfLayers" id="-859306446%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show-all-shelf-layers.html"><span>show</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-859306446%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-all-shelf-layers.html"><span class="token function">showAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-346025929%2FFunctions%2F-458957359" anchor-label="showShelvesFillLayer" id="-346025929%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show-shelves-fill-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-346025929%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-shelves-fill-layer.html"><span class="token function">showShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-668881176%2FFunctions%2F-458957359" anchor-label="showShelvesLineLayer" id="-668881176%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show-shelves-line-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-668881176%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-shelves-line-layer.html"><span class="token function">showShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-994491391%2FFunctions%2F-458957359" anchor-label="showShelvesMarkLayer" id="-994491391%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="show-shelves-mark-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-994491391%2FFunctions%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-shelves-mark-layer.html"><span class="token function">showShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Properties</h2>
+              <div class="table" data-togglable="Properties"><a data-name="1714247416%2FProperties%2F-458957359" anchor-label="shelves" id="1714247416%2FProperties%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+                <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex">
+                        <div><a href="shelves.html">shelves</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1714247416%2FProperties%2F-458957359"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><a data-name="1714247416%2FProperties%2F-458957359" anchor-label="shelves" id="1714247416%2FProperties%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="shelves.html">shelves</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="se.virtualstores.tt2_domain.model.central.shelves/Shelf///PointingToDeclaration/">Shelf</span><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2022 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+      </div>
+    </div>
+  
+</body></html>
+
+
