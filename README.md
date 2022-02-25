@@ -14,9 +14,9 @@
 # Supported platforms
 
 | Platform  | Description | Get started |
-| ------------- | ------------- |
+| ------------- | ------------- | ------------- |
 | Android  | TT2 Android SDK  | |
-| iOS   | TT2 iOS SDK   ||
+| iOS   | TT2 iOS SDK   | |
 
 # Code samples
 ## Installation
