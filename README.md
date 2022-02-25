@@ -5,13 +5,18 @@
 
 # Getting started
 - Requirements
-- Supported platforms
+- [Supported platforms](#supported-platforms)
 - Platform Overview
 - [Code samples](#code-samples)
 - [Documentation](./android/index.html)
    
    
+# Supported platforms
 
+| Platform  | Description | Get started |
+| ------------- | ------------- |
+| Android  | TT2 Android SDK  | |
+| iOS   | TT2 iOS SDK   ||
 
 # Code samples
 ## Installation
