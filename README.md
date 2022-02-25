@@ -1,14 +1,20 @@
 # TT2 SDK
    
+   The TT2 SDK provides a powerful indoor positioning system that doesn’t need any external hardware. It contains tools for accurate live positioning, position based analytics, interactive and customizable map, zone based messages and more.
    
-   
-   
-Full documentation:  [Docs](./android/index.html)
-   
-   
-The TT2 SDK provides a powerful indoor positioning system that doesn’t need any external hardware. It contains tools for accurate live positioning, position based analytics, interactive and customizable map, zone based messages and more.
 
-# Installation
+# Getting started
+- Requirements
+- Supported platforms
+- Platform Overview
+- [Code samples](#code-samples)
+- [Documentation](./android/index.html)
+   
+   
+
+
+# Code samples
+## Installation
 
 Add the SDK to your app level `build.gradle` file:
 
@@ -20,8 +26,6 @@ dependencies {
 }
 ```
 
-
-# Using the SDK
 
 ## Setup
 
