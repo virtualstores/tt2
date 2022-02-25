@@ -15,8 +15,8 @@
 
 | Platform  | Description | Get started |
 |     :---:      |     :---:      |     :---:      |
-| Android  | TT2 Android SDK  | <img src="/res/android.svg" width="40" height="40" /> |
-| iOS   | TT2 iOS SDK   | <img src="/res/ios.svg" width="40" height="40" />  |
+| Android  | TT2 Android SDK  | <img src="res/android.svg" width="40" height="40" /> |
+| iOS   | TT2 iOS SDK   | <img src="res/ios.svg" width="40" height="40" />  |
 
 # Code samples
 ## Installation
