@@ -24,7 +24,7 @@ the `Active` but it is not possible to do that in reverse.
 
 # Supported platforms
 
-| Platform  | Description | Get started | Samples |
-|     :---:      |     :---:      |     :---:      |     :---:      |
-| Android  | TT2 Android SDK  | [<img src="res/android.svg" width="40" height="40" />](android.md) |[<img src="res/sample-android.svg" width="40" height="40" />](android.md#code-samples) |
-| iOS   | TT2 iOS SDK   | [<img src="res/ios.svg" width="40" height="40" />](ios.md)  | [<img src="res/sample-ios.svg" width="40" height="40" />](android.md#code-samples) |
+| Platform  | Description | Get started | Code Samples | Documentation
+|     :---:      |     :---:      |     :---:      |     :---:      |     :---:      |
+| Android  | TT2 Android SDK  | [<img src="res/android.svg" width="40" height="40" />](android.md) |[<img src="res/sample-android.svg" width="40" height="40" />](android.md#code-samples) | |
+| iOS   | TT2 iOS SDK   | [<img src="res/ios.svg" width="40" height="40" />](ios.md)  | [<img src="res/sample-ios.svg" width="40" height="40" />](android.md#code-samples) | |
