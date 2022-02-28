@@ -27,5 +27,5 @@ the `Active` but it is not possible to do that in reverse.
 
 | Platform  | Description | Get started | Code Samples | Documentation
 |     :---:      |     :---:      |     :---:      |     :---:      |     :---:      |
-| Android  | TT2 Android SDK  | [<img src="res/android.svg" width="40" height="40" />](android.md) |[<img src="res/sample-android.svg" width="40" height="40" />](android.md#code-samples) | [<img src="res/doc.svg" width="40" height="40" />](./android/index.html) |
-| iOS   | TT2 iOS SDK   | [<img src="res/ios.svg" width="40" height="40" />](ios.md)  | [<img src="res/sample-ios.svg" width="40" height="40" />](android.md#code-samples) | [<img src="res/doc.svg" width="40" height="40" />](./android/index.html) |
+| Android  | TT2 Android SDK  | [<img src="res/android.svg" width="40" height="40" />](android.md) |[<img src="res/sample-android.svg" width="40" height="40" />](android.md#code-samples) | [<img src="res/doc-android.svg" width="40" height="40" />](./android/index.html) |
+| iOS   | TT2 iOS SDK   | [<img src="res/ios.svg" width="40" height="40" />](ios.md)  | [<img src="res/sample-ios.svg" width="40" height="40" />](android.md#code-samples) | [<img src="res/doc-ios.svg" width="40" height="40" />](./android/index.html) |
