@@ -23,7 +23,7 @@ se.virtualstores.tt2.androidsdk.recording
 se.virtualstores.tt2.androidsdk.scanner
 se.virtualstores.tt2.androidsdk.scanner.util
 se.virtualstores.tt2.androidsdk.scanner.view
-se.virtualstores.tt2.androidsdk.util.insidezone
+se.virtualstores.tt2.androidsdk.util.inandout
 se.virtualstores.tt2.androidsdk.util.navigation
 module:tt2-domain
 se.virtualstores.tt2_domain
