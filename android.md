@@ -155,6 +155,50 @@ class MapActivity : AppCompatActivity(), Listener{
 
 ```
 
+Trigger events can also be created and then listen on when they are triggered.
+
+```
+//set upp trigger events by adding them to the trigger manager
+//In this example we set upp will trigger event that will trigger when a user comes inside a 5m radius of the shalf named "123"
+TT2.position.getByShelfName("123") { // getting an IItemPosition from a shelf named "123"
+    it?.let { position ->
+        TT2.triggerEventManager.addTriggerEvent( //Adding the trigger event to the trigger event manager.
+            TriggerEvent.Builder().apply { //Building the trigger event.
+                setName("Coordinate Trigger")
+                addTag("shelf", "123")
+                setTriggerEventData(
+                    CoordinateTrigger(
+                        x = position.point.x.toDouble(),
+                        y = position.point.y.toDouble(),
+                        radius = 5.0
+                    )
+                )
+            }.build()
+        )
+    }
+}
+```
+Extend your class with TriggerEventManager.Listener to listen on the created trigger events.
+Set this as a trigger listener inside the trigger event manager.
+
+```
+
+extend your class to listen on trigger events with  TriggerEventManager.Listener
+class MainActivity():  TriggerEventManager.Listener{
+    
+    TT2.triggerEventManager.setTriggerListener(this)
+    
+    fun onNewTriggerEvent(triggerEvent: TriggerEvent){
+        //Show special offer for product on screen
+        
+        //Post trigger event
+        TT2.analytics.postEventData(triggerEvent)
+    }
+}
+
+```
+
+
 When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
 ```
