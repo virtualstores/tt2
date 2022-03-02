@@ -1,11 +1,11 @@
 # Code samples
 ## Overview
 
-- [Installation](#Installation)
-- [Setup](#Setup)
-- [Changing the floor](#Changing-the-floor)
-- [Navigation](#Navigation)
-- [Analytics](#Analytics)
+- [Installation](#installation)
+- [Setup](#setup)
+- [Changing the floor](#changing-the-floor)
+- [Navigation](#navigation)
+- [Analytics](#analytics)
 
 
 ## Installation
