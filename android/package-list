@@ -30,7 +30,6 @@ se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
 se.virtualstores.tt2_domain.analytics.api
 se.virtualstores.tt2_domain.analytics.model
-se.virtualstores.tt2_domain.analytics.model.triggertype
 se.virtualstores.tt2_domain.analytics.worker
 se.virtualstores.tt2_domain.converter
 se.virtualstores.tt2_domain.datasource.local
@@ -47,6 +46,8 @@ se.virtualstores.tt2_domain.pathfinder
 se.virtualstores.tt2_domain.pathfinder.deprecated
 se.virtualstores.tt2_domain.sensor
 se.virtualstores.tt2_domain.shelftool
+se.virtualstores.tt2_domain.triggerevents
+se.virtualstores.tt2_domain.triggerevents.triggertype
 se.virtualstores.tt2_domain.usersettings
 se.virtualstores.tt2_domain.util
 se.virtualstores.tt2_domain.util.extensions
