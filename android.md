@@ -1,5 +1,13 @@
-
 # Code samples
+## Overview
+
+- [Installation](#Installation)
+- [Setup](#Setup)
+- [Changing the floor](#Changing-the-floor)
+- [Navigation](#Navigation)
+- [Analytics](#Analytics)
+
+
 ## Installation
 
 Add the SDK to your app level `build.gradle` file:
@@ -56,6 +64,7 @@ When the user chose a store you can initialize the selected store by calling:
         }
   ```
 
+
 ## Changing the floor
 
 If you need to change the current floor manually:
@@ -72,6 +81,7 @@ TT2.initiateFloorLevel(
         }
 ```
 
+
 ## Navigation
 
 Navigation handles the TT2 positioning system.
@@ -80,7 +90,6 @@ It's recommended to start with a QR code for the most accurate positioning. A us
 You can access the navigation functionalities by calling:
 
 ```
-
 //IScanLocations can be set up in the TT2 csm. Filter and find what start qr code has been scanned. 
 TT2.activeStore.startScanLocations.find { iScanLocation ->
     iScanLocation.code == scanResult
@@ -91,7 +100,6 @@ TT2.activeStore.startScanLocations.find { iScanLocation ->
 fun startNavigation(startScanLocation: IScanLocation) {
     TT2.navigation.start(startScanLocation)
 }
-
 ```
 
 If a user scans a product or shelf we want to update the user position.
@@ -104,12 +112,11 @@ If a user scans a product or shelf we want to update the user position.
 TT2.navigation.syncPosition(position = shelfPosition, syncRotation = false, forceSync = true)
  
 ```
-
 When the positioning should stop just call tt2.navigation.stop()
-
 ```
 TT2.navigation.stop()
 ```
+
 
 ## Analytics
 
@@ -152,7 +159,6 @@ class MapActivity : AppCompatActivity(), Listener{
         TT2.analytics.postEventData(triggerEvent)
     }
 }
-
 ```
 
 Trigger events can also be created and then listen on when they are triggered.
@@ -178,11 +184,11 @@ TT2.position.getByShelfName("123") { // getting an IItemPosition from a shelf na
     }
 }
 ```
+
 Extend your class with TriggerEventManager.Listener to listen on the created trigger events.
 Set this as a trigger listener inside the trigger event manager.
 
 ```
-
 extend your class to listen on trigger events with  TriggerEventManager.Listener
 class MainActivity():  TriggerEventManager.Listener{
     
@@ -195,10 +201,7 @@ class MainActivity():  TriggerEventManager.Listener{
         TT2.analytics.postEventData(triggerEvent)
     }
 }
-
 ```
-
-
 When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
 ```
@@ -208,6 +211,5 @@ fun stopNavigation(){
     TT2.analytics.stopVisit() 
     //stopVisit() will stop the collection heatmap data internaly. If the heatmap collection wants to be stopped alone TT2.analytics.stopCollctingHeatMapData() can be called.
 }
-
 ```
 
