@@ -75,7 +75,7 @@ TT2.initiateFloorLevel(
 ## Navigation
 
 Navigation handles the TT2 positioning system.
-It's possible to start the positioning system in different way.
+It's possible to start the positioning system in different ways.
 It's recommended to start with a QR code for the most accurate positioning. A user can also go to a starting point visualized on the map and hold the device in the indicated direction and press start.
 You can access the navigation functionalities by calling:
 
@@ -115,15 +115,6 @@ TT2.navigation.stop()
 
 Analytics is used for posting position related data to a server that later can be used for analysis and decision making.
 
-You can access the analytics functionalities by calling:
-
-```
-TT2.analytics.startVisit()
-TT2.analytics.startCollectingHeatMapData()
-etc...
-
-```
-
 For analytics functionalities to work a visit need to be started first.
 It is recommended to start the visit when the navigation starts and to start collecting heatmap data on the start visit callback.
 
@@ -149,8 +140,8 @@ fun startNavigation(position: PointF, angle: Double) {
 }
 ```
 
-During the visit the user will walk around on the map. Indifferent senarios a default triggerevent will be built by the TT2 sdk.
-A class can listen on these events add additional information and post it to a server that later can be filtered on tags and used for analysis.
+During the visit the user will walk around on the map. In different scenarios a default trigger event will be built by the TT2 sdk.
+A class can listen on these events. Then add additional information ot the trigger event and post it to a server.
 
 ```
 import se.virtualstores.tt2.androidsdk.Listener
@@ -164,7 +155,7 @@ class MapActivity : AppCompatActivity(), Listener{
 
 ```
 
-When navigation is stopped or the user quits the app the visit and heatmap collection should be stopped.
+When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
 ```
 
