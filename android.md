@@ -21,10 +21,12 @@ Make sure that your project meets these requirements:
 ## Add SDK to your app
 
 Add the SDK to your app level `build.gradle` file:
+//Todo: check this info:
 
+The latest [SDK_VERSION](https://link-to-release)
 ```
 dependencies {
-    ... //Todo: check this info:
+    ... 
     implementation("se.virtualstores:tt2-android-sdk:${SDK_VERSION}")
     ...
 }
