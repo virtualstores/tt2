@@ -8,7 +8,7 @@
 
 ## Installation
 
-####Using as a dependency
+###Using as a dependency
 
 `Using Swift 5.5`
 
@@ -93,24 +93,24 @@ tt2.navigation.stop()
 ## Position
 To get the position of a item or a shelf you can use one of the following functions
 
-For getting shelfByName call the following:
+For getting position by shelf call the following:
 
 ```
-tt2.position.getByShelfName(shelfName: name) { (itemPosition) in
+tt2.position.getBy(shelfName: name) { (itemPosition) in
     do {
-    	try self.tt2.navigation.compassStartNavigation(startPosition: itemPosition.point)
+    	try self.tt2.navigation.start(startPosition: itemPosition.point)
     } catch {
     	// Handle error
     }
 }
 ```
-For gettig shelfByBarcode call the following:
+For getting position by barcode call the following:
 
 ```
-tt2.position.getByBarcode(barcode: "barcode") { (item) in
+tt2.position.getBy(barcode: "barcode") { (item) in
     guard let point = item.itemPosition?.point else { return }
     do {
-        try self.tt2.navigation.compassStartNavigation(startPosition: point)
+        try self.tt2.navigation.start(startPosition: point)
     } catch {
         // Handle error
     }
@@ -119,7 +119,7 @@ tt2.position.getByBarcode(barcode: "barcode") { (item) in
 For getting multiple positions for barcodes call the following:
 
 ```
-tt2.position.getByBarcode(barcodes: []) { (items) in
+tt2.position.getBy(barcodes: []) { (items) in
     // Use item postions
 }
 ```
@@ -142,22 +142,18 @@ let deviceInformation = DeviceInformation(id: device.name,
     
 let tags: [String : String] = ["age": age, "gender": gender, "userId": userId]
     
-tt2.analytics.startVisit(deviceInformation: deviceInformation, tags: tags)
-```
-As soon as the startVisit succeds you will receive that information in `tt2.analytics.startHeatMapCollectingPublisher` and then you can start collect heatmap data
-
-```
-tt2.analytics.startHeatMapCollectingPublisher
-    .compactMap({ $0 })
-    .sink(receiveCompletion: { _ in
-        // Handle error
-    }, receiveValue: { [weak self] event in
-        do {
-            try self?.tt2.analytics.startCollectingHeatMapData()
-        } catch {
-            // Handle error
-        }
-    })
+tt2.analytics.startVisit(deviceInformation: deviceInformation, tags: tags) { (error) in
+	if let error = error {
+	  	// Handle error
+	} else {
+		do {
+			// Start collecting heatmap data by calling the following:
+			try tt2.analytics.startCollectingHeatMapData()
+		} catch {
+		  	// Handle error
+		}
+	}
+}
 ```
 
 During the visit the user will walk around on the map. In different scenarios a default trigger event will be built by the TT2 sdk. A class can listen on these events. Then add additional information ot the trigger event and post it to a server.
