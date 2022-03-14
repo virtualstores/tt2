@@ -8,7 +8,7 @@
 
 ## Installation
 
-###Using as a dependency
+#### Using as a dependency
 
 `Using Swift 5.5`
 
