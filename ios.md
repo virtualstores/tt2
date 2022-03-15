@@ -5,7 +5,7 @@
 - [Navigation](#Navigation)
 - [Position](#Position)
 - [Analytics](#Analytics)
-- [Demo app](#Demo app)
+- [Demo app](#Demo)
 
 ## Installation
 
@@ -183,6 +183,6 @@ let event = TriggerEvent(rtlsOptionsId: /*floor level id*/,
 self.tt2.analytics.evenManager.addEvent(event: event)
 ```
 
-## Demo app
+## Demo
 
 - [Passive Demo](https://github.com/virtualstores/ios-passive-demo-app)
