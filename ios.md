@@ -5,6 +5,7 @@
 - [Navigation](#Navigation)
 - [Position](#Position)
 - [Analytics](#Analytics)
+- [Demo app](#Demo app)
 
 ## Installation
 
@@ -14,7 +15,7 @@
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release verion `0.0.5` 
+3. Use release verion `0.0.7` 
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
@@ -181,3 +182,7 @@ let event = TriggerEvent(rtlsOptionsId: /*floor level id*/,
 							  eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
 self.tt2.analytics.evenManager.addEvent(event: event)
 ```
+
+## Demo app
+
+- [Passive Demo](https://github.com/virtualstores/ios-passive-demo-app)
