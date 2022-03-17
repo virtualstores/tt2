@@ -3,7 +3,7 @@
 
 - [Code samples](#code-samples)
   - [Overview](#overview)
-  - [Current record time of implementation: 41 min](#current-record-time-of-implementation-41-min)
+  - [Current record time of implementation: 34 min](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
   - [Add SDK to your app](#add-sdk-to-your-app)
   - [Setup](#setup)
@@ -14,7 +14,7 @@
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
     - [Example using the map view with a fragment](#example-using-the-map-view-with-a-fragment)
 
-## Current record time of implementation: 41 min
+## Current record time of implementation: 34 min
 Integrating the SDK, initializing SDK, Store, Analytics and performing test round collecting heatmap data to be viewd in the dashboard on the CMS.
 
 ## Prerequisites
