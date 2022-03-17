@@ -1,12 +1,14 @@
 # Code samples
 ## Overview
 
-- [Prerequisites](#prerequisites)
-- [Installation](#add-sdk-to-your-app)
-- [Setup](#setup)
-- [Changing the floor](#changing-the-floor)
-- [Navigation](#navigation)
-- [Analytics](#analytics)
+- [Code samples](#code-samples)
+  - [Overview](#overview)
+  - [Prerequisites](#prerequisites)
+  - [Add SDK to your app](#add-sdk-to-your-app)
+  - [Setup](#setup)
+  - [Changing the floor](#changing-the-floor)
+  - [Navigation](#navigation)
+  - [Analytics](#analytics)
 
 ## Prerequisites
 Install or update [Android Studio](https://developer.android.com/sdk) to its latest version.
@@ -23,8 +25,24 @@ Make sure that your project meets these requirements:
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
 
-The latest [SDK_VERSION](https://link-to-release)
+Project level 
+```gradle
+allprojects {
+    repositories {
+        maven {
+            credentials {
+                username "provided by Virtual stores"
+                password "provided by Virtual stores"
+
+            }
+            url = "https://nexus.aws.vs-office.se/repository/external-public/"
+        }
+    }
+}
 ```
+
+The latest [SDK_VERSION](https://link-to-release)
+```gradle
 dependencies {
     ... 
     implementation("se.virtualstores:tt2-android-sdk:${SDK_VERSION}")
@@ -35,16 +53,32 @@ dependencies {
 
 ## Setup
 
+Declare the tt2 service in your app manifest file `AndroidManifest.xml`
+```xml
+<manifest>
+    <application>
+
+        . . .
+
+        <service
+            android:name="se.virtualstores.tt2.pub.positionkit.PositionKitService"
+            android:enabled="true" />
+
+        . . .
+
+    </application>
+</manifest>
+```
+
 1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
 
-```
+```kotlin
 TT2.initialize(
             context = //applicationContext
             apiUrl = // The api url to connect to
             apiKey = // Your API key
             clientId = //Your client ID
-            neuralNetFileName = // The name of the NeuralNet File name
-            serviceNotificationIntent = // The intent which will be used to keep the SDK alive on background
+            serviceNotificationIntent =  Intent(context, ClassToReceiveIntent::class.java) // The intent which will be used to keep the SDK alive on background, it will also handle user interaction with the notification that will be displayed in the notification center when the app is in background.
         ) { error ->
             if (error != null) {
                 // Show error to user in case of any exception happened during initialization including network exception
@@ -62,11 +96,11 @@ You can show the list of the stores to the user and choose one.
 
 When the user chose a store you can initialize the selected store by calling:
 
-  ```
+  ```kotlin
   TT2.initStore(
             context = //applicationContext,
             storeId = //Your store Id
-            floorLevelId = // The floor level to start navigation with
+            floorLevelId = // The floor level to start navigation with. This is optional, if not set the SDK will init the default floorLevel configured in the CMS
         ) { error ->
             if (error != null) {
                 // Show error to user in case of any exception happened during initialization including network exception
@@ -80,7 +114,7 @@ When the user chose a store you can initialize the selected store by calling:
 ## Changing the floor
 
 If you need to change the current floor manually:
-```
+```kotlin
 TT2.initiateFloorLevel(
             context = //applicationContext,
             floorLevelId = // The floor level to start navigation with
@@ -102,7 +136,7 @@ It's recommended to start with a QR code for the most accurate positioning. A us
 You can access the navigation functionalities by calling:
 
 IScanLocations can be set up in the TT2 csm. Filter and find what start qr code has been scanned. 
-```
+```kotlin
 TT2.activeStore.startScanLocations.find { iScanLocation ->
     iScanLocation.code == scanResult
 }?.let{
@@ -120,12 +154,13 @@ Get the position of the shelf and use it as input.
 Position determines where on the map the user will be synced to. 
 SyncRotation determines if the direction of the positioning system should be updated. Should only be true if we are sure the input direction is correct.
 For example if a user scans a shelf label:
-
-```
-TT2.navigation.syncPosition(position = shelfPosition, syncRotation = false, forceSync = true)
+```kotlin
+TT2.position.getByBarcode("<scannerInput>") { item -> 
+    TT2.navigation.syncPosition(position = item.itemPosition, syncRotation = false, forceSync = true)            
+}
 ```
 When the positioning should stop just call tt2.navigation.stop()
-```
+```kotlin
 TT2.navigation.stop()
 ```
 
@@ -137,7 +172,7 @@ Analytics is used for posting position related data to a server that later can b
 For analytics functionalities to work a visit need to be started first.
 It is recommended to start the visit when the navigation starts and to start collecting heatmap data on the start visit callback.
 
-```
+```kotlin
 fun startNavigation(position: PointF, angle: Double) {
     TT2.navigation.start(position, angle)
     TT2.analytics.startVisit(
@@ -147,7 +182,7 @@ fun startNavigation(position: PointF, angle: Double) {
             appVersion = BuildConfig.VERSION_NAME,
             Build.MODEL),
         tags = mapOf(
-                //More tags can be added for more ways of filtering all visits. It's recommended to use these tags.
+                //More tags can be added for more ways of filtering all visits. We recommended to use these tags as they are already prepared in the CMS for data filtering.
                 "userID" to user.ID,
                 "userGender" to user.gender,
                 "userAge" to user.age 
@@ -162,13 +197,25 @@ fun startNavigation(position: PointF, angle: Double) {
 During the visit the user will walk around on the map. In different scenarios a default trigger event will be built by the TT2 sdk.
 A class can listen on these events. Then add additional information ot the trigger event and post it to a server.
 
-```
+```kotlin
 import se.virtualstores.tt2.androidsdk.Listener
 
 class MapActivity : AppCompatActivity(), Listener{
 
     override fun onDefaultTriggerEvent(triggerEvent: TriggerEvent) {
-        TT2.analytics.postEventData(triggerEvent)
+
+        // parse the trigger event to show it to the user. I.e in the event of an message event added from the CMS: 
+         triggerEvent.metaData[TriggerEvent.defaultMetaData.type]?.let {
+            when (it) {
+                    TriggerEvent.DefaultMetaData.MessageType.SMALL.name -> {}
+                    TriggerEvent.DefaultMetaData.MessageType.LARGE.name -> {}
+         }
+
+        // after receiving an event you can optionally remove it to avoid trigger it again during this visit
+        TT2.triggerEventManager.removeTriggerEvent(triggerEvent)
+
+        // For viewing analytics data of the messages we recommend that your post the trigger event to the anlaytics
+        TT2.analytics.postEventData(triggerEvent.toMessageShownEvent())
     }
 }
 ```
@@ -177,20 +224,27 @@ Trigger events can also be created and then listen on when they are triggered.
 
 Setup trigger events by adding them to the trigger manager
 In this example we set upp will trigger event that will trigger when a user comes inside a `5m radius` of the shalf named `"123"`
-```
-TT2.position.getByShelfName("123") { // getting an IItemPosition from a shelf named "123"
-    it?.let { position ->
+```kotlin
+TT2.position.getByBarcode("<barcode>") { item ->  // getting an IItem matching the barcode
+    it?.itemPosition?.let { position ->
         TT2.triggerEventManager.addTriggerEvent( //Adding the trigger event to the trigger event manager.
-            TriggerEvent.Builder().apply { //Building the trigger event.
+            TriggerEvent.Builder().apply {
                 setName("Coordinate Trigger")
-                addTag("shelf", "123")
-                setTriggerEventData(
-                    CoordinateTrigger(
-                        x = position.point.x.toDouble(),
-                        y = position.point.y.toDouble(),
-                        radius = 5.0
+                // add as mouch metaData as you like
+                    addMetaData(
+                        listOf(
+                            TriggerEvent.defaultMetaData.id to "<barcode>",
+                            TriggerEvent.defaultMetaData.title to "RadiusTrigger",
+                            TriggerEvent.defaultMetaData.body to "Close to kitchen",
+                        )
                     )
-                )
+                    setTriggerEventData(
+                        CoordinateTrigger(
+                            x = position.point.x.toDouble(),
+                            y = position.point.y.toDouble(),
+                            radius = 2.0
+                        )
+                    )
             }.build()
         )
     }
@@ -200,7 +254,7 @@ TT2.position.getByShelfName("123") { // getting an IItemPosition from a shelf na
 Extend your class with TriggerEventManager.Listener to listen on the created trigger events.
 Set this as a trigger listener inside the trigger event manager.
 
-```
+```kotlin
 class MainActivity():  TriggerEventManager.Listener{
     
     TT2.triggerEventManager.setTriggerListener(this)
@@ -215,8 +269,7 @@ class MainActivity():  TriggerEventManager.Listener{
 ```
 When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
-```
-
+```kotlin
 fun stopNavigation(){
     TT2.navigation.stop()
     TT2.analytics.stopVisit() 
