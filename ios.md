@@ -30,6 +30,8 @@ Make sure to add the following row to your .plist file so background access is w
 
 * For “Privacy - Location When In Use Usage Description"
 
+In "Signing & Capabilities" tab of your project add "Background Modes" capability and select "Location updates"
+
 ## Setup
 1. Create TT2 object: `let tt2 = TT2()`
 2. Initiate TT2 for user with serverUrl, apiKey, and clientId
