@@ -26,10 +26,8 @@ If you have doubts, please, check the following links:
 
 Make sure to import the SDK wherever you need to use it by: `import VSTT2`
 
-Make sure to add these following rows to your .plist file so background access is working. We need it for being able to run in the background otherwise the app will be suspended once the user exits or locks the phone. Which then will result in losing user position.
+Make sure to add the following row to your .plist file so background access is working. We need it for being able to run in the background otherwise the app will be suspended once the user exits or locks the phone. Which then will result in losing user position.
 
-* For "Privacy - Location Always and When In Use Usage Description" 
-* For “Privacy - Location Always Usage Description”
 * For “Privacy - Location When In Use Usage Description"
 
 ## Setup
