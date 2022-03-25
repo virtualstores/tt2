@@ -15,7 +15,7 @@
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release verion `0.0.11` 
+3. Use release verion `0.0.12` 
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
