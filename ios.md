@@ -120,7 +120,7 @@ tt2.position.getBy(barcode: "<scanned barcode>") { (item) in
 ```
 For getting multiple positions for barcodes call the following:
 
-```
+```swift
 tt2.position.getBy(barcodes: [<scanned barcodes>]) { (items) in
     // Use item postions
 }
