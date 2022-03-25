@@ -98,7 +98,7 @@ To get the position of a item or a shelf you can use one of the following functi
 For getting position by shelf call the following:
 
 ```swift
-tt2.position.getBy(shelfName: <shelf name>) { (itemPosition) in
+tt2.position.getBy(shelfName: "<shelf name>") { (itemPosition) in
     do {
         try self.tt2.navigation.syncPosition(position: itemPosition)
     } catch {
