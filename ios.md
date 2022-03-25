@@ -15,7 +15,7 @@
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release verion `0.0.7` 
+3. Use release verion `0.0.11` 
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
@@ -100,19 +100,19 @@ For getting position by shelf call the following:
 ```swift
 tt2.position.getBy(shelfName: name) { (itemPosition) in
     do {
-    	try self.tt2.navigation.start(startPosition: itemPosition.point)
+        try self.tt2.navigation.syncPosition(position: itemPosition)
     } catch {
-    	// Handle error
+        // Handle error
     }
 }
 ```
 For getting position by barcode call the following:
 
 ```swift
-tt2.position.getBy(barcode: "barcode") { (item) in
-    guard let point = item.itemPosition?.point else { return }
+tt2.position.getBy(barcode: "<scanned barcode>") { (item) in
+    guard let itemPosition = item?.itemPosition else { return }
     do {
-        try self.tt2.navigation.start(startPosition: point)
+        try self.tt2.navigation.syncPosition(position: itemPosition)
     } catch {
         // Handle error
     }
@@ -121,7 +121,7 @@ tt2.position.getBy(barcode: "barcode") { (item) in
 For getting multiple positions for barcodes call the following:
 
 ```
-tt2.position.getBy(barcodes: []) { (items) in
+tt2.position.getBy(barcodes: [<scanned barcodes>]) { (items) in
     // Use item postions
 }
 ```
