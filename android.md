@@ -13,6 +13,8 @@
 - [Map Library](#map-library)
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
     - [Example using the map view with a fragment](#example-using-the-map-view-with-a-fragment)
+- [Known issues](#known-issues)
+  - [Run in the background](#run-in-the-background)
 
 ## Current record time of implementation: 34 min
 Integrating the SDK, initializing SDK, Store, Analytics and performing test round collecting heatmap data to be viewd in the dashboard on the CMS.
@@ -428,4 +430,8 @@ class MyFragment: Fragment(), MapListener, LifecycleListener, PathfindingControl
 }
 ```
 
-
+# Known issues
+## Run in the background
+The application needs to do work continually and it is not acceptable for the Android OS to kill the application’s background services. Since the introduction of doze mode in Android Marshmallow we have seen a number of enterprise use cases where customers want to ensure their application continues to run even though the device wants to enter a power saving mode. So as a developer this is your responsiblity to keep your app alive and keep up with the latest changes of Android OS to make this possible. Here is a list that may help you do this but may not be all the best solutions to this problem. Let us know if you know a better way of handling this.
+  - Read the android documentation about [the dose mode](https://developer.android.com/training/monitoring-device-state/doze-standby.html)
+  - Whitelist your app from being optimized. This is something you need to do for every manufacturer because some have separate battery optimization. You may use [third party libraries](https://github.com/pvsvamsi/AppKillerManager) to do so or do it yourself.
