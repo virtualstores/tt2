@@ -11,7 +11,7 @@
 
 #### Using as a dependency
 
-`Using Swift 5.5`
+`Using Swift 5.6`
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
@@ -183,6 +183,45 @@ let event = TriggerEvent(rtlsOptionsId: /*floor level id*/,
 self.tt2.analytics.evenManager.addEvent(event: event)
 ```
 
+## Map Library
+
+## Installation
+
+#### Using as a dependency
+
+In this package we are using Mapbox v10. To be able to use this you need to add the following file in your user folder: [.netrc]().
+It is used by Mapbox to authenticate your account
+
+1. Using Xcode 13 go to File > Add packages...
+2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)
+3. Use release verion `0.0.1`
+4. Click on next and select the project target
+
+Make sure to import the SDK wherever you need to use it by: `import VSMap`
+
+## Setup
+1. Create a TT2MapView and add it to your view
+
+	```swift
+	let mapView = TT2MapView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+	view.insertSubview(mapView, at: 0)
+	```
+
+2. Create a BaseMapController
+	- Find your token [Here](https://account.mapbox.com/access-tokens/)
+	- Use MapOptions to visulize the map
+
+	```swift
+	let mapController = BaseMapController(with: "<Your MapBox token>", view: TT2MapView, mapOptions: MapOptions)
+	```
+
+3. Connect Map SDK to TT2 SDK
+
+	```swift
+	tt2.setMap(map: mapController)
+	```
+
 ## Demo
 
 - [Passive Demo](https://github.com/virtualstores/ios-passive-demo-app)
+- [Active Demo](https://github.com/virtualstores/ios-active-demo-app)
