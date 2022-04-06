@@ -62,23 +62,6 @@ dependencies {
 
 ## Setup
 
-Declare the tt2 service in your app manifest file `AndroidManifest.xml`
-```xml
-<manifest>
-    <application>
-
-        . . .
-
-        <service
-            android:name="se.virtualstores.tt2.pub.positionkit.PositionKitService"
-            android:enabled="true" />
-
-        . . .
-
-    </application>
-</manifest>
-```
-
 1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
 
 ```kotlin
@@ -142,18 +125,14 @@ TT2.initiateFloorLevel(
 Navigation handles the TT2 positioning system.
 It's possible to start the positioning system in different ways.
 It's recommended to start with a QR code for the most accurate positioning. A user can also go to a starting point visualized on the map and hold the device in the indicated direction and press start.
-You can access the navigation functionalities by calling:
+You can access the navigation functionalities by calling TT2.navigation:
 
 IScanLocations can be set up in the TT2 csm. Filter and find what start qr code has been scanned. 
 ```kotlin
 TT2.activeStore.startScanLocations.find { iScanLocation ->
     iScanLocation.code == scanResult
 }?.let{
-    startNavigation(it)
-}
-
-fun startNavigation(startScanLocation: IScanLocation) {
-    TT2.navigation.start(startScanLocation)
+    TT2.navigation.syncPosition(startScanLocation)
 }
 ```
 
@@ -183,7 +162,7 @@ It is recommended to start the visit when the navigation starts and to start col
 
 ```kotlin
 fun startNavigation(position: PointF, angle: Double) {
-    TT2.navigation.start(position, angle)
+    TT2.navigation.syncPosition(position, angle)
     TT2.analytics.startVisit(
         deviceInformation = DeviceInformation(
             operatingSystem = "Android",
