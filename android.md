@@ -18,6 +18,8 @@
   - [PathfindingController](#pathfindingcontroller)
   - [ZoneController](#zonecontroller)
   - [CameraController](#cameracontroller)
+- [Known issues](#known-issues)
+  - [Run in the background](#run-in-the-background)
 
 ## Current record time of implementation: 34 min
 Integrating the SDK, initializing SDK, Store, Analytics and performing test round collecting heatmap data to be viewd in the dashboard on the CMS.
@@ -63,23 +65,6 @@ dependencies {
 
 
 ## Setup
-
-Declare the tt2 service in your app manifest file `AndroidManifest.xml`
-```xml
-<manifest>
-    <application>
-
-        . . .
-
-        <service
-            android:name="se.virtualstores.tt2.pub.positionkit.PositionKitService"
-            android:enabled="true" />
-
-        . . .
-
-    </application>
-</manifest>
-```
 
 1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
 
@@ -144,18 +129,14 @@ TT2.initiateFloorLevel(
 Navigation handles the TT2 positioning system.
 It's possible to start the positioning system in different ways.
 It's recommended to start with a QR code for the most accurate positioning. A user can also go to a starting point visualized on the map and hold the device in the indicated direction and press start.
-You can access the navigation functionalities by calling:
+You can access the navigation functionalities by calling TT2.navigation:
 
 IScanLocations can be set up in the TT2 csm. Filter and find what start qr code has been scanned. 
 ```kotlin
 TT2.activeStore.startScanLocations.find { iScanLocation ->
     iScanLocation.code == scanResult
 }?.let{
-    startNavigation(it)
-}
-
-fun startNavigation(startScanLocation: IScanLocation) {
-    TT2.navigation.start(startScanLocation)
+    TT2.navigation.syncPosition(startScanLocation)
 }
 ```
 
@@ -185,7 +166,7 @@ It is recommended to start the visit when the navigation starts and to start col
 
 ```kotlin
 fun startNavigation(position: PointF, angle: Double) {
-    TT2.navigation.start(position, angle)
+    TT2.navigation.syncPosition(position, angle)
     TT2.analytics.startVisit(
         deviceInformation = DeviceInformation(
             operatingSystem = "Android",
@@ -538,3 +519,10 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener {
         mapController.camera.updateCameraMode(mapController.camera.modes.containMap2D())
     } 
 ```
+
+# Known issues
+## Run in the background
+The application needs to do work continually and it is not acceptable for the Android OS to kill the application’s background services. Since the introduction of doze mode in Android Marshmallow we have seen a number of enterprise use cases where customers want to ensure their application continues to run even though the device wants to enter a power saving mode. So as a developer this is your responsiblity to keep your app alive and keep up with the latest changes of Android OS to make this possible. Here is a list that may help you do this but may not be all the best solutions to this problem. Let us know if you know a better way of handling this.
+- Read the android documentation about [the dose mode](https://developer.android.com/training/monitoring-device-state/doze-standby.html)
+- [Whitelist](https://stackoverflow.com/a/54982071/3248593) your app from being optimized. This is something you need to do for every manufacturer because some have [separate battery optimization](https://stackoverflow.com/a/56993037/3248593). You may use [third party libraries](https://github.com/pvsvamsi/AppKillerManager) to do so or do it yourself. If you use Flutter there is a [library](https://github.com/SachinGanesh/battery_optimization) that may help you.
+- Sensors quality differs between devices. In some devices some sensors may not be available.
