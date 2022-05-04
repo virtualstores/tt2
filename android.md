@@ -5,14 +5,19 @@
   - [Overview](#overview)
   - [Current record time of implementation: 34 min](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-  - [Add SDK to your app](#add-sdk-to-your-app)
+- [Add SDK to your app, latest version: `1.3.4`](#add-sdk-to-your-app-latest-version-134)
   - [Setup](#setup)
   - [Changing the floor](#changing-the-floor)
   - [Navigation](#navigation)
   - [Analytics](#analytics)
-- [Map Library](#map-library)
+- [Map SDK](#map-sdk)
+  - [Map SDK version is the same as the SDK version](#map-sdk-version-is-the-same-as-the-sdk-version)
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
     - [Example using the map view with a fragment](#example-using-the-map-view-with-a-fragment)
+  - [MarkerController](#markercontroller)
+  - [PathfindingController](#pathfindingcontroller)
+  - [ZoneController](#zonecontroller)
+  - [CameraController](#cameracontroller)
 
 ## Current record time of implementation: 34 min
 Integrating the SDK, initializing SDK, Store, Analytics and performing test round collecting heatmap data to be viewd in the dashboard on the CMS.
@@ -27,7 +32,7 @@ Make sure that your project meets these requirements:
 - Uses Android 4.4 or higher
 
 
-## Add SDK to your app
+# Add SDK to your app, latest version: `1.3.4`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
@@ -48,7 +53,6 @@ allprojects {
 }
 ```
 
-The latest [SDK_VERSION](https://link-to-release)
 ```gradle
 dependencies {
     ... 
@@ -286,13 +290,38 @@ fun stopNavigation(){
 
 
 
-# Map Library
+# Map SDK
 
-The latest [MAP_SDK_VERSION](https://link-to-release)
+Current record time of implementation: Not set, will you be the first?
+
+## Map SDK version is the same as the SDK version
+
+```gradle
+
+allprojects {
+    repositories {
+    
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = "mapbox"
+                password = "provided by Virtual stores"
+            }
+        }
+    }
+}
+
+
+```
+
+
 ```gradle
 dependencies {
     ... 
-    implementation("se.virtualstores:lib-map:${MAP_SDK_VERSION}")
+    implementation("se.virtualstores:lib-map:${SDK_VERSION}")
     ...
 }
 ```
@@ -307,11 +336,19 @@ dependencies {
 ```
 
 ### Example using the map view with a fragment
+Documentation: [MapListener](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-map-listener/index.html)
 
+Documentation: [LifecycleListener](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-lifecycle-listener/index.html)
+
+Documentation: [MapOptions](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain/-map-options/index.html)
+
+Documentation: [MapController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-map-controller/index.html)
+
+Example:
 ```kotlin
 
 
-class MyFragment: Fragment(), MapListener, LifecycleListener, PathfindingController.Listener, MarkerController.OnMarkerClickListener {
+class MyMapFragment: Fragment(), MapListener, LifecycleListener {
     
     var mapController: MapController? = null
 
@@ -332,63 +369,8 @@ class MyFragment: Fragment(), MapListener, LifecycleListener, PathfindingControl
         
         // optional
         mapController.mapListener = this
-
-        mapController.pathfinding.addListener(this)
-        mapController.marker.addOnMarkerClickListener(this)
+    }
     
-    }
-
-    // using map marks
-    fun addMarkToMap(data: YourData, itemPosition: IItemPosition) {
-        // the BaseMapMark class that are available in the SDK can show two different types of information, image or text
-        // You can design your own map marks by extending :MapMark<T>, Comparable<MapMark<T>>
-        val mark = BaseMapMark(
-            id = data.shelfId,
-            position = itemPosition.point,
-            floorLevelId = itemPosition.floorLevelId,
-            data = data,
-            // choose either 
-            imageURL = data.imageUrl,
-            text = data.label
-        )
-
-        mapController.marker.addMark(mark)
-    }
-
-    override fun onMarkClick(mark: MapMark<out Any>) {
-        (mark.data as? YourData)?.let {
-
-        }
-    }
-
-
-    // Using the pathfinder 
-    fun addPathfinderGoalToMap(data: YourData, itemPosition: IItemPosition) {
-        
-        val goal = BasePathfindingGoal(
-            id = data.id,
-            position =  itemPosition.point,
-            floorLevelId = itemPosition.floorLevelId,
-            data = data
-        )
-
-        mapController.pathfinding.addGoal(goal)
-    }
-
-    // listening for pathfinder updates
-    override val pathfindingListenerId: String
-        get() = <choose an id for this listener>
-
-    override fun onCurrentGoalChange(goal: PathfindingController.PathfindingGoal<out Any>?) {
-         (goal.data as? YourData)?.let {
-            
-        }   
-    }
-
-    override fun onSortedGoalChange(goals: List<PathfindingController.PathfindingGoal<out Any>>) {
-            
-    }
-
 
     // Lifecycle callbacks for map controller
     override fun onStart() {
@@ -429,3 +411,130 @@ class MyFragment: Fragment(), MapListener, LifecycleListener, PathfindingControl
 ```
 
 
+## MarkerController
+Documentation: [MarkerController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-marker-controller/index.html)
+Example:
+```kotlin
+// Implement interface MarkerController.Listener
+class MyMapFragment: Fragment(), MapListener, LifecycleListener, MarkerController.Listener {
+    
+    // the map is now fully loaded and it's now safe to start using it
+    override fun onMapLoaded() {
+        super.onMapLoaded()
+        
+        mapController.marker.addListener(this)
+    }
+
+    // using map marks
+    fun addMarkToMap(data: YourData, itemPosition: IItemPosition) {
+        // the BaseMapMark class that are available in the SDK can show two different types of information, image or text
+        // You can design your own map marks by extending :MapMark<T>, Comparable<MapMark<T>>
+        val mark = BaseMapMark(
+            id = data.shelfId,
+            position = itemPosition.point,
+            floorLevelId = itemPosition.floorLevelId,
+            data = data,
+            // choose either mark with image:
+            imageURL = data.imageUrl,
+            // or mark with text:
+            text = data.label
+        )
+
+        mapController.marker.addMark(mark)
+    }
+
+        
+    override fun onMarkClick(mark: MapMark<out Any>) {
+        (mark.data as? YourData)?.let {
+
+        }
+    }
+
+    override fun onClusterClicked(marks: List<MapMark<out Any>>) {
+
+    }
+
+```
+
+
+
+## PathfindingController
+Documentation: [PathfindingController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-pathfinding-controller/index.html)
+
+Example:
+```kotlin
+// Implement interface PathfindingController.Listener
+class MyMapFragment: Fragment(), MapListener, LifecycleListener, PathfindingController.Listener {
+    
+    // the map is now fully loaded and it's now safe to start using it
+    override fun onMapLoaded() {
+        super.onMapLoaded()
+
+        mapController.pathfinder.addListener(this)
+    }
+
+    // Using the pathfinder 
+    fun addPathfinderGoalToMap(data: YourData, itemPosition: IItemPosition) {        
+        val goal = BasePathfindingGoal(
+            id = data.id,
+            position =  itemPosition.point,
+            floorLevelId = itemPosition.floorLevelId,
+            data = data
+        )
+
+        mapController.pathfinding.addGoal(goal)
+    }
+
+    // listening for pathfinder updates
+    override val pathfindingListenerId: String
+        get() = <choose an id for this listener>
+
+    override fun onCurrentGoalChange(goal: PathfindingController.PathfindingGoal<out Any>?) {
+         (goal.data as? YourData)?.let {
+            
+        }   
+    }
+
+    override fun onSortedGoalChange(goals: List<PathfindingController.PathfindingGoal<out Any>>) {
+            
+    }
+
+    
+```
+
+
+## ZoneController
+
+Example:
+```kotlin
+
+class MyMapFragment: Fragment(), MapListener, LifecycleListener {
+    
+    override fun onMapLoaded() {
+        super.onMapLoaded()
+
+        mapController.zones?.showAll()    
+    }
+
+    
+```
+
+Documentation: [ZoneController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-zone-controller/index.html)
+
+
+## CameraController
+Documentation: [CameraController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-camera-controller/index.html)
+
+Documetation: [CameraModes](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-camera-controller/-camera-modes/index.html)
+
+Example:
+```kotlin
+
+class MyMapFragment: Fragment(), MapListener, LifecycleListener {
+    
+    override fun onMapLoaded() {
+        super.onMapLoaded()
+
+        mapController.camera.updateCameraMode(mapController.camera.modes.containMap2D())
+    } 
+```
