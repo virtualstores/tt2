@@ -9,7 +9,6 @@ se.virtualstores.lib_map.pub.model.pathfinding
 se.virtualstores.lib_map.pub.view
 module:tt2-android-sdk
 se.virtualstores.tt2.pub
-se.virtualstores.tt2.pub.model
 se.virtualstores.tt2.pub.model.item
 se.virtualstores.tt2.pub.model.recording
 se.virtualstores.tt2.pub.model.store
@@ -20,7 +19,6 @@ se.virtualstores.tt2.pub.recording
 se.virtualstores.tt2.pub.scanner
 se.virtualstores.tt2.pub.scanner.util
 se.virtualstores.tt2.pub.scanner.view
-se.virtualstores.tt2.pub.util.navigation
 module:tt2-domain
 se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
