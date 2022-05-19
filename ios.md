@@ -1,11 +1,18 @@
 # Code samples
 ## Overview
-- [Installation](#Installation)
-- [Setup](#Setup)
-- [Navigation](#Navigation)
-- [Position](#Position)
-- [Analytics](#Analytics)
-- [Demo app](#Demo)
+- [Installation](#installation)
+  - [Setup](#setup)
+  - [Navigation](#navigation)
+  - [Position](#position)
+  - [Analytics](#analytics)
+- [Map SDK](#map-sdk)
+  - [Installation](#installation-1)
+  - [Setup](#setup-1)
+  - [MarkerController](#markercontroller)
+  - [PathfindingController](#pathfindingcontroller)
+  - [ZoneController](#zonecontroller)
+  - [CamerController](#cameracontroller)
+- [Demo apps](#demo-apps)
 
 ## Installation
 
@@ -183,7 +190,7 @@ let event = TriggerEvent(rtlsOptionsId: /*floor level id*/,
 self.tt2.analytics.evenManager.addEvent(event: event)
 ```
 
-## Map Library
+## Map SDK
 
 ## Installation
 
@@ -375,7 +382,7 @@ class ViewController: UIViewController {
 }
 ```
 
-## Demo
+## Demo apps
 
 - [Passive Demo](https://github.com/virtualstores/ios-passive-demo-app)
 - [Active Demo](https://github.com/virtualstores/ios-active-demo-app)
