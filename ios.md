@@ -71,10 +71,10 @@ ScanLocations can be set up in the TT2 cms. Filter and find what start QR code h
 
 ```swift
 do {
-	guard let code = self.tt2.activeStore?.startScanLocations.first(where: { $0.code == "scanResult "}) else { return }
-	try self.tt2.navigation.start(code: code)
+  guard let code = self.tt2.activeStore?.startScanLocations.first(where: { $0.code == "scanResult "}) else { return }
+  try self.tt2.navigation.start(code: code)
 } catch {
-	// Handle error
+  // Handle error
 }
 ```
 
@@ -99,30 +99,30 @@ For getting position by shelf call the following:
 
 ```swift
 tt2.position.getBy(shelfName: "<shelf name>") { (itemPosition) in
-    do {
-        try self.tt2.navigation.syncPosition(position: itemPosition)
-    } catch {
-        // Handle error
-    }
+  do {
+    try self.tt2.navigation.syncPosition(position: itemPosition)
+  } catch {
+    // Handle error
+  }
 }
 ```
 For getting position by barcode call the following:
 
 ```swift
 tt2.position.getBy(barcode: "<scanned barcode>") { (item) in
-    guard let itemPosition = item?.itemPosition else { return }
-    do {
-        try self.tt2.navigation.syncPosition(position: itemPosition)
-    } catch {
-        // Handle error
-    }
+  guard let itemPosition = item?.itemPosition else { return }
+  do {
+    try self.tt2.navigation.syncPosition(position: itemPosition)
+  } catch {
+    // Handle error
+  }
 }
 ```
 For getting multiple positions for barcodes call the following:
 
 ```swift
 tt2.position.getBy(barcodes: [<scanned barcodes>]) { (items) in
-    // Use item postions
+  // Use item postions
 }
 ```
 
@@ -145,16 +145,16 @@ let deviceInformation = DeviceInformation(id: device.name,
 let tags: [String : String] = ["age": age, "gender": gender, "userId": userId]
     
 tt2.analytics.startVisit(deviceInformation: deviceInformation, tags: tags) { (error) in
-	if let error = error {
-	  	// Handle error
-	} else {
-		do {
-			// Start collecting heatmap data by calling the following:
-			try tt2.analytics.startCollectingHeatMapData()
-		} catch {
-		  	// Handle error
-		}
-	}
+  if let error = error {
+    // Handle error
+  } else {
+    do {
+      // Start collecting heatmap data by calling the following:
+      try tt2.analytics.startCollectingHeatMapData()
+    } catch {
+      // Handle error
+    }
+  }
 }
 ```
 
@@ -166,7 +166,7 @@ During the visit the user will walk around on the map. In different scenarios a 
 analyticsMessgeCancellable = tt2.analytics.evenManager.messageEventPublisher
   .compactMap({ $0 })
   .sink { [weak self] event in
-  		// Handle event as you want to display it
+    // Handle event as you want to display it
   }
 ```
 
@@ -177,9 +177,9 @@ After getting an event you need to call `tt2.analytics.addTriggerEvent(for: even
 ```swift
 let trigger = TriggerEvent.CoordinateTrigger(point: CGPoint(x: 5.0, y: 10.0), radius: 5)
 let event = TriggerEvent(rtlsOptionsId: /*floor level id*/, 
-							  name: "Testing", 
-							  description: "Test description", 
-							  eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
+                         name: "Testing", 
+                         description: "Test description", 
+                         eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
 self.tt2.analytics.evenManager.addEvent(event: event)
 ```
 
@@ -226,62 +226,61 @@ Example:
 
 ```swift
 class ViewController: UIViewController {
-	private var cancellable = Set<AnyCancellable>()
-	
-	var mapController: IMapController?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+  private var cancellable = Set<AnyCancellable>()
 
-		bindPublishers()
-	}
+  var mapController: IMapController?
 	
-	func bindPublishers() {
-		mapController?.mapDataLoadedPublisher
-			.sink(receiveCompletion: { error in
-				Logger.init().log(message: "mapLoading error")
-			}, receiveValue: { (loaded) in
-				if loaded == true {
-					self.createMarker()
-				}
-			})
-			.store(in: &cancellable)
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-		mapController?.marker.onMarkerClicked
-			.compactMap { $0 }
-          .sink(receiveValue: { (marker) in
-          	// Do stuff, i.e remove marker and goal from map. Display the marker
-				self.mapController?.marker.remove(marker: marker)
-				guard let goal = self.mapController?.path.sortedGoals.first(where: { $0.id == marker.id }) else { return }
-				self.mapController?.path.remove(goal: goal, completion: { })
-			}).store(in: &cancellable)
-	}
+    bindPublishers()
+  }
+
+  func bindPublishers() {
+    mapController?.mapDataLoadedPublisher
+      .sink(receiveCompletion: { error in
+        Logger.init().log(message: "mapLoading error")
+      }, receiveValue: { (loaded) in
+        if loaded == true {
+          self.createMarker()
+        }
+      }).store(in: &cancellable)
+
+    mapController?.marker.onMarkerClicked
+      .compactMap { $0 }
+      .sink(receiveValue: { (marker) in
+        // Do stuff, i.e remove marker and goal from map. Display the marker
+        self.mapController?.marker.remove(marker: marker)
+        guard let goal = self.mapController?.path.sortedGoals.first(where: { $0.id == marker.id }) else { return }
+        self.mapController?.path.remove(goal: goal, completion: { })
+      }).store(in: &cancellable)
+  }
 	
-	func createMarker() {
-		self.tt2.position.getBy(barcode: "1234567890123") { (item) in
-			guard let item = item, let itemPosition = item.itemPosition else { return }
-			let id = item.name
-			let marker = BaseMapMark(
-				id: id,
-				position: itemPosition.point,
-				offset: itemPosition.offset,
-				floorLevelId: itemPosition.floorLevelId,
-				triggerRadius: nil,
-				data: nil,
-				clusterable: true,
-				deletable: false,
-				defaultVisibility: true,
-				focused: false,
-				text: id,
-				imageUrl: nil
-			)
+  func createMarker() {
+    self.tt2.position.getBy(barcode: "1234567890123") { (item) in
+      guard let item = item, let itemPosition = item.itemPosition else { return }
+      let id = item.name
+      let marker = BaseMapMark(
+        id: id,
+        position: itemPosition.point,
+        offset: itemPosition.offset,
+        floorLevelId: itemPosition.floorLevelId,
+        triggerRadius: nil,
+        data: nil,
+        clusterable: true,
+        deletable: false,
+        defaultVisibility: true,
+        focused: false,
+        text: id,
+        imageUrl: nil
+      )
 
-			self.mapController?.marker.add(marker: marker)
+      self.mapController?.marker.add(marker: marker)
 			
-			// Function found in PathfindingController chapter
-			self.createGoal(id: id, itemPosition: itemPosition)
-		}
-	}
+      // Function found in PathfindingController chapter
+      self.createGoal(id: id, itemPosition: itemPosition)
+    }
+  }
 }
 ```
 
@@ -290,33 +289,33 @@ Example:
 
 ```swift
 class ViewController: UIViewController {
-	private var cancellable = Set<AnyCancellable>()
-	
-	var mapController: IMapController?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+  private var cancellable = Set<AnyCancellable>()
 
-		bindPublishers()
-	}
+  var mapController: IMapController?
 	
-	func bindPublishers() {
-		mapController?.path.onCurrentGoalChangePublisher
-			.compactMap { $0 }
-			.sink(receiveValue: { (goal) in
-				// Do stuff
-			}).store(in: &cancellable)
-		mapController?.path.onSortedGoalChangePublisher
-			.compactMap { $0 }
-			.sink(receiveValue: { (sortedGoals) in
-				// Do stuff
-		}).store(in: &cancellable)
-	}
-	
-	func createGoal(id: String, itemPosition: ItemPosition) {
-		let goal = PathfindingGoal(id: id, position: itemPosition.point, data: nil, type: .target, floorLevelId: itemPosition.floorLevelId)
-		self.mapController?.path.add(goal: goal, completion: { })
-	}
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    bindPublishers()
+  }
+
+  func bindPublishers() {
+    mapController?.path.onCurrentGoalChangePublisher
+      .compactMap { $0 }
+      .sink(receiveValue: { (goal) in
+        // Do stuff
+      }).store(in: &cancellable)
+    mapController?.path.onSortedGoalChangePublisher
+      .compactMap { $0 }
+      .sink(receiveValue: { (sortedGoals) in
+        // Do stuff
+      }).store(in: &cancellable)
+  }
+
+  func createGoal(id: String, itemPosition: ItemPosition) {
+    let goal = PathfindingGoal(id: id, position: itemPosition.point, data: nil, type: .target, floorLevelId: itemPosition.floorLevelId)
+    self.mapController?.path.add(goal: goal, completion: { })
+  }
 }
 ```
 
@@ -325,27 +324,26 @@ Example:
 
 ```swift
 class ViewController: UIViewController {
-	private var cancellable = Set<AnyCancellable>()
-	
-	var mapController: IMapController?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+  private var cancellable = Set<AnyCancellable>()
 
-		bindPublishers()
-	}
-	
-	func bindPublishers() {
-		self.mapController?.mapDataLoadedPublisher
-			.sink(receiveCompletion: { error in
-				Logger.init().log(message: "mapLoading error")
-			}, receiveValue: { (loaded) in
-				if loaded == true {
-					self.mapController?.zone.showAll()
-				}
-			})
-			.store(in: &cancellable)
-	}
+  var mapController: IMapController?
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    bindPublishers()
+  }
+
+  func bindPublishers() {
+    self.mapController?.mapDataLoadedPublisher
+      .sink(receiveCompletion: { error in
+        Logger.init().log(message: "mapLoading error")
+      }, receiveValue: { (loaded) in
+        if loaded == true {
+          self.mapController?.zone.showAll()
+        }
+      }).store(in: &cancellable)
+  }
 }
 ```
 
@@ -354,27 +352,26 @@ Example:
 
 ```swift
 class ViewController: UIViewController {
-	private var cancellable = Set<AnyCancellable>()
-	
-	var mapController: IMapController?
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
+  private var cancellable = Set<AnyCancellable>()
 
-		bindPublishers()
-	}
-	
-	func bindPublishers() {
-		self.mapController?.mapDataLoadedPublisher
-			.sink(receiveCompletion: { error in
-				Logger.init().log(message: "mapLoading error")
-			}, receiveValue: { (loaded) in
-				if loaded == true {
-					self.mapController?.camera.updateCameraMode(with: .containMap)
-				}
-			})
-			.store(in: &cancellable)
-	}
+  var mapController: IMapController?
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    bindPublishers()
+  }
+
+  func bindPublishers() {
+    self.mapController?.mapDataLoadedPublisher
+      .sink(receiveCompletion: { error in
+        Logger.init().log(message: "mapLoading error")
+      }, receiveValue: { (loaded) in
+        if loaded == true {
+          self.mapController?.camera.updateCameraMode(with: .containMap)
+        }
+      }).store(in: &cancellable)
+  }
 }
 ```
 
