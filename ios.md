@@ -370,7 +370,8 @@ class ViewController: UIViewController {
 				Logger.init().log(message: "mapLoading error")
 			}, receiveValue: { (loaded) in
 				if loaded == true {
-					self.mapController?.camera.updateCameraMode(with: .containMap)				}
+					self.mapController?.camera.updateCameraMode(with: .containMap)
+				}
 			})
 			.store(in: &cancellable)
 	}
