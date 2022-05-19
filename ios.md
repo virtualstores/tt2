@@ -208,7 +208,7 @@ Make sure to import the SDK wherever you need to use it by: `import VSMap`
 	```
 
 2. Create a BaseMapController
-	- Find your token [Here](https://account.mapbox.com/access-tokens/)
+	- Find your token here: [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
 	- Use MapOptions to visulize the map
 
 	```swift
@@ -220,6 +220,162 @@ Make sure to import the SDK wherever you need to use it by: `import VSMap`
 	```swift
 	tt2.setMap(map: mapController)
 	```
+	
+## MarkerController
+Example:
+
+```swift
+class ViewController: UIViewController {
+	private var cancellable = Set<AnyCancellable>()
+	
+	var mapController: IMapController?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		bindPublishers()
+	}
+	
+	func bindPublishers() {
+		mapController?.mapDataLoadedPublisher
+			.sink(receiveCompletion: { error in
+				Logger.init().log(message: "mapLoading error")
+			}, receiveValue: { (loaded) in
+				if loaded == true {
+					self.createMarker()
+				}
+			})
+			.store(in: &cancellable)
+
+		mapController?.marker.onMarkerClicked
+			.compactMap { $0 }
+          .sink(receiveValue: { (marker) in
+          	// Do stuff, i.e remove marker and goal from map. Display the marker
+				self.mapController?.marker.remove(marker: marker)
+				guard let goal = self.mapController?.path.sortedGoals.first(where: { $0.id == marker.id }) else { return }
+				self.mapController?.path.remove(goal: goal, completion: { })
+			}).store(in: &cancellable)
+	}
+	
+	func createMarker() {
+		self.tt2.position.getBy(barcode: "1234567890123") { (item) in
+			guard let item = item, let itemPosition = item.itemPosition else { return }
+			let id = item.name
+			let marker = BaseMapMark(
+				id: id,
+				position: itemPosition.point,
+				offset: itemPosition.offset,
+				floorLevelId: itemPosition.floorLevelId,
+				triggerRadius: nil,
+				data: nil,
+				clusterable: true,
+				deletable: false,
+				defaultVisibility: true,
+				focused: false,
+				text: id,
+				imageUrl: nil
+			)
+
+			self.mapController?.marker.add(marker: marker)
+			
+			// Function found in PathfindingController chapter
+			self.createGoal(id: id, itemPosition: itemPosition)
+		}
+	}
+}
+```
+
+## PathfindingController
+Example: 
+
+```swift
+class ViewController: UIViewController {
+	private var cancellable = Set<AnyCancellable>()
+	
+	var mapController: IMapController?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		bindPublishers()
+	}
+	
+	func bindPublishers() {
+		mapController?.path.onCurrentGoalChangePublisher
+			.compactMap { $0 }
+			.sink(receiveValue: { (goal) in
+				// Do stuff
+			}).store(in: &cancellable)
+		mapController?.path.onSortedGoalChangePublisher
+			.compactMap { $0 }
+			.sink(receiveValue: { (sortedGoals) in
+				// Do stuff
+		}).store(in: &cancellable)
+	}
+	
+	func createGoal(id: String, itemPosition: ItemPosition) {
+		let goal = PathfindingGoal(id: id, position: itemPosition.point, data: nil, type: .target, floorLevelId: itemPosition.floorLevelId)
+		self.mapController?.path.add(goal: goal, completion: { })
+	}
+}
+```
+
+## ZoneController
+Example:
+
+```swift
+class ViewController: UIViewController {
+	private var cancellable = Set<AnyCancellable>()
+	
+	var mapController: IMapController?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		bindPublishers()
+	}
+	
+	func bindPublishers() {
+		self.mapController?.mapDataLoadedPublisher
+			.sink(receiveCompletion: { error in
+				Logger.init().log(message: "mapLoading error")
+			}, receiveValue: { (loaded) in
+				if loaded == true {
+					self.mapController?.zone.showAll()
+				}
+			})
+			.store(in: &cancellable)
+	}
+}
+```
+
+## CameraController
+Example:
+
+```swift
+class ViewController: UIViewController {
+	private var cancellable = Set<AnyCancellable>()
+	
+	var mapController: IMapController?
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		bindPublishers()
+	}
+	
+	func bindPublishers() {
+		self.mapController?.mapDataLoadedPublisher
+			.sink(receiveCompletion: { error in
+				Logger.init().log(message: "mapLoading error")
+			}, receiveValue: { (loaded) in
+				if loaded == true {
+					self.mapController?.camera.updateCameraMode(with: .containMap)				}
+			})
+			.store(in: &cancellable)
+	}
+}
+```
 
 ## Demo
 
