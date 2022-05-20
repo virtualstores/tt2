@@ -349,7 +349,7 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mapController = BaseMapboxController(
+        mapController = BaseMapController(
             binding.mapView,
             MapOptions())
 
