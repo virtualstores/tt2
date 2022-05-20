@@ -196,8 +196,7 @@ self.tt2.analytics.evenManager.addEvent(event: event)
 
 #### Using as a dependency
 
-In this package we are using Mapbox v10. To be able to use this you need to add the following file in your user folder: [.netrc]().
-It is used by Mapbox to authenticate your account
+In this package we are using Mapbox v10. To be able to use this you need to download and add the following file in your user folder: [.netrc](ios/.netrc), and edit the file to add your Mapbox Secret Token. You can create your token [here](https://account.mapbox.com/access-tokens/). It is used by Mapbox to authenticate your account.
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)
@@ -216,10 +215,10 @@ Make sure to import the SDK wherever you need to use it by: `import VSMap`
 
 2. Create a BaseMapController
 	- Find your token here: [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
-	- Use MapOptions to visulize the map
+	- Use MapOptions to visualize the map
 
 	```swift
-	let mapController = BaseMapController(with: "<Your MapBox token>", view: TT2MapView, mapOptions: MapOptions)
+	let mapController = BaseMapController(with: "<Your Public MapBox token>", view: TT2MapView, mapOptions: MapOptions)
 	```
 
 3. Connect Map SDK to TT2 SDK
