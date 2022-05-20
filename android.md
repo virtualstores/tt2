@@ -186,7 +186,9 @@ fun startNavigation(position: PointF, angle: Double) {
                 "userGender" to user.gender,
                 "userAge" to user.age 
             ),
-        metaData = null
+        metaData = mapOf(
+            "customTag" to "customData"
+        )
     ) {
         TT2.analytics.startCollectingHeatMapData()          
     }
@@ -342,7 +344,7 @@ Example:
 ```kotlin
 
 
-class MyMapFragment: Fragment(), MapListener, LifecycleListener {
+class MyMapFragment: Fragment(), MapListener {
     
     var mapController: MapController? = null
 
@@ -353,16 +355,14 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener {
             binding.mapView,
             MapOptions())
 
-        mapController.lifecycleListener = this
+        mapController.mapListener = this
         TT2.setMapController(mapController)
     }
 
     // the map is now fully loaded and it's now safe to start using it
     override fun onMapLoaded() {
         super.onMapLoaded()
-        
-        // optional
-        mapController.mapListener = this
+        // continue map setup
     }
     
 
@@ -385,11 +385,6 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener {
     override fun onStop() {
         super.onStop()
         mapController.onStop()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        mapController.onSaveInstanceState(outState)
     }
 
     override fun onLowMemory() {
