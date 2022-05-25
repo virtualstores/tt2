@@ -1,18 +1,23 @@
 # Code samples
 ## Overview
-- [Installation](#installation)
+- [Code samples](#code-samples)
+  - [Overview](#overview)
+  - [Installation](#installation)
+      - [Using as a dependency](#using-as-a-dependency)
   - [Setup](#setup)
   - [Navigation](#navigation)
   - [Position](#position)
   - [Analytics](#analytics)
-- [Map SDK](#map-sdk)
+  - [Map SDK](#map-sdk)
   - [Installation](#installation-1)
+    - [1. Crate .netrc file](#1-crate-netrc-file)
+    - [2. Add dependency on ios-map package](#2-add-dependency-on-ios-map-package)
   - [Setup](#setup-1)
   - [MarkerController](#markercontroller)
   - [PathfindingController](#pathfindingcontroller)
   - [ZoneController](#zonecontroller)
-  - [CamerController](#cameracontroller)
-- [Demo apps](#demo-apps)
+  - [CameraController](#cameracontroller)
+  - [Demo apps](#demo-apps)
 
 ## Installation
 
@@ -44,7 +49,11 @@ In "Signing & Capabilities" tab of your project add "Background Modes" capabilit
 2. Initiate TT2 for user with serverUrl, apiKey, and clientId
 
 	```swift
-	tt2.initialize(with: /*your server url*/, apiKey: /*your api key*/, clientId: 1) { [weak self] error in
+	tt2.initialize(
+    with: "your server url", /* provided by Virtual Stores */
+    apiKey: "your api key", /* provided by Virtual Stores */ 
+    clientId: yourClientId /* provided by Virtual Stores */
+    ) { [weak self] error in
 	    if error != nil {
 	    	// Show error to user in case of any exception happened during initialization including network exception
 	    } else {
@@ -194,9 +203,20 @@ self.tt2.analytics.evenManager.addEvent(event: event)
 
 ## Installation
 
-#### Using as a dependency
+### 1. Crate .netrc file
 
-In this package we are using Mapbox v10. To be able to use this you need to download and add the following file in your user folder: [.netrc](ios/.netrc), and edit the file to add your Mapbox Secret Token. You can create your token [here](https://account.mapbox.com/access-tokens/). It is used by Mapbox to authenticate your account.
+In this package we are using Mapbox v10. To be able to use this you need to create and add the following file in your home folder: ` ~/.netrc`, and edit the file to add your Mapbox Secret Token. It is used by Mapbox to authenticate your account.
+
+You can find an example of this file [here](https://github.com/virtualstores/tt2/blob/main/ios/.netrc)
+
+Contnets of the `.netrc` file should match this
+```
+  machine api.mapbox.com
+  login mapbox
+  password <secretkey> // provided by virtual stores
+```
+
+### 2. Add dependency on ios-map package 
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)

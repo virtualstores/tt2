@@ -405,7 +405,7 @@ Documentation: [MarkerController](https://virtualstores.github.io/tt2/android/tt
 Example:
 ```kotlin
 // Implement interface MarkerController.Listener
-class MyMapFragment: Fragment(), MapListener, LifecycleListener, MarkerController.Listener {
+class MyMapFragment: Fragment(), MapListener, MarkerController.Listener {
     
     // the map is now fully loaded and it's now safe to start using it
     override fun onMapLoaded() {
@@ -443,6 +443,14 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener, MarkerControlle
 
     }
 
+    override fun onMarkTriggerEnter(mark: MapMark<out Any>) {
+        
+    }
+
+    override fun onMarkTriggerExit(mark: MapMark<out Any>) {
+        
+    }
+
 ```
 
 
@@ -453,7 +461,7 @@ Documentation: [PathfindingController](https://virtualstores.github.io/tt2/andro
 Example:
 ```kotlin
 // Implement interface PathfindingController.Listener
-class MyMapFragment: Fragment(), MapListener, LifecycleListener, PathfindingController.Listener {
+class MyMapFragment: Fragment(), MapListener, PathfindingController.Listener {
     
     // the map is now fully loaded and it's now safe to start using it
     override fun onMapLoaded() {
@@ -499,7 +507,7 @@ Documentation: [ZoneController](https://virtualstores.github.io/tt2/android/tt2-
 Example:
 ```kotlin
 
-class MyMapFragment: Fragment(), MapListener, LifecycleListener {
+class MyMapFragment: Fragment(), MapListener, ZoneController.Listener {
     
     override fun onMapLoaded() {
         super.onMapLoaded()
@@ -512,6 +520,16 @@ class MyMapFragment: Fragment(), MapListener, LifecycleListener {
             mapController.zones?.select(it)
         }
     }
+
+    override fun onEnter(zone: TT2Zone) {
+        
+    }
+
+    override fun onExit(zone: TT2Zone) {
+        
+    }
+
+
 ```
 
 
