@@ -179,7 +179,7 @@ During the visit the user will walk around on the map. In different scenarios a 
 * Subscribe to EventTrigger for getting events
 
 ```swift
-analyticsMessgeCancellable = tt2.analytics.evenManager.messageEventPublisher
+analyticsMessgeCancellable = tt2.events.messageEventPublisher
   .compactMap({ $0 })
   .sink { [weak self] event in
     // Handle event as you want to display it
@@ -191,12 +191,12 @@ After getting an event you need to call `tt2.analytics.addTriggerEvent(for: even
 * Create your own events
 
 ```swift
-let trigger = TriggerEvent.CoordinateTrigger(point: CGPoint(x: 5.0, y: 10.0), radius: 5)
+let trigger = TriggerEvent.CoordinateTrigger(point: CGPoint(x: 5.0, y: 10.0), radius: 5, type: .enter)
 let event = TriggerEvent(rtlsOptionsId: /*floor level id*/, 
                          name: "Testing", 
                          description: "Test description", 
                          eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
-self.tt2.analytics.evenManager.addEvent(event: event)
+self.tt2.events.add(event: event)
 ```
 
 ## Map SDK
