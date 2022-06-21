@@ -202,7 +202,7 @@ To listen for these events implement TriggerEventManager.Listener interface and 
 ```kotlin
 import se.virtualstores.tt2.androidsdk.Listener
 
-class MapActivity : AppCompatActivity(), TT2.triggerEventManager {
+class MapActivity : AppCompatActivity(), TriggerEventManager.Listener {
     fun storeInitiated(){
         TT2.triggerEventManager.setTriggerListener(this)
     }
