@@ -38,7 +38,6 @@ se.virtualstores.tt2_domain.model.central.zone
 se.virtualstores.tt2_domain.model.map
 se.virtualstores.tt2_domain.pathfinder
 se.virtualstores.tt2_domain.pathfinder.deprecated
-se.virtualstores.tt2_domain.sensor
 se.virtualstores.tt2_domain.shelftool
 se.virtualstores.tt2_domain.triggerevents
 se.virtualstores.tt2_domain.triggerevents.triggertype
