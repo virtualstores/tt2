@@ -5,7 +5,7 @@
   - [Overview](#overview)
   - [Current record time of implementation: 34 min*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `1.3.7`](#add-sdk-to-your-app-latest-version-137)
+- [Add SDK to your app, latest version: `1.4.1`](#add-sdk-to-your-app-latest-version-141)
   - [Setup](#setup)
   - [Changing the floor](#changing-the-floor)
   - [TT2.Navigation](#tt2navigation)
@@ -35,7 +35,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 
 
-# Add SDK to your app, latest version: `1.3.7`
+# Add SDK to your app, latest version: `1.4.1`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
