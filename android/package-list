@@ -16,9 +16,6 @@ se.virtualstores.tt2.pub.navigation
 se.virtualstores.tt2.pub.position
 se.virtualstores.tt2.pub.positionkit
 se.virtualstores.tt2.pub.recording
-se.virtualstores.tt2.pub.scanner
-se.virtualstores.tt2.pub.scanner.util
-se.virtualstores.tt2.pub.scanner.view
 module:tt2-domain
 se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
@@ -34,6 +31,7 @@ se.virtualstores.tt2_domain.model.central.swaplocation
 se.virtualstores.tt2_domain.model.central.zone
 se.virtualstores.tt2_domain.model.map
 se.virtualstores.tt2_domain.model.stat
+se.virtualstores.tt2_domain.model.stat.userml
 se.virtualstores.tt2_domain.pathfinder
 se.virtualstores.tt2_domain.pathfinder.deprecated
 se.virtualstores.tt2_domain.shelftool
