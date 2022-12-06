@@ -16,7 +16,6 @@ se.virtualstores.tt2.pub.navigation
 se.virtualstores.tt2.pub.position
 se.virtualstores.tt2.pub.positionkit
 se.virtualstores.tt2.pub.recording
-se.virtualstores.tt2.pub.wifi
 module:tt2-domain
 se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
