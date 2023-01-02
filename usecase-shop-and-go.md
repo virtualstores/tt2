@@ -29,7 +29,9 @@ TT2.initialize(
             apiUrl = // The api url to connect to
             apiKey = // Your API key
             clientId = //Your client ID
-            serviceNotificationIntent =  Intent(context, ClassToReceiveIntent::class.java) // The intent which will be used by the foreground service running the positioning logic, it will also handle user interaction with the notification that will be displayed in the notification center when the app is in background.
+            // The intent which will be used by the foreground service running the positioning logic, it will also 
+            // handle user interaction with the notification that will be displayed in the notification center when the app is in background.
+            serviceNotificationIntent =  Intent(context, ClassToReceiveIntent::class.java) 
         ) { error ->
             if (error != null) {
                 // Show error to user in case of any exception happened during initialization including network exception
@@ -39,16 +41,12 @@ TT2.initialize(
         }
 ```
 
-When this step is done, you can get a list of the stores by calling: `TT2.activeStores`
-
-You can show the list of the stores to the user and choose one.
-
 ## Initiate Store
 
 <img align="top" src="res/usecases/Initiate%20Store.svg">
 <p>
 
-When the user chose a store you can initialize the selected store by calling:
+When the user chooses a store you can initialize the selected store by calling:
 
   ```kotlin
   TT2.initStore(
@@ -181,7 +179,3 @@ fun onScannedProduct(scannerInputString: String) {
     }
 ​
 ```
-
-
-<embed src="snippet.md" />
-
