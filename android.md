@@ -3,9 +3,10 @@
 
 - [Code samples](#code-samples)
   - [Overview](#overview)
-  - [Current record time of implementation: 34 min*](#current-record-time-of-implementation-34-min)
+  - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
 - [Add SDK to your app, latest version: `1.4.1`](#add-sdk-to-your-app-latest-version-141)
+  - [Usecases](#usecases)
   - [Setup](#setup)
   - [Changing the floor](#changing-the-floor)
   - [TT2.Navigation](#tt2navigation)
@@ -63,11 +64,15 @@ dependencies {
     ...
 }
 ```
+## Usecases
+[Shop & Go App](usecase-shop-and-go.md "Example")
 
 
 ## Setup
 
 1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
+
+
 
 ```kotlin
 TT2.initialize(
