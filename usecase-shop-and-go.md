@@ -78,7 +78,6 @@ fun initUser(user: CustomUserObject){
                     }
                 }
             }
-​
             // if no exception on userProfile, continue to start visit
             tt2Profile?.let {
                 startVisit(user)
@@ -153,7 +152,6 @@ fun onScannedProduct(scannerInputString: String) {
                     uncertainAngle = true,
                     withForce = false,
                 )
-​
                 // Optionally report the event to track scanning events in the analytics.
                 TT2.analytics.postScanEvent(
                     ScanEvent(
@@ -168,5 +166,4 @@ fun onScannedProduct(scannerInputString: String) {
             }
         }
     }
-​
 ```
