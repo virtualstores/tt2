@@ -12,14 +12,9 @@
   
 ## Overview
 <img align="top" src="res/usecases/Integration%20Overview.svg">
-<p>
-
-
 
 ## TT2 Initialization
-
 <img align="top" src="res/usecases/Initialization.svg">
-<p>
 
 To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes. 
 
@@ -44,7 +39,6 @@ TT2.initialize(
 ## Initiate Store
 
 <img align="top" src="res/usecases/Initiate%20Store.svg">
-<p>
 
 When the user chooses a store you can initialize the selected store by calling:
 
@@ -64,9 +58,7 @@ When the user chooses a store you can initialize the selected store by calling:
 
 
 ## Start Shopping Trip
-
 <img align="top" src="res/usecases/Start%20Shopping%20Trip.svg">
-<p>
 
 ### Init User Profile
 ```kotlin
@@ -144,7 +136,6 @@ fun startVisit(user: CustomUserObject) {
 
 ## Scan Item
 <img align="top" src="res/usecases/Scan%20Item.svg">
-<p>
 
 ```kotlin
 fun onScannedProduct(scannerInputString: String) {
