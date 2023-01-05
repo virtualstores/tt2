@@ -48,7 +48,6 @@ When the user chooses a store you can initialize the selected store by calling:
 
 ## Scan Item
 <img align="top" src="res/usecases/Scan%20Item.svg">
-
 {% include android/code-sample-tt2-on-scan-item.md %}
 
 ## End Shopping Trip
