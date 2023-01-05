@@ -1,7 +1,15 @@
-# Code samples
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+description: This guide will help you to get started.
+---
+
+# Android Quick Start
 ## Overview
 
-- [Code samples](#code-samples)
+- [Android Quick Start](#android-quick-start)
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
@@ -65,30 +73,14 @@ dependencies {
 }
 ```
 ## Usecases
-[Shop & Go App](usecase-shop-and-go.md "Example")
+[Shop & Go App](usecase-shop-and-go.html "Example")
 
 
 ## Setup
 
 1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
 
-
-
-```kotlin
-TT2.initialize(
-            context = //applicationContext
-            apiUrl = // The api url to connect to
-            apiKey = // Your API key
-            clientId = //Your client ID
-            serviceNotificationIntent =  Intent(context, ClassToReceiveIntent::class.java) // The intent which will be used by the foreground service running the positioning logic, it will also handle user interaction with the notification that will be displayed in the notification center when the app is in background.
-        ) { error ->
-            if (error != null) {
-                // Show error to user in case of any exception happened during initialization including network exception
-            } else  {
-                // Safe to do the next steps
-            }
-        }
-```
+{% include android/code-sample-tt2-initialize.md %}
 
 When this step is done, you can get a list of the stores by calling: `TT2.activeStores`
 
