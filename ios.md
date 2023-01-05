@@ -3,11 +3,12 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
+description: This guide will help you to get started.
 ---
 
-# Code samples
+# iOS Quick Start
 ## Overview
-- [Code samples](#code-samples)
+- [iOS Quick Start](#ios-quick-start)
   - [Overview](#overview)
   - [Installation](#installation)
       - [Using as a dependency](#using-as-a-dependency)
