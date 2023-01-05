@@ -53,8 +53,8 @@ When the user chooses a store you can initialize the selected store by calling:
 
 ## End Shopping Trip
 <img align="top" src="res/usecases/End%20Visit.svg">
-{% include android/code-sample-tt2-stop-visit %}
+{% include android/code-sample-tt2-stop-visit.md %}
 
 ## On App Closed
 <img align="top" src="res/usecases/Close%20App.svg">
-{% include android/code-sample-tt2-on-destroy %}
+{% include android/code-sample-tt2-on-destroy.md %}
