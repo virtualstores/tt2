@@ -3,13 +3,13 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-description: This is the android description
+description: 
 ---
 
-# Code samples
+# Android Quick Start
 ## Overview
 
-- [Code samples](#code-samples)
+- [Android Quick Start](#android-quick-start)
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
