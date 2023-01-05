@@ -17,6 +17,8 @@ description: This use case shows the TT2 integration flow for a Scan & Go moblie
     - [Init User Profile](#init-user-profile)
     - [Start Visit](#start-visit)
   - [Scan Item](#scan-item)
+  - [End Shopping Trip](#end-shopping-trip)
+  - [On App Closed](#on-app-closed)
 
 ## Overview
 <img align="top" src="res/usecases/Integration%20Overview.svg">
@@ -48,3 +50,11 @@ When the user chooses a store you can initialize the selected store by calling:
 <img align="top" src="res/usecases/Scan%20Item.svg">
 
 {% include android/code-sample-tt2-on-scan-item.md %}
+
+## End Shopping Trip
+<img align="top" src="res/usecases/End%20Visit.svg">
+{% include android/code-sample-tt2-stop-visit %}
+
+## On App Closed
+<img align="top" src="res/usecases/Close%20App.svg">
+{% include android/code-sample-tt2-on-destroy %}
