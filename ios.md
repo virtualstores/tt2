@@ -210,9 +210,9 @@ After getting an event you need to call `tt2.analytics.addTriggerEvent(for: even
 
 ### 1. Create .netrc file
 
-In this package we are using Mapbox v10. To be able to use this you need to create and add the following file in your home folder: ` ~/.netrc`, and edit the file to add your Mapbox Secret Token. It is used by Mapbox to authenticate your account.
+In this package we are using Mapbox v10. To be able to use this you need to create and add the following file in your home folder: `~/.netrc`, and edit the file to add your Mapbox Secret Token. It is used by Mapbox to authenticate your account.
 
-You can find an example of this file [here](ios/.netrc.html)
+You can find an example of this file [here](ios/.netrc.html "https://github.com/virtualstores/tt2/blob/main/ios/.netrc")
 
 Contents of the `.netrc` file should match this
 ```
