@@ -81,15 +81,7 @@ The following parameters needed for setup will be provided by Virtual Stores
 
 	When the user chose a store you can initialize the selected store by calling:
 	
-	```swift
-	tt2.initiate(store: store) { error in
-		if error != nil {
-	    	// Show error to user in case of any exception happened during initialization including network exception
-	    } else {
-	    	// Safe to do the next steps
-	    }
-	}
-	```
+    {% include ios/code-sample-tt2-init-store.md %}
 
 ## Navigation
 Navigation handles the TT2 positioning system. It's possible to start the positioning system in different ways. It's recommended to start with a QR code for the most accurate positioning. A user can also go to a starting point visualized on the map and hold the device in the indicated direction and press start. You can access the navigation functionalities by calling:
@@ -196,7 +188,7 @@ During the visit the user will walk around on the map. In different scenarios a 
     .compactMap { $0 }
     .sink { [weak self] event in
       // Handle event as you want to display it
-    }.
+    }
   ```
 
 After getting an event you need to call `tt2.analytics.addTriggerEvent(for: event)`
@@ -220,7 +212,7 @@ After getting an event you need to call `tt2.analytics.addTriggerEvent(for: even
 
 In this package we are using Mapbox v10. To be able to use this you need to create and add the following file in your home folder: ` ~/.netrc`, and edit the file to add your Mapbox Secret Token. It is used by Mapbox to authenticate your account.
 
-You can find an example of this file [here](https://github.com/virtualstores/tt2/blob/main/ios/.netrc)
+You can find an example of this file [here](ios/.netrc.html)
 
 Contents of the `.netrc` file should match this
 ```
