@@ -187,7 +187,7 @@ tt2.analytics.startVisit(deviceInformation: deviceInformation, tags: tags) { (er
 }
 ```
 
-During the visit the user will walk around on the map. In different scenarios a default trigger event will be built by the TT2 sdk. A class can listen on these events. Then add additional information ot the trigger event and post it to a server.
+During the visit the user will walk around on the map. In different scenarios a default trigger event will be built by the TT2 SDK. A class can listen to these events. Then add additional information to the trigger event and post it to a server.
 
 * Subscribe to EventTrigger for getting events
 
@@ -196,7 +196,7 @@ During the visit the user will walk around on the map. In different scenarios a 
     .compactMap { $0 }
     .sink { [weak self] event in
       // Handle event as you want to display it
-    }
+    }.
   ```
 
 After getting an event you need to call `tt2.analytics.addTriggerEvent(for: event)`
@@ -233,7 +233,7 @@ Contents of the `.netrc` file should match this
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)
-3. Use release verion `0.0.1`
+3. Use release version `1.0.0`
 4. Click on next and select the project target
 
 Make sure to import the SDK wherever you need to use it by: `import VSMap`
