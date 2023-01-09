@@ -10,22 +10,25 @@ description: This guide will help you to get started.
 ## Overview
 - [iOS Quick Start](#ios-quick-start)
   - [Overview](#overview)
+- [TT2 SDK](#tt2-sdk)
   - [Installation](#installation)
-      - [Using as a dependency](#using-as-a-dependency)
+    - [Using as a dependency](#using-as-a-dependency)
   - [Setup](#setup)
   - [Navigation](#navigation)
   - [Position](#position)
   - [Analytics](#analytics)
-  - [Map SDK](#map-sdk)
+- [Map SDK](#map-sdk)
   - [Installation](#installation-1)
-    - [1. Crate .netrc file](#1-crate-netrc-file)
+    - [1. Create .netrc file](#1-create-netrc-file)
     - [2. Add dependency on ios-map package](#2-add-dependency-on-ios-map-package)
   - [Setup](#setup-1)
   - [MarkerController](#markercontroller)
   - [PathfindingController](#pathfindingcontroller)
   - [ZoneController](#zonecontroller)
   - [CameraController](#cameracontroller)
-  - [Demo apps](#demo-apps)
+- [Demo apps](#demo-apps)
+
+# TT2 SDK
 
 ## Installation
 
@@ -35,7 +38,7 @@ description: This guide will help you to get started.
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release verion `0.0.12` 
+3. Use release version `1.0.0`
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
@@ -53,14 +56,14 @@ Make sure to add the following row to your .plist file so background access is w
 In "Signing & Capabilities" tab of your project add "Background Modes" capability and select "Location updates"
 
 ## Setup
-1. Create TT2 object: `let tt2 = TT2()`
+The following parameters needed for setup will be provided by Virtual Stores
+1. Create TT2 object: `let tt2 = TT2(with: "your server url", apiKey: "your api key")`
 2. Initiate TT2 for user with serverUrl, apiKey, and clientId
 
 	```swift
 	tt2.initialize(
-    with: "your server url", /* provided by Virtual Stores */
-    apiKey: "your api key", /* provided by Virtual Stores */ 
-    clientId: yourClientId /* provided by Virtual Stores */
+      clientId: yourClientId,
+      positionKitParams: .retail
     ) { [weak self] error in
 	    if error != nil {
 	    	// Show error to user in case of any exception happened during initialization including network exception
@@ -79,7 +82,7 @@ In "Signing & Capabilities" tab of your project add "Background Modes" capabilit
 	When the user chose a store you can initialize the selected store by calling:
 	
 	```swift
-	tt2.initiateStore(store: store) { error in
+	tt2.initiate(store: store) { error in
 		if error != nil {
 	    	// Show error to user in case of any exception happened during initialization including network exception
 	    } else {
@@ -95,7 +98,9 @@ ScanLocations can be set up in the TT2 cms. Filter and find what start QR code h
 
 ```swift
 do {
-  guard let code = self.tt2.activeStore?.startScanLocations.first(where: { $0.code == "scanResult "}) else { return }
+  guard 
+    let code = self.tt2.activeFloor?.scanLocations?.filter({ $0.type == .start }).first(where: { $0.code == "scanResult"})
+  else { return }
   try self.tt2.navigation.start(code: code)
 } catch {
   // Handle error
@@ -166,7 +171,7 @@ let deviceInformation = DeviceInformation(id: device.name,
                                           appVersion: "1.0",
                                           deviceModel: device.modelName)
     
-let tags: [String : String] = ["age": age, "gender": gender, "userId": userId]
+let tags: [String : String] = ["age": String, "gender": String, "userId": String]
     
 tt2.analytics.startVisit(deviceInformation: deviceInformation, tags: tags) { (error) in
   if let error = error {
@@ -186,38 +191,38 @@ During the visit the user will walk around on the map. In different scenarios a 
 
 * Subscribe to EventTrigger for getting events
 
-```swift
-analyticsMessgeCancellable = tt2.events.messageEventPublisher
-  .compactMap({ $0 })
-  .sink { [weak self] event in
-    // Handle event as you want to display it
-  }
-```
+  ```swift
+  analyticsMessgeCancellable = tt2.events.messageEventPublisher
+    .compactMap { $0 }
+    .sink { [weak self] event in
+      // Handle event as you want to display it
+    }
+  ```
 
 After getting an event you need to call `tt2.analytics.addTriggerEvent(for: event)`
 
 * Create your own events
 
-```swift
-let trigger = TriggerEvent.CoordinateTrigger(point: CGPoint(x: 5.0, y: 10.0), radius: 5, type: .enter)
-let event = TriggerEvent(rtlsOptionsId: /*floor level id*/, 
-                         name: "Testing", 
-                         description: "Test description", 
-                         eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
-self.tt2.events.add(event: event)
-```
+  ```swift
+  let trigger = TriggerEvent.CoordinateTrigger(point: CGPoint(x: 5.0, y: 10.0), radius: 5, type: .enter)
+  let event = TriggerEvent(rtlsOptionsId: /*floor level id*/,
+                          name: "Testing",
+                          description: "Test description",
+                          eventType: TriggerEvent.EventType.coordinateTrigger(trigger))
+  self.tt2.events.add(event: event)
+  ```
 
-## Map SDK
+# Map SDK
 
 ## Installation
 
-### 1. Crate .netrc file
+### 1. Create .netrc file
 
 In this package we are using Mapbox v10. To be able to use this you need to create and add the following file in your home folder: ` ~/.netrc`, and edit the file to add your Mapbox Secret Token. It is used by Mapbox to authenticate your account.
 
 You can find an example of this file [here](https://github.com/virtualstores/tt2/blob/main/ios/.netrc)
 
-Contnets of the `.netrc` file should match this
+Contents of the `.netrc` file should match this
 ```
   machine api.mapbox.com
   login mapbox
@@ -252,7 +257,7 @@ Make sure to import the SDK wherever you need to use it by: `import VSMap`
 3. Connect Map SDK to TT2 SDK
 
 	```swift
-	tt2.setMap(map: mapController)
+	tt2.set(map: mapController)
 	```
 	
 ## MarkerController
