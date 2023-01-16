@@ -22,7 +22,6 @@ se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
 se.virtualstores.tt2_domain.converter
 se.virtualstores.tt2_domain.datasource.local
-se.virtualstores.tt2_domain.datasource.local.datasources
 se.virtualstores.tt2_domain.datasource.remote.api
 se.virtualstores.tt2_domain.map
 se.virtualstores.tt2_domain.model.central
