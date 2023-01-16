@@ -82,7 +82,8 @@ dependencies {
 
 {% include android/code-sample-tt2-initialize.md %}
 
-When this step is done, you can get a list of the stores by calling: `TT2.activeStores`
+When this step is done, you can get a list of the stores by calling: `TT2.activeStores` or query for the store that your user selected. A store can be either active or inactive. While setting up a store for indoor positioning the store should be inactive and when it's ready for production you activate the store in the CMS.
+You can access all stores, active or not, by calling `TT2.stores` to test a store in your development phase.
 
 You can show the list of the stores to the user and choose one.
 
@@ -94,15 +95,25 @@ When the user chose a store you can initialize the selected store by calling:
   TT2.initStore(
             context = //applicationContext,
             storeId = //Your store Id
-            floorLevelId = // (optional) The floor level to start on. If not set the SDK will init the default floorLevel configured in the CMS
+            floorLevelId = // (optional) The floor level to start on. If not set the SDK will initiate the default floorLevel configured in the CMS
         ) { error ->
             if (error != null) {
                 // Show error to user in case of any exception happened during initialization including network exception
             } else  {
-                // Safe to do the next steps
+                // Safe to continue
             }
         }
   ```
+
+You can declare an external ID for each store matching your organisations store id's. Depending on your implementation this might be your prefered solution. To get the store you can query the stores on the external id property to find your match.
+
+```kotlin
+TT2.activeStores.find { it.externalId == "Your organisation store ID" }?.let { store ->
+    TT2.initStore(applicationContext, store.id){ error ->
+        ...
+    }
+}
+```
 
 
 ## Changing the floor
