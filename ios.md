@@ -11,6 +11,7 @@ description: This guide will help you to get started.
 - [iOS Quick Start](#ios-quick-start)
   - [Overview](#overview)
 - [TT2 SDK](#tt2-sdk)
+  - [Usecases](#usecases)
   - [Installation](#installation)
     - [Using as a dependency](#using-as-a-dependency)
   - [Setup](#setup)
@@ -29,6 +30,10 @@ description: This guide will help you to get started.
 - [Demo apps](#demo-apps)
 
 # TT2 SDK
+
+## Usecases
+
+[Shop & Go App](ios-usecase-shop-and-go.html)
 
 ## Installation
 
@@ -57,31 +62,20 @@ In "Signing & Capabilities" tab of your project add "Background Modes" capabilit
 
 ## Setup
 The following parameters needed for setup will be provided by Virtual Stores
-1. Create TT2 object: `let tt2 = TT2(with: "your server url", apiKey: "your api key")`
-2. Initiate TT2 for user with serverUrl, apiKey, and clientId
 
-	```swift
-	tt2.initialize(
-      clientId: yourClientId,
-      positionKitParams: .retail
-    ) { [weak self] error in
-	    if error != nil {
-	    	// Show error to user in case of any exception happened during initialization including network exception
-	    } else {
-	    	// Safe to do the next steps
-	    }
-	}
-	```
+&nbsp;1. Create TT2 object with serverUrl and apiKey. Intialize TT2 with clientId and `ParameterPackage.retail`
+
+  {% include ios/code-sample-tt2-initialize.md %}
 	
-	When this step is done, you can get a list of the stores by calling: tt2.activeStores
-		
-	You can show the list of the stores to the user and choose one.
+&emsp;&emsp;&ensp;When this step is done, you can get a list of the stores by calling: tt2.activeStores
+    
+&emsp;&emsp;&ensp;You can show the list of the stores to the user and choose one.
 
-3. To initialize your store, call tt2.initiateStore(store:, completion:)
+&nbsp;2. To initialize your store, call `tt2.initiateStore(store:, completion:)`
 
-	When the user chose a store you can initialize the selected store by calling:
+&emsp;&emsp;&ensp;When the user chose a store you can initialize the selected store by calling:
 	
-    {% include ios/code-sample-tt2-init-store.md %}
+  {% include ios/code-sample-tt2-init-store.md %}
 
 ## Navigation
 Navigation handles the TT2 positioning system. It's possible to start the positioning system in different ways. It's recommended to start with a QR code for the most accurate positioning. A user can also go to a starting point visualized on the map and hold the device in the indicated direction and press start. You can access the navigation functionalities by calling:
