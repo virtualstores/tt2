@@ -43,7 +43,7 @@ description: This guide will help you to get started.
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release version `1.0.0`
+3. Use release version `1.1.0`
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
@@ -219,7 +219,7 @@ password <secretkey> // provided by virtual stores
 
 1. Using Xcode 13 go to File > Add packages...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)
-3. Use release version `1.0.0`
+3. Use release version `1.1.1`
 4. Click on next and select the project target
 
 Make sure to import the SDK wherever you need to use it by: `import VSMap`
