@@ -18,34 +18,26 @@ description: This use case shows the TT2 integration flow for a Scan & Go moblie
     - [Start Visit](#start-visit)
   - [Scan Item](#scan-item)
   - [End Shopping Trip](#end-shopping-trip)
-  - [On App Closed](#on-app-closed)
-
----
-**NOTE**
-
-Currently uses images with Android syntax
-
----
 
 ## Overview
-<img align="top" src="res/usecases/Integration%20Overview.svg">
+<img align="top" src="res/usecases/ios/shop&go/Integration%20Overview.svg">
 
 ## TT2 Initialization
-<img align="top" src="res/usecases/Initialization.svg">
+<img align="top" src="res/usecases/ios/shop&go/Initialization.svg">
 
-To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
+To get the SDK ready to work first initialize `TT2()` and then call initialize method. This will prepare the SDK for all other purposes. Recomended to save TT2 variable in a singleton so that it will be easily accesible allover the app.
 
 {% include ios/code-sample-tt2-initialize.md %}
 
 ## Initiate Store
-<img align="top" src="res/usecases/Initiate%20Store.svg">
+<img align="top" src="res/usecases/ios/shop&go/Initiate%20Store.svg">
 
 When the user chooses a store you can initialize the selected store by calling:
 
 {% include ios/code-sample-tt2-init-store.md %}
 
 ## Start Shopping Trip
-<img align="top" src="res/usecases/Start%20Shopping%20Trip.svg">
+<img align="top" src="res/usecases/ios/shop&go/Start%20Shopping%20Trip.svg">
 
 ### Init User Profile
 {% include ios/code-sample-tt2-init-user.md %}
@@ -54,11 +46,11 @@ When the user chooses a store you can initialize the selected store by calling:
 {% include ios/code-sample-tt2-start-visit.md %}
 
 ## Scan Item
-<img align="top" src="res/usecases/Scan%20Item.svg">
+<img align="top" src="res/usecases/ios/shop&go/Scan%20Item.svg">
 {% include ios/code-sample-tt2-on-scan-item.md %}
 
 ## End Shopping Trip
-<img align="top" src="res/usecases/End%20Visit.svg">
+<img align="top" src="res/usecases/ios/shop&go/End%20Visit.svg">
 {% include ios/code-sample-tt2-stop-visit.md %}
 
 Alternatively call the convenience method `tt2.stop()` which will do the same as above function
