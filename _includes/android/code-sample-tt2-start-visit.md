@@ -11,9 +11,9 @@ fun startVisit(user: CustomUserObject) {
         // We recommended to use these tags as they are already
         // prepared in the CMS for data filtering.
         tags = mapOf(
-            "userID" to user.ID,
-            "userGender" to user.gender,
-            "userAge" to user.age
+            "userId" to user.ID,
+            "gender" to user.gender,
+            "age" to user.age
         ),
         metaData = mapOf(
             "customTag" to "customData"
