@@ -6,9 +6,9 @@ layout: default
 description: Guide to TT2 Android PathfindingController.
 ---
 
-# Camera Controller
+# Pathfinding Controller
 ### Table of Contents
-- [Camera Controller](#camera-controller)
+- [Pathfinding Controller](#pathfinding-controller)
     - [Table of Contents](#table-of-contents)
   - [Summary](#summary)
     - [PathfindingController](#pathfindingcontroller)
