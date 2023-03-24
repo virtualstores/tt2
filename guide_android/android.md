@@ -13,7 +13,7 @@ description: This guide will help you to get started.
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `1.4.13`](#add-sdk-to-your-app-latest-version-1413)
+- [Add SDK to your app, latest version: `1.4.21`](#add-sdk-to-your-app-latest-version-1421)
   - [Usecases](#usecases)
   - [Setup](#setup)
   - [Changing the floor](#changing-the-floor)
@@ -25,9 +25,11 @@ description: This guide will help you to get started.
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
     - [Example using the map view with a fragment](#example-using-the-map-view-with-a-fragment)
   - [MarkerController](#markercontroller)
+    - [Guide to MarkerController](#guide-to-markercontroller)
   - [PathfindingController](#pathfindingcontroller)
     - [Guide to PathfindingController](#guide-to-pathfindingcontroller)
   - [ZoneController](#zonecontroller)
+    - [Guide to ZoneController](#guide-to-zonecontroller)
   - [CameraController](#cameracontroller)
     - [Guide to CameraController](#guide-to-cameracontroller)
 - [Known issues](#known-issues)
@@ -42,12 +44,11 @@ Install or update [Android Studio](https://developer.android.com/sdk) to its lat
 
 Make sure that your project meets these requirements:
 
-//Todo: check this info:
 - Targets API level 24 or higher
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `1.4.13`
+# Add SDK to your app, latest version: `1.4.21`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
@@ -156,17 +157,15 @@ TT2.activeStore.startScanLocations.find { scanLocation ->
 
 It's recommenden to sycronize the users location when possible, i.e If a user scans a product or shelf can use that information to calibrate the users position. 
 
-Get the position of the product/shelf and use it as input to the system.
-Position determines where on the map the user will be synced to.
-For example if a user scans a shelf label:
+For example if a user scans a an item:
 ```kotlin
-TT2.position.getByBarcode("<scannerInput>") { item -> 
-    TT2.navigation.syncPosition(
-        position = item.itemPosition,
-        syncAngle = true, // Scenario: You know the user scanned a shelf label.
-        uncertainAngle = false // Scenario: The user scanned a shelf label and the device was held towards the shelf. 
-    )                   
-}
+TT2.navigation.syncPosition(
+        identifier: "<scannerInput>",
+        syncAngle: Boolean = false, // Scenario: You know the user scanned a shelf label set this to true.
+        uncertainAngle: Boolean = true, // Scenario: The user scanned a shelf label and the device was held towards the shelf, set this to false. 
+        withForce: Boolean = false, // Use only for debugging purposes
+        callback: ((OperationResult<String>) -> Unit)? = null,
+    )
 ```
 When the positioning should stop just call tt2.navigation.stop()
 
@@ -415,58 +414,9 @@ class MyMapFragment: Fragment(), MapListener {
 
 ## MarkerController
 Documentation: [MarkerController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-marker-controller/index.html)
-Example:
-```kotlin
-// Implement interface MarkerController.Listener
-class MyMapFragment: Fragment(), MapListener, MarkerController.Listener {
-    
-    // the map is now fully loaded and it's now safe to start using it
-    override fun onMapLoaded() {
-        super.onMapLoaded()
-        
-        mapController.marker.addListener(this)
-    }
 
-    // using map marks
-    fun addMarkToMap(data: YourData, itemPosition: IItemPosition) {
-        // the BaseMapMark class that are available in the SDK can show two different types of information, image or text
-        // You can design your own map marks by extending :MapMark<T>, Comparable<MapMark<T>>
-        val mark = BaseMapMark(
-            id = data.shelfId,
-            position = itemPosition.point,
-            floorLevelId = itemPosition.floorLevelId,
-            data = data,
-            // choose either mark with image:
-            imageURL = data.imageUrl,
-            // or mark with text:
-            text = data.label
-        )
-
-        mapController.marker.addMark(mark)
-    }
-
-        
-    override fun onMarkClick(mark: MapMark<out Any>) {
-        (mark.data as? YourData)?.let {
-
-        }
-    }
-
-    override fun onClusterClicked(marks: List<MapMark<out Any>>) {
-
-    }
-
-    override fun onMarkTriggerEnter(mark: MapMark<out Any>) {
-        
-    }
-
-    override fun onMarkTriggerExit(mark: MapMark<out Any>) {
-        
-    }
-
-```
+### [Guide to MarkerController](./mapsdk/marker_controller.html "Example")
 <br/><br/>
-
 
 ## PathfindingController
 
@@ -480,36 +430,17 @@ Documentation: [PathfindingController](https://virtualstores.github.io/tt2/andro
 
 Documentation: [ZoneController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-zone-controller/index.html)
 
-Example:
-```kotlin
-
-class MyMapFragment: Fragment(), MapListener, ZoneController.Listener {
-    
-    override fun onMapLoaded() {
-        super.onMapLoaded()
-        
-        // display all zones on the map
-        mapController.zones?.showAll()
-
-        // select a zone to change the apearance of the zone 
-        mapController.zones?.zones.first.let {
-            mapController.zones?.select(it)
-        }
-    }
-
-    override fun onEnter(zone: TT2Zone) {
-        
-    }
-
-    override fun onExit(zone: TT2Zone) {
-        
-    }
+### [Guide to ZoneController](./mapsdk/zone_controller.html "Example")
 
 
-```
 <br/><br/>
 
 ## CameraController
+
+Documentation: [CameraController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-camera-controller/index.html)
+
+Documetation: [CameraModes](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-camera-controller/-camera-modes/index.html)
+
 ### [Guide to CameraController](./mapsdk/camera_controller.html "Example")
 <br/><br/>
 
@@ -524,9 +455,14 @@ Since the introduction of doze mode in Android Marshmallow we have seen a number
 Other mentionable notes
 - Sensor quality differs between android devices. In some devices some sensors may not be available. The quality of the sensors might affect the accuracy of the positioning.
 - You can call on `TT2.validateDevice(context)` to validate the device has the required sensors, not that this is not a measurment on the quality of the sensors.
+- `checkForMagnetometer` : Depending on your integration you might want to also validate that the device has a `magnetometer`. If your integration only uses StartScanLocations by QR-codes or cradleId for hardware souch as Zebra `PS20` then there is no need for the `magnetometer`. However if you intend to start the positioning on scanning items in store then the system will rely on the `magnetometer` to get the orientation of the device and therefore the `magnetometer` has to be available.
+
 ```kotlin
-TT2.validateDevice(context)) { error ->
-    error?.let {
+TT2.validateDevice(
+    context
+    checkForMagnetometer = false // optional depending on your use case
+) { unSupportedDeviceException ->
+    unSupportedDeviceException?.let {
         // This means that the device is unsupported due to missing crucial sensors
     }
 }
