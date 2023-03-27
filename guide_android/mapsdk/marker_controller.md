@@ -30,6 +30,25 @@ Example:
 // Implement interface MarkerController.Listener
 class MyMapFragment: Fragment(), MapListener, MarkerController.Listener {
     
+    var mapController: MapController? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val mapOptions = MapOptions().apply {
+            mapMark = MapOptions.MapMark().apply {
+                focusSizeScale = 1.25f
+            }
+        }
+
+        mapController = BaseMapController(
+            binding.mapView,
+            mapOptions)
+
+        mapController.mapListener = this
+        TT2.setMapController(mapController)
+    }
+
     // the map is now fully loaded and it's now safe to start using it
     override fun onMapLoaded() {
         super.onMapLoaded()
@@ -39,8 +58,12 @@ class MyMapFragment: Fragment(), MapListener, MarkerController.Listener {
 
     // using map marks
     fun addMarkToMap(data: YourData, itemPosition: IItemPosition) {
-        // the BaseMapMark class that are available in the SDK can show two different types of information, image or text
-        // You can design your own map marks by extending :MapMark<T>, Comparable<MapMark<T>>
+        
+        // You can design and create your own map marks by extending :MapMark<T>, Comparable<MapMark<T>>
+        // or use the included marks available in the map SDK.
+        
+        // the BaseMapMark class that are available in the SDK can display two different types of 
+        // information, image from url or short text (max 2-3 characters)
         val mark = BaseMapMark(
             id = data.shelfId,
             position = itemPosition.point,
@@ -52,20 +75,34 @@ class MyMapFragment: Fragment(), MapListener, MarkerController.Listener {
             text = data.label
         )
 
+        // the BaseTextBoxMapMark class that are available in the SDK can display longer text labels 
+        val textBoxMark = BaseTextBoxMapMark(
+            id = data.shelfId,
+            position = itemPosition.point,
+            floorLevelId = itemPosition.floorLevelId,
+            data = data,
+            // or mark with text:
+            text = data.label
+        )
+
         mapController.marker.addMark(mark)
     }
 
-        
+    // Handles the click events if a user clicks on rendered mark on the map
     override fun onMarkClick(mark: MapMark<out Any>) {
         (mark.data as? YourData)?.let {
 
         }
     }
 
+    // Handles the click events if a user clicks on rendered cluster of marks on the map
     override fun onClusterClicked(marks: List<MapMark<out Any>>) {
 
     }
 
+    
+    // MapMarks with the MapMark.triggerRadius set will notify if the user 
+    // location enters or exits the set radius. 
     override fun onMarkTriggerEnter(mark: MapMark<out Any>) {
         
     }
