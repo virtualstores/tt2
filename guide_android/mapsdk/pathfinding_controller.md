@@ -137,20 +137,20 @@ class MyMapFragment: Fragment(), MapListener, PathfindingController.Listener {
         mapController.pathfinder.addListener(this)
         
         // Show the pathfinding components 
-        mMapController.pathfinding.showPathfinding()
+        mapController.pathfinding.showPathfinding()
         
         // Hide the pathfinding components 
-        mMapController.pathfinding.hidePathfinding()
+        mapController.pathfinding.hidePathfinding()
 
         // Hide specific pathfinding components 
-        mMapController.pathfinding.hideTail()
-        mMapController.pathfinding.hideBody()
-        mMapController.pathfinding.hideHead()
+        mapController.pathfinding.hideTail()
+        mapController.pathfinding.hideBody()
+        mapController.pathfinding.hideHead()
 
         // Show specific pathfinding components 
-        mMapController.pathfinding.showTail()
-        mMapController.pathfinding.showBody()
-        mMapController.pathfinding.showHead()
+        mapController.pathfinding.showTail()
+        mapController.pathfinding.showBody()
+        mapController.pathfinding.showHead()
 
     }
     
