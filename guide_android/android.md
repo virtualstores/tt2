@@ -48,7 +48,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `1.4.21`
+# Add SDK to your app, latest version: `1.4.23`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
