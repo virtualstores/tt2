@@ -44,7 +44,7 @@ Install or update [Android Studio](https://developer.android.com/sdk) to its lat
 
 Make sure that your project meets these requirements:
 
-- Targets API level 24 or higher
+- Targets API level 26 or higher
 - Uses Android 7.0 or higher
 <br/><br/>
 
