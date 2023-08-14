@@ -13,7 +13,7 @@ description: This guide will help you to get started.
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `2.0.12`](#add-sdk-to-your-app-latest-version-2012)
+- [Add SDK to your app, latest version: `2.0.16`](#add-sdk-to-your-app-latest-version-2016)
   - [Usecases](#usecases)
   - [Setup](#setup)
   - [Changing the floor](#changing-the-floor)
@@ -48,7 +48,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `2.0.12`
+# Add SDK to your app, latest version: `2.0.16`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
@@ -209,14 +209,14 @@ fun startNavigation(position: PointF, angle: Double) {
 ## Trigger events
 Trigger events can be created in the TT2 CMS or via the SDK. 
 Trigger events are mostly set to trigger on user locaton, when entering/exiting a specific area or radius.
-To listen for these events implement TriggerEventManager.Listener interface and set the listener in TT2 after initiating the store.
+To listen for these events implement TriggerEventController.Listener interface and set the listener in TT2 after initiating the store.
 
 ```kotlin
 import se.virtualstores.tt2.androidsdk.Listener
 
-class MapActivity : AppCompatActivity(), TriggerEventManager.Listener {
+class MapActivity : AppCompatActivity(), TriggerEventController.Listener {
     fun storeInitiated(){
-        TT2.triggerEventManager.setTriggerListener(this)
+        TT2.triggerEvents.setTriggerListener(this)
     }
 
     override fun onNewTriggerEvent(triggerEvent: TriggerEvent) {
@@ -246,7 +246,7 @@ class MapActivity : AppCompatActivity(), TriggerEventManager.Listener {
          }
 
         // after receiving an event you can optionally remove it to avoid trigger it again during this visit
-        TT2.triggerEventManager.removeTriggerEvent(triggerEvent)
+        TT2.triggerEvents.removeTriggerEvent(triggerEvent)
 
         // For viewing analytics data of the messages we recommend that you also post the trigger event to the anlaytics.
         TT2.analytics.postEventData(triggerEvent.toMessageShownEvent())
@@ -261,7 +261,7 @@ In this example we set upp will trigger event that will trigger when a user come
 ```kotlin
 TT2.position.getByBarcode("<barcode>") { item ->  // getting an IItem matching the barcode
     it?.itemPosition?.let { position ->
-        TT2.triggerEventManager.addTriggerEvent( //Adding the trigger event to the trigger event manager.
+        TT2.triggerEvents.addTriggerEvent( //Adding the trigger event to the trigger event manager.
             TriggerEvent.Builder().apply {
                 setName("Coordinate Trigger")
                 // add as mouch metaData as you like
