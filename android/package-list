@@ -19,6 +19,7 @@ se.virtualstores.tt2.pub.model.recording
 se.virtualstores.tt2.pub.model.store
 se.virtualstores.tt2.pub.model.velocitymodel
 se.virtualstores.tt2.pub.positionkit
+se.virtualstores.tt2.pub.positionkit.settings
 se.virtualstores.tt2.pub.wifi
 module:tt2-domain
 se.virtualstores.tt2_domain
