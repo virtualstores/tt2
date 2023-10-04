@@ -16,6 +16,7 @@ se.virtualstores.tt2.pub.controllers.status
 se.virtualstores.tt2.pub.controllers.triggerevent
 se.virtualstores.tt2.pub.controllers.zones
 se.virtualstores.tt2.pub.model.item
+se.virtualstores.tt2.pub.model.network
 se.virtualstores.tt2.pub.model.recording
 se.virtualstores.tt2.pub.model.store
 se.virtualstores.tt2.pub.model.velocitymodel
