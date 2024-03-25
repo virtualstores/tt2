@@ -41,9 +41,9 @@ description: This guide will help you to get started.
 
 `Using Swift 5.6`
 
-1. Using Xcode 13 go to File > Add packages...
+1. Using Xcode 15 go to File > Add Package Dependencies...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release version `1.1.0`
+3. Use release version `2.1.0`
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
@@ -217,9 +217,9 @@ password <secretkey> // Provided by Virtual Stores
 
 ### 2. Add dependency on ios-map package 
 
-1. Using Xcode 13 go to File > Add packages...
+1. Using Xcode 15 go to File > Add Package Dependencies...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-map](https://github.com/virtualstores/ios-map)
-3. Use release version `1.1.1`
+3. Use release version `2.1.0`
 4. Click on next and select the project target
 
 Make sure to import the SDK wherever you need to use it by: `import VSMap`
