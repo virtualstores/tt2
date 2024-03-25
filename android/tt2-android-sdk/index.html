@@ -1,166 +1,347 @@
-<html>
-  <head>
+<!doctype html>
+<html class="no-js">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>tt2-android-sdk</title>
-</head><body><link href="../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../";</script>
-    <script type="text/javascript" src="../scripts/sourceset_dependencies.js" async></script><link href="../styles/style.css" rel="Stylesheet"><link href="../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../styles/main.css" rel="Stylesheet"><link href="../styles/prism.css" rel="Stylesheet"><link href="../styles/logo-styles.css" rel="Stylesheet"><script type="text/javascript" src="../scripts/clipboard.js" async></script><script type="text/javascript" src="../scripts/navigation-loader.js" async></script><script type="text/javascript" src="../scripts/platform-content-handler.js" async></script><script type="text/javascript" src="../scripts/main.js" defer></script><script type="text/javascript" src="../scripts/prism.js" async></script><script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
-
-  
-    <div class="navigation-wrapper" id="navigation-wrapper">
-      <div id="leftToggler"><span class="icon-toggler"></span></div>
-      <div class="library-name"><a href="../index.html"><span>tt2-android</span></a></div>
-      <div></div>
-      <div class="pull-right d-flex"><button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
-      </div>
+<link href="../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../scripts/sourceset_dependencies.js" async></script>
+<link href="../styles/style.css" rel="Stylesheet">
+<link href="../styles/main.css" rel="Stylesheet">
+<link href="../styles/prism.css" rel="Stylesheet">
+<link href="../styles/logo-styles.css" rel="Stylesheet">
+<link href="../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../scripts/main.js" defer></script>
+<script type="text/javascript" src="../scripts/prism.js" async></script>
+<script type="text/javascript" src="../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../index.html">
+                            tt2-android
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tt2-android-sdk:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div id="container">
-      <div id="leftColumn">
-        <div id="sideMenu"></div>
-      </div>
-      <div id="main">
-        <div class="main-content" id="content" pageids="tt2-android-sdk::////PointingToDeclaration//-529631612">
-          <div class="breadcrumbs"></div>
-          <div class="cover ">
-            <h1 class="cover"><span><span>tt2-android-sdk</span></span></h1>
-          </div>
-          <h2 class="">Packages</h2>
-          <div class="table"><a data-name="-726674538%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub" id="-726674538%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub/index.html">se.virtualstores.tt2.pub</a></div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" id="content" pageids="tt2-android-sdk::////PointingToDeclaration//-529631612">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>tt2-android-sdk</span></span></h1>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="-726674538%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub" id="-726674538%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub/index.html">se.virtualstores.tt2.pub</a></div>
 <span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-726674538%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="-659145836%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.item" id="-659145836%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.model.item/index.html">se.virtualstores.tt2.pub.model.item</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-659145836%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="748811668%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.recording" id="748811668%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.model.recording/index.html">se.virtualstores.tt2.pub.model.recording</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="748811668%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="-186200828%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.store" id="-186200828%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.model.store/index.html">se.virtualstores.tt2.pub.model.store</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-186200828%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="1419526128%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.navigation" id="1419526128%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.navigation/index.html">se.virtualstores.tt2.pub.navigation</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1419526128%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="1696179525%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.position" id="1696179525%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.position/index.html">se.virtualstores.tt2.pub.position</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1696179525%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="1684352245%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.positionkit" id="1684352245%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.positionkit/index.html">se.virtualstores.tt2.pub.positionkit</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1684352245%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="-565172647%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.recording" id="-565172647%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.recording/index.html">se.virtualstores.tt2.pub.recording</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-565172647%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
-            </div>
-<a data-name="1978874161%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.wifi" id="1978874161%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-            <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-              <div>
-                <div class="main-subrow ">
-                  <div class=""><span class="inline-flex">
-                      <div><a href="se.virtualstores.tt2.pub.wifi/index.html">se.virtualstores.tt2.pub.wifi</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1978874161%2FPackages%2F-529631612"></span>
-                        <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                      </span></span></div>
-                  <div class="pull-right"></div>
-                </div>
-                <div></div>
-              </div>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
             </div>
           </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+        <div></div>
       </div>
     </div>
-  
-</body></html>
-
+<a data-name="1421624359%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.navigation" id="1421624359%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.navigation/index.html">se.virtualstores.tt2.pub.controllers.navigation</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421624359%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="453724988%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.position" id="453724988%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.position/index.html">se.virtualstores.tt2.pub.controllers.position</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="453724988%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-426557630%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.recording" id="-426557630%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.recording/index.html">se.virtualstores.tt2.pub.controllers.recording</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-426557630%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1840312059%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.status" id="-1840312059%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.status/index.html">se.virtualstores.tt2.pub.controllers.status</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1840312059%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-2139251659%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.triggerevent" id="-2139251659%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.triggerevent/index.html">se.virtualstores.tt2.pub.controllers.triggerevent</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2139251659%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-705961064%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.controllers.zones" id="-705961064%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.controllers.zones/index.html">se.virtualstores.tt2.pub.controllers.zones</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-705961064%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-659145836%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.item" id="-659145836%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.model.item/index.html">se.virtualstores.tt2.pub.model.item</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-659145836%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="320953297%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.network" id="320953297%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.model.network/index.html">se.virtualstores.tt2.pub.model.network</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="320953297%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="748811668%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.recording" id="748811668%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.model.recording/index.html">se.virtualstores.tt2.pub.model.recording</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="748811668%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-186200828%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.store" id="-186200828%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.model.store/index.html">se.virtualstores.tt2.pub.model.store</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-186200828%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="1421958095%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.model.velocitymodel" id="1421958095%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.model.velocitymodel/index.html">se.virtualstores.tt2.pub.model.velocitymodel</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1421958095%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="1684352245%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.positionkit" id="1684352245%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.positionkit/index.html">se.virtualstores.tt2.pub.positionkit</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1684352245%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="2062378304%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.positionkit.settings" id="2062378304%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.positionkit.settings/index.html">se.virtualstores.tt2.pub.positionkit.settings</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2062378304%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="1978874161%2FPackages%2F-529631612" anchor-label="se.virtualstores.tt2.pub.wifi" id="1978874161%2FPackages%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+    <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="se.virtualstores.tt2.pub.wifi/index.html">se.virtualstores.tt2.pub.wifi</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1978874161%2FPackages%2F-529631612"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right">
+            <div class="platform-tags no-gutters">
+              <div class="platform-tag jvm-like">androidJvm</div>
+            </div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 
