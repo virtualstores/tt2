@@ -1,363 +1,498 @@
-<html>
-  <head>
+<!doctype html>
+<html class="no-js">
+<head>
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <title>ShelfController</title>
-</head><body><link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
-    <script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><link href="../../../styles/prism.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script><script type="text/javascript" src="../../../scripts/main.js" defer></script><script type="text/javascript" src="../../../scripts/prism.js" async></script><script>const storage = localStorage.getItem("dokka-dark-mode")
-const savedDarkMode = storage ? JSON.parse(storage) : false
-if(savedDarkMode === true){
-    document.getElementsByTagName("html")[0].classList.add("theme-dark")
-}</script>
-
-  
-    <div class="navigation-wrapper" id="navigation-wrapper">
-      <div id="leftToggler"><span class="icon-toggler"></span></div>
-      <div class="library-name"><a href="../../../index.html"><span>tt2-android</span></a></div>
-      <div></div>
-      <div class="pull-right d-flex"><button id="theme-toggle-button"><span id="theme-toggle"></span></button>
-        <div id="searchBar"></div>
-      </div>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer></script></head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+<a class="library-name--link" href="../../../index.html">
+                            tt2-android
+                    </a>            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":tt2-domain:dokkaHtmlPartial/release">androidJvm</button>
+        </div>
     </div>
-    <div id="container">
-      <div id="leftColumn">
-        <div id="sideMenu"></div>
-      </div>
-      <div id="main">
-        <div class="main-content" id="content" pageids="tt2-domain::se.virtualstores.tt2_domain.map/ShelfController///PointingToDeclaration//-1461421708">
-          <div class="breadcrumbs"><a href="../../index.html">tt2-domain</a>/<a href="../index.html">se.virtualstores.tt2_domain.map</a>/<a href="index.html">ShelfController</a></div>
-          <div class="cover ">
-            <h1 class="cover"><span>Shelf</span><wbr><span><span>Controller</span></span></h1>
-            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">ShelfController</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Shelf controller.</p></div></div>
-          </div>
-          <div class="tabbedcontent">
-            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button></div>
-            <div class="tabs-section-body">
-              <h2 class="">Functions</h2>
-              <div class="table" data-togglable="Functions"><a data-name="-1788268383%2FFunctions%2F-1461421708" anchor-label="clearAllMarkedShelves" id="-1788268383%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="clear-all-marked-shelves.html"><span>clear</span><wbr><span>All</span><wbr><span>Marked</span><wbr><span><span>Shelves</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1788268383%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-all-marked-shelves.html"><span class="token function">clearAllMarkedShelves</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Clear all marked shelves.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1743696716%2FFunctions%2F-1461421708" anchor-label="clearMarkedShelf" id="1743696716%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="clear-marked-shelf.html"><span>clear</span><wbr><span>Marked</span><wbr><span><span>Shelf</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1743696716%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-marked-shelf.html"><span class="token function">clearMarkedShelf</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Clear marked shelf. Remove mark on shelf.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1104617813%2FFunctions%2F-1461421708" anchor-label="deselect" id="-1104617813%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="deselect.html"><span><span>deselect</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1104617813%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="deselect.html"><span class="token function">deselect</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Deselect. Deselect and unhighlight a selected shelf.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1828643227%2FFunctions%2F-1461421708" anchor-label="deselectAll" id="-1828643227%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="deselect-all.html"><span>deselect</span><wbr><span><span>All</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1828643227%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="deselect-all.html"><span class="token function">deselectAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Deselect all. Deselect all selected shelves.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="154293181%2FFunctions%2F-1461421708" anchor-label="hide" id="154293181%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide.html"><span><span>hide</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="154293181%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide. Makes a shelf invisible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-430023830%2FFunctions%2F-1461421708" anchor-label="hideAll" id="-430023830%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide-all.html"><span>hide</span><wbr><span><span>All</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-430023830%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-all.html"><span class="token function">hideAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide all. Makes all shelves invisible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1755631492%2FFunctions%2F-1461421708" anchor-label="hideAllShelfLayers" id="1755631492%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide-all-shelf-layers.html"><span>hide</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1755631492%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-all-shelf-layers.html"><span class="token function">hideAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide all shelf layers. Hide all shelf layers. These include, shelf fill layer, shelf outline layer, shelf mark layer.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="53464329%2FFunctions%2F-1461421708" anchor-label="hideShelvesFillLayer" id="53464329%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide-shelves-fill-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="53464329%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-fill-layer.html"><span class="token function">hideShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide shelves fill layer. Makes all shelves and their core shape invisible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-269390918%2FFunctions%2F-1461421708" anchor-label="hideShelvesLineLayer" id="-269390918%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide-shelves-line-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-269390918%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-line-layer.html"><span class="token function">hideShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide shelves line layer. Makes all shelf outlines invisible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-595001133%2FFunctions%2F-1461421708" anchor-label="hideShelvesMarkLayer" id="-595001133%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="hide-shelves-mark-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-595001133%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-mark-layer.html"><span class="token function">hideShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Hide shelves mark layer. Makes all marks on shelves invisible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1973199808%2FFunctions%2F-1461421708" anchor-label="markShelf" id="1973199808%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="mark-shelf.html"><span>mark</span><wbr><span><span>Shelf</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973199808%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="mark-shelf.html"><span class="token function">markShelf</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Mark shelf. Place a mark on shelf. It is visualized by a dot on the shelf.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-550256308%2FFunctions%2F-1461421708" anchor-label="select" id="-550256308%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="select.html"><span><span>select</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-550256308%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="select.html"><span class="token function">select</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Select. Select and highlight a shelf.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1990309001%2FFunctions%2F-1461421708" anchor-label="setOnShelfClickedListener" id="1990309001%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="set-on-shelf-clicked-listener.html"><span>set</span><wbr><span>On</span><wbr><span>Shelf</span><wbr><span>Clicked</span><wbr><span><span>Listener</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1990309001%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-on-shelf-clicked-listener.html"><span class="token function">setOnShelfClickedListener</span></a><span class="token punctuation">(</span>listener<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html">Unit</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Set on shelf clicked listener. Returns the clicked shelf to listener.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1644674022%2FFunctions%2F-1461421708" anchor-label="setShelves" id="-1644674022%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="set-shelves.html"><span>set</span><wbr><span><span>Shelves</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1644674022%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-shelves.html"><span class="token function">setShelves</span></a><span class="token punctuation">(</span>shelves<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf-group/index.html">ShelfGroup</a><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Set shelves. Sets a collection of <a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf-group/index.html">ShelfGroup</a>.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1138172792%2FFunctions%2F-1461421708" anchor-label="show" id="1138172792%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show.html"><span><span>show</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1138172792%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span>shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show. Makes a shelf visible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="-1701723483%2FFunctions%2F-1461421708" anchor-label="showAll" id="-1701723483%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show-all.html"><span>show</span><wbr><span><span>All</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1701723483%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-all.html"><span class="token function">showAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show all. Show all shelves.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1712072041%2FFunctions%2F-1461421708" anchor-label="showAllShelfLayers" id="1712072041%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show-all-shelf-layers.html"><span>show</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1712072041%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-all-shelf-layers.html"><span class="token function">showAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show all shelf layers. Makes all shelf layers visible. These include, shelf fill layer, shelf outline layer, shelf mark layer.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="1142504878%2FFunctions%2F-1461421708" anchor-label="showShelvesFillLayer" id="1142504878%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show-shelves-fill-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1142504878%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-fill-layer.html"><span class="token function">showShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show shelves fill layer. Makes all shelves and their core shape visible.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="819649631%2FFunctions%2F-1461421708" anchor-label="showShelvesLineLayer" id="819649631%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show-shelves-line-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="819649631%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-line-layer.html"><span class="token function">showShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show shelves line layer. Show outlines of all shelves.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-<a data-name="494039416%2FFunctions%2F-1461421708" anchor-label="showShelvesMarkLayer" id="494039416%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="show-shelves-mark-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="494039416%2FFunctions%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-mark-layer.html"><span class="token function">showShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">Show shelves mark layer. Show all shelf marks places on shelves.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h2 class="">Properties</h2>
-              <div class="table" data-togglable="Properties"><a data-name="610571297%2FProperties%2F-1461421708" anchor-label="shelves" id="610571297%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
-                <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
-                  <div class="main-subrow keyValue ">
-                    <div class=""><span class="inline-flex">
-                        <div><a href="shelves.html">shelves</a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="610571297%2FProperties%2F-1461421708"></span>
-                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                        </span></span></div>
-                    <div>
-                      <div class="title">
-                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><a data-name="610571297%2FProperties%2F-1461421708" anchor-label="shelves" id="610571297%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="shelves.html">shelves</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">&gt;</span><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="610571297%2FProperties%2F-1461421708" anchor-label="shelves" id="610571297%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a><p class="paragraph">List of all shelves that has been set up.</p></div></div></div>
-                      </div>
-                    </div>
-                  </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="tt2-domain::se.virtualstores.tt2_domain.map/ShelfController///PointingToDeclaration//-1461421708">
+  <div class="breadcrumbs"><a href="../../index.html">tt2-domain</a><span class="delimiter">/</span><a href="../index.html">se.virtualstores.tt2_domain.map</a><span class="delimiter">/</span><span class="current">ShelfController</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Shelf</span><wbr><span><span>Controller</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">ShelfController</a></div><p class="paragraph">Shelf controller.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1941031282%2FClasslikes%2F-1461421708" anchor-label="Listener" id="1941031282%2FClasslikes%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-listener/index.html"><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1941031282%2FClasslikes%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-listener/index.html">Listener</a></div></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="footer"><span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="593397703%2FProperties%2F-1461421708" anchor-label="isShelvesFillLayerVisible" id="593397703%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shelves-fill-layer-visible.html"><span>is</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span>Layer</span><wbr><span><span>Visible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="593397703%2FProperties%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="is-shelves-fill-layer-visible.html">isShelvesFillLayerVisible</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1474244598%2FProperties%2F-1461421708" anchor-label="isShelvesLineLayerVisible" id="1474244598%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shelves-line-layer-visible.html"><span>is</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span>Layer</span><wbr><span><span>Visible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1474244598%2FProperties%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="is-shelves-line-layer-visible.html">isShelvesLineLayerVisible</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1752998723%2FProperties%2F-1461421708" anchor-label="isShelvesMarkLayerVisible" id="-1752998723%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-shelves-mark-layer-visible.html"><span>is</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span>Layer</span><wbr><span><span>Visible</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1752998723%2FProperties%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="is-shelves-mark-layer-visible.html">isShelvesMarkLayerVisible</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1335700772%2FProperties%2F-1461421708" anchor-label="selectedShelves" id="-1335700772%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="selected-shelves.html"><span>selected</span><wbr><span><span>Shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1335700772%2FProperties%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="selected-shelves.html">selectedShelves</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="610571297%2FProperties%2F-1461421708" anchor-label="shelves" id="610571297%2FProperties%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="shelves.html"><span><span>shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="610571297%2FProperties%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="shelves.html">shelves</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">List of all shelves that has been set up.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1252703402%2FFunctions%2F-1461421708" anchor-label="addListener" id="-1252703402%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-listener.html"><span>add</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1252703402%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-listener.html"><span class="token function">addListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">ShelfController.Listener</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1788268383%2FFunctions%2F-1461421708" anchor-label="clearAllMarkedShelves" id="-1788268383%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-all-marked-shelves.html"><span>clear</span><wbr><span>All</span><wbr><span>Marked</span><wbr><span><span>Shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1788268383%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-all-marked-shelves.html"><span class="token function">clearAllMarkedShelves</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Clear all marked shelves.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1743696716%2FFunctions%2F-1461421708" anchor-label="clearMarkedShelf" id="1743696716%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clear-marked-shelf.html"><span>clear</span><wbr><span>Marked</span><wbr><span><span>Shelf</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1743696716%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="clear-marked-shelf.html"><span class="token function">clearMarkedShelf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Clear marked shelf. Remove mark on shelf.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1104617813%2FFunctions%2F-1461421708" anchor-label="deselect" id="-1104617813%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deselect.html"><span><span>deselect</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1104617813%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="deselect.html"><span class="token function">deselect</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Deselect. Deselect and unhighlight a selected shelf.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1828643227%2FFunctions%2F-1461421708" anchor-label="deselectAll" id="-1828643227%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="deselect-all.html"><span>deselect</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1828643227%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="deselect-all.html"><span class="token function">deselectAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Deselect all. Deselect all selected shelves.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="154293181%2FFunctions%2F-1461421708" anchor-label="hide" id="154293181%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide.html"><span><span>hide</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="154293181%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide.html"><span class="token function">hide</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide. Makes a shelf invisible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-430023830%2FFunctions%2F-1461421708" anchor-label="hideAll" id="-430023830%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-all.html"><span>hide</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-430023830%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-all.html"><span class="token function">hideAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide all. Makes all shelves invisible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1755631492%2FFunctions%2F-1461421708" anchor-label="hideAllShelfLayers" id="1755631492%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-all-shelf-layers.html"><span>hide</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1755631492%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-all-shelf-layers.html"><span class="token function">hideAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide all shelf layers. Hide all shelf layers. These include, shelf fill layer, shelf outline layer, shelf mark layer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="53464329%2FFunctions%2F-1461421708" anchor-label="hideShelvesFillLayer" id="53464329%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-shelves-fill-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="53464329%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-fill-layer.html"><span class="token function">hideShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide shelves fill layer. Makes all shelves and their core shape invisible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-269390918%2FFunctions%2F-1461421708" anchor-label="hideShelvesLineLayer" id="-269390918%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-shelves-line-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-269390918%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-line-layer.html"><span class="token function">hideShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide shelves line layer. Makes all shelf outlines invisible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-595001133%2FFunctions%2F-1461421708" anchor-label="hideShelvesMarkLayer" id="-595001133%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hide-shelves-mark-layer.html"><span>hide</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-595001133%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="hide-shelves-mark-layer.html"><span class="token function">hideShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Hide shelves mark layer. Makes all marks on shelves invisible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1973199808%2FFunctions%2F-1461421708" anchor-label="markShelf" id="1973199808%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="mark-shelf.html"><span>mark</span><wbr><span><span>Shelf</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1973199808%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="mark-shelf.html"><span class="token function">markShelf</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Mark shelf. Place a mark on shelf. It is visualized by a dot on the shelf.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="737272251%2FFunctions%2F-1461421708" anchor-label="removeListener" id="737272251%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-listener.html"><span>remove</span><wbr><span><span>Listener</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="737272251%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-listener.html"><span class="token function">removeListener</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">ShelfController.Listener</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-550256308%2FFunctions%2F-1461421708" anchor-label="select" id="-550256308%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="select.html"><span><span>select</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-550256308%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="select.html"><span class="token function">select</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Select. Select and highlight a shelf.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1644674022%2FFunctions%2F-1461421708" anchor-label="setShelves" id="-1644674022%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-shelves.html"><span>set</span><wbr><span><span>Shelves</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1644674022%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-shelves.html"><span class="token function">setShelves</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelves<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf-group/index.html">ShelfGroup</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Set shelves. Sets a collection of <a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf-group/index.html">ShelfGroup</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1138172792%2FFunctions%2F-1461421708" anchor-label="show" id="1138172792%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show.html"><span><span>show</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1138172792%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show.html"><span class="token function">show</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">shelf<span class="token operator">: </span><a href="../../se.virtualstores.tt2_domain.model.central.shelves/-shelf/index.html">Shelf</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show. Makes a shelf visible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1701723483%2FFunctions%2F-1461421708" anchor-label="showAll" id="-1701723483%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-all.html"><span>show</span><wbr><span><span>All</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1701723483%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-all.html"><span class="token function">showAll</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show all. Show all shelves.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1712072041%2FFunctions%2F-1461421708" anchor-label="showAllShelfLayers" id="1712072041%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-all-shelf-layers.html"><span>show</span><wbr><span>All</span><wbr><span>Shelf</span><wbr><span><span>Layers</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1712072041%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-all-shelf-layers.html"><span class="token function">showAllShelfLayers</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show all shelf layers. Makes all shelf layers visible. These include, shelf fill layer, shelf outline layer, shelf mark layer.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1142504878%2FFunctions%2F-1461421708" anchor-label="showShelvesFillLayer" id="1142504878%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-shelves-fill-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Fill</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1142504878%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-fill-layer.html"><span class="token function">showShelvesFillLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show shelves fill layer. Makes all shelves and their core shape visible.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="819649631%2FFunctions%2F-1461421708" anchor-label="showShelvesLineLayer" id="819649631%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-shelves-line-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Line</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="819649631%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-line-layer.html"><span class="token function">showShelvesLineLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show shelves line layer. Show outlines of all shelves.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="494039416%2FFunctions%2F-1461421708" anchor-label="showShelvesMarkLayer" id="494039416%2FFunctions%2F-1461421708" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-domain:dokkaHtmlPartial/release" data-filterable-set=":tt2-domain:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="show-shelves-mark-layer.html"><span>show</span><wbr><span>Shelves</span><wbr><span>Mark</span><wbr><span><span>Layer</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="494039416%2FFunctions%2F-1461421708"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-domain:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="show-shelves-mark-layer.html"><span class="token function">showShelvesMarkLayer</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Show shelves mark layer. Show all shelf marks places on shelves.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  
-</body></html>
-
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
 

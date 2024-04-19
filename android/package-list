@@ -16,6 +16,7 @@ se.virtualstores.tt2.pub.controllers.status
 se.virtualstores.tt2.pub.controllers.triggerevent
 se.virtualstores.tt2.pub.controllers.zones
 se.virtualstores.tt2.pub.model.item
+se.virtualstores.tt2.pub.model.network
 se.virtualstores.tt2.pub.model.recording
 se.virtualstores.tt2.pub.model.store
 se.virtualstores.tt2.pub.model.velocitymodel
@@ -26,6 +27,7 @@ module:tt2-domain
 se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
 se.virtualstores.tt2_domain.converter
+se.virtualstores.tt2_domain.converter.real
 se.virtualstores.tt2_domain.datasource.local
 se.virtualstores.tt2_domain.datasource.remote.api
 se.virtualstores.tt2_domain.map
@@ -40,6 +42,8 @@ se.virtualstores.tt2_domain.model.central.triggerevents
 se.virtualstores.tt2_domain.model.central.wifi
 se.virtualstores.tt2_domain.model.central.zone
 se.virtualstores.tt2_domain.model.generic
+se.virtualstores.tt2_domain.model.generic.geojson
+se.virtualstores.tt2_domain.model.generic.geojson.extensions
 se.virtualstores.tt2_domain.model.map
 se.virtualstores.tt2_domain.model.stat
 se.virtualstores.tt2_domain.model.stat.scanevents
