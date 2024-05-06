@@ -13,7 +13,7 @@ description: This guide will help you to get started.
 - [TT2 SDK](#tt2-sdk)
   - [Usecases](#usecases)
   - [Installation](#installation)
-    - [Using as a dependency](#using-as-a-dependency)
+      - [Using as a dependency](#using-as-a-dependency)
   - [Setup](#setup)
   - [Navigation](#navigation)
   - [Position](#position)
@@ -25,9 +25,10 @@ description: This guide will help you to get started.
   - [Setup](#setup-1)
   - [MarkerController](#markercontroller)
   - [PathfindingController](#pathfindingcontroller)
+    - [Guide to PathfindingController](#guide-to-pathfindingcontroller)
   - [ZoneController](#zonecontroller)
   - [CameraController](#cameracontroller)
-- [Demo apps](#demo-apps)
+  - [Demo apps](#demo-apps)
 
 # TT2 SDK
 
@@ -43,7 +44,7 @@ description: This guide will help you to get started.
 
 1. Using Xcode 15 go to File > Add Package Dependencies...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release version `2.1.0`
+3. Use release version `2.3.0`
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
