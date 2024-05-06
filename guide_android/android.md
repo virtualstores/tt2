@@ -13,13 +13,14 @@ description: This guide will help you to get started.
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `2.0.23`](#add-sdk-to-your-app-latest-version-2023)
+- [Add SDK to your app, latest version: `2.6.0`](#add-sdk-to-your-app-latest-version-260)
   - [Usecases](#usecases)
   - [Setup](#setup)
-  - [Changing the floor](#changing-the-floor)
   - [TT2.Navigation](#tt2navigation)
   - [Analytics](#analytics)
-  - [Trigger events](#trigger-events)
+  - [Location-Based Commuinication](#location-based-commuinication)
+    - [Guide to Location-Based Commuinication](#guide-to-location-based-commuinication)
+  - [When Stopping navigation](#when-stopping-navigation)
 - [Map SDK](#map-sdk)
   - [Map SDK version is the same as the SDK version](#map-sdk-version-is-the-same-as-the-sdk-version)
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
@@ -48,7 +49,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `2.0.23`
+# Add SDK to your app, latest version: `2.6.0`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
@@ -59,8 +60,8 @@ allprojects {
     repositories {
         maven {
             credentials {
-                username "provided by Virtual stores"
-                password "provided by Virtual stores"
+                username "provided by TT2"
+                password "provided by TT2"
 
             }
             url = "https://nexus.aws.vs-office.se/repository/external-public/"
@@ -118,23 +119,6 @@ TT2.activeStores.find { it.externalId == "Your organisation store ID" }?.let { s
         ...
     }
 }
-```
-<br/><br/>
-
-## Changing the floor
-
-If you need to change the current floor manually:
-```kotlin
-TT2.initiateFloorLevel(
-            context = //applicationContext,
-            floorLevelId = // The floor level to start navigation with
-        ) { error->
-            if (error != null) {
-                // Show error to user in case of any exception happened during initialization including network exception
-            } else  {
-                // Safe to do the next steps
-            }
-        }
 ```
 <br/><br/>
 
@@ -206,85 +190,12 @@ fun startNavigation(position: PointF, angle: Double) {
 }
 ```
 <br/><br/>
-## Trigger events
-Trigger events can be created in the TT2 CMS or via the SDK. 
-Trigger events are mostly set to trigger on user locaton, when entering/exiting a specific area or radius.
-To listen for these events implement TriggerEventController.Listener interface and set the listener in TT2 after initiating the store.
+## Location-Based Commuinication
 
-```kotlin
-import se.virtualstores.tt2.androidsdk.Listener
+### [Guide to Location-Based Commuinication](./coresdk/location_based_communication.html "Example")
+<br/><br/>
 
-class MapActivity : AppCompatActivity(), TriggerEventController.Listener {
-    fun storeInitiated(){
-        TT2.triggerEvents.setTriggerListener(this)
-    }
-
-    override fun onNewTriggerEvent(triggerEvent: TriggerEvent) {
-
-        // parse the trigger event to show it to the user. I.e in the event of an 
-        // message event created in the CMS the event will contain the following metaData tags: 
-         triggerEvent.metaData[TriggerEvent.defaultMetaData.id]?.let {
-         
-         }
-
-         triggerEvent.metaData[TriggerEvent.defaultMetaData.type]?.let {
-            when (it) {
-                    TriggerEvent.DefaultMetaData.MessageType.SMALL.name -> {}
-                    TriggerEvent.DefaultMetaData.MessageType.LARGE.name -> {}
-         }
-
-         triggerEvent.metaData[TriggerEvent.defaultMetaData.title]?.let {
-
-         }
-
-         triggerEvent.metaData[TriggerEvent.defaultMetaData.body]?.let {
-             
-         }
-
-         triggerEvent.metaData[TriggerEvent.defaultMetaData.imageUrl]?.let {
-             
-         }
-
-        // after receiving an event you can optionally remove it to avoid trigger it again during this visit
-        TT2.triggerEvents.removeTriggerEvent(triggerEvent)
-
-        // For viewing analytics data of the messages we recommend that you also post the trigger event to the anlaytics.
-        TT2.analytics.postEventData(triggerEvent.toMessageShownEvent())
-    }
-}
-```
-
-Trigger events can also be created and then listen on when they are triggered.
-
-Setup trigger events by adding them to the trigger manager
-In this example we set upp will trigger event that will trigger when a user comes inside a `5m radius` of the item relating to the  `"<barcode>"`
-```kotlin
-TT2.position.getByBarcode("<barcode>") { item ->  // getting an IItem matching the barcode
-    it?.itemPosition?.let { position ->
-        TT2.triggerEvents.addTriggerEvent( //Adding the trigger event to the trigger event manager.
-            TriggerEvent.Builder().apply {
-                setName("Coordinate Trigger")
-                // add as mouch metaData as you like
-                    addMetaData(
-                        listOf(
-                            TriggerEvent.defaultMetaData.id to "<barcode>",
-                            TriggerEvent.defaultMetaData.title to "RadiusTrigger",
-                            TriggerEvent.defaultMetaData.body to "Close to kitchen",
-                            "CustomTag" to "foo"
-                        )
-                    )
-                    setTriggerEventData(
-                        CoordinateTrigger(
-                            x = position.point.x.toDouble(),
-                            y = position.point.y.toDouble(),
-                            radius = 5.0
-                        )
-                    )
-            }.build()
-        )
-    }
-}
-```
+## When Stopping navigation
 
 When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
