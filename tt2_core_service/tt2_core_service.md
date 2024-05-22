@@ -143,26 +143,26 @@ Location-based communication section of the TT2 CMS.
 Example start Service Command
 
 ```
-adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
+adb shell 'am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start \
 --ei tt2Params 1 \
 --es centralServerUrl "https://example-central-server.se" \
 --es centralServerApiKey "example-api-key" \
 --el clientId 12 \
 --el storeId 62 \
 --ei serviceParams 1 \
---es scanIntentAction com.example.SCAN
+--es scanIntentAction com.example.SCAN'
 ```
 
 Example start Activity Command
 
 ```
-adb shell am start -n se.tt2.tt2service/.activity.MainActivity \
+adb shell 'am start -n se.tt2.tt2service/.activity.MainActivity \
 --es centralServerUrl "https://example-central-server.se" \
 --es centralServerApiKey "example-api-key" \
 --el clientId 12 \
 --el storeId 62 \
 --es scanIntentAction com.example.SCAN \ 
---ez autoFinish true
+--ez autoFinish true'
 ```
 
 <br/><br/>
