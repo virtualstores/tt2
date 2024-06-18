@@ -26,7 +26,7 @@ description: This guide will help you to get started.
 
 ## Downloads :arrow_down: 
 
-
+- [TT2_Core_Service_v1.3](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.3.apk)
 - [TT2_Core_Service_v1.2](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.2.apk)
 - [TT2_Core_Service_v1.0](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.0.apk)
 
@@ -45,14 +45,15 @@ On devices running <= Android 12 the tt2 core service can be started directly:
 
 ```
 adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
-< params >
+< additional params >
 ```
 
 On devices running Android 13 and above the tt2 core service needs to be started from an activity:
 
 ```
-adb shell am start -n se.tt2.tt2service/.activity.MainActivity \
-< params >
+adb shell 'am start -n se.tt2.tt2service/.activity.MainActivity \
+< additional params >
+--ez autoFinish true'
 ```
 
 If unsure of what Android version the device is running use start the service using the activity.
@@ -93,16 +94,18 @@ If opting in for this the following parameters are used to configure the proxy c
 - `tt2ResourceUrl` type `string` nullable = `true`
 - `tt2MLResourceUrl` type `string` nullable = `true`
 
-TT2 can be configured to use specific trained ml models.
-If opting in for this the following params are used to configure which ml model to use:
+TT2 can be configured to use specific trained models for certain environments, overriding default settings.
+If opting in for this the following params are used to configure targets and specific versions to use:
 
-- `mlInterfaceVersion` type `string` nullable = `true`
-- `mlModelVersion` type `string` nullable = `true`
+- `tt2ModelTarget` type `int` nullable = `true`
+- `tt2TargetMLModelVersion` type `int` nullable = `true` (works only if `tt2ModelTarget` is also specified) 
+- `tt2TargetNLModelVersion` type `int` nullable = `true` (works only if `tt2ModelTarget` is also specified)
 
 There are some tools that can be configured for debugging and some specific environment constraints:
 
 - `debugMode` type `boolean` defaults to `false`
 - `enableWorkManager` type `boolean` defaults to `true`
+- `enableProxy` type `boolean` defaults to `false`
 
 ### ServiceParams
 
@@ -145,14 +148,14 @@ Location-based communication section of the TT2 CMS.
 Example start Service Command
 
 ```
-adb shell 'am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start \
+adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
 --ei tt2Params 1 \
 --es centralServerUrl "https://example-central-server.se" \
 --es centralServerApiKey "example-api-key" \
 --el clientId 12 \
 --el storeId 62 \
 --ei serviceParams 1 \
---es scanIntentAction com.example.SCAN'
+--es scanIntentAction com.example.SCAN
 ```
 
 Example start Activity Command
