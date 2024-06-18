@@ -13,7 +13,7 @@ description: This guide will help you to get started.
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `2.6.0`](#add-sdk-to-your-app-latest-version-260)
+- [Add SDK to your app, latest version: `2.7.0`](#add-sdk-to-your-app-latest-version-270)
   - [Usecases](#usecases)
   - [Setup](#setup)
   - [TT2.Navigation](#tt2navigation)
@@ -49,7 +49,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `2.6.0`
+# Add SDK to your app, latest version: `2.7.0`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:

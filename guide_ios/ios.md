@@ -44,7 +44,7 @@ description: This guide will help you to get started.
 
 1. Using Xcode 15 go to File > Add Package Dependencies...
 2. Paste the project URL in search bar: [https://github.com/virtualstores/ios-sdk](https://github.com/virtualstores/ios-sdk)
-3. Use release version `2.3.0`
+3. Use release version `2.4.0`
 4. Click on next and select the project target
 
 If you have doubts, please, check the following links:
