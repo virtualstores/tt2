@@ -26,6 +26,7 @@ description: This guide will help you to get started.
 
 ## Downloads :arrow_down: 
 
+- [TT2_Core_Service_v1.4](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.4.apk)
 - [TT2_Core_Service_v1.3](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.3.apk)
 - [TT2_Core_Service_v1.2](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.2.apk)
 - [TT2_Core_Service_v1.0](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.0.apk)
