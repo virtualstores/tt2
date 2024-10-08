@@ -49,6 +49,7 @@ se.virtualstores.tt2_domain.model.generic.geojson.extensions
 se.virtualstores.tt2_domain.model.generic.inandout
 se.virtualstores.tt2_domain.model.map
 se.virtualstores.tt2_domain.model.stat
+se.virtualstores.tt2_domain.model.stat.geopositions
 se.virtualstores.tt2_domain.model.stat.scanevents
 se.virtualstores.tt2_domain.model.stat.syncevents
 se.virtualstores.tt2_domain.model.stat.triggerevents
