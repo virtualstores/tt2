@@ -10,6 +10,7 @@ se.virtualstores.lib_map.pub.view
 module:tt2-android-sdk
 se.virtualstores.tt2.pub
 se.virtualstores.tt2.pub.controllers.device
+se.virtualstores.tt2.pub.controllers.lease
 se.virtualstores.tt2.pub.controllers.navigation
 se.virtualstores.tt2.pub.controllers.position
 se.virtualstores.tt2.pub.controllers.recording
