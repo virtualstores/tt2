@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../index.html">tt2-android-sdk</a><span class="delimiter">/</span><a href="../index.html">se.virtualstores.tt2.pub.positionkit</a><span class="delimiter">/</span><span class="current">PositionKitService</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Position</span><wbr><span>Kit</span><wbr><span><span>Service</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PositionKitService</a> : <a href="https://developer.android.com/reference/kotlin/android/app/Service.html">Service</a></div><p class="paragraph">The Backround service running the VPS positioning engine. This service is running as a foreground service and is kept running until the user stops the positioning.</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">PositionKitService</a> : <a href="https://developer.android.com/reference/kotlin/android/app/Service.html">Service</a>, <a href="../../se.virtualstores.tt2.pub.controllers.positionkitengine/-position-kit-engine-controller/-listener/index.html">PositionKitEngineController.Listener</a></div><p class="paragraph">The Backround service running the VPS positioning engine. This service is running as a foreground service and is kept running until the user stops the positioning.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -122,37 +122,7 @@
       </div>
       <div data-togglable="PROPERTY">
         <h2 class="">Properties</h2>
-        <div class="table"><a data-name="-1306803304%2FProperties%2F-529631612" anchor-label="analyticsRepository" id="-1306803304%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="analytics-repository.html"><span>analytics</span><wbr><span><span>Repository</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1306803304%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="analytics-repository.html">analyticsRepository</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.data.repository.analytics/AnalyticsRepository///PointingToDeclaration/">AnalyticsRepository</span></div><div class="brief "><p class="paragraph">VPS Recorder dependencies</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1707149101%2FProperties%2F-529631612" anchor-label="appExecutors" id="-1707149101%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="app-executors.html"><span>app</span><wbr><span><span>Executors</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1707149101%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="app-executors.html">appExecutors</a><span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain/-app-executors/index.html">AppExecutors</a></div><div class="brief "><p class="paragraph">VPS dependencies</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-765388078%2FProperties%2F-529631612" anchor-label="floorRepository" id="-765388078%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+        <div class="table"><a data-name="-765388078%2FProperties%2F-529631612" anchor-label="floorRepository" id="-765388078%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -163,36 +133,6 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="floor-repository.html">floorRepository</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.data.repository.floor/FloorRepository///PointingToDeclaration/">FloorRepository</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1773255990%2FProperties%2F-529631612" anchor-label="getActiveStoreUseCase" id="1773255990%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="get-active-store-use-case.html"><span>get</span><wbr><span>Active</span><wbr><span>Store</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1773255990%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="get-active-store-use-case.html">getActiveStoreUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.store/GetActiveStoreUseCase///PointingToDeclaration/">GetActiveStoreUseCase</span></div><div class="brief "><p class="paragraph">Compass dependencies</p></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1886569062%2FProperties%2F-529631612" anchor-label="getNLModelUseCase" id="1886569062%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="get-n-l-model-use-case.html"><span>get</span><wbr><span>NLModel</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1886569062%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="get-n-l-model-use-case.html">getNLModelUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.mlmodel.nlmodel/GetNLModelUseCase///PointingToDeclaration/">GetNLModelUseCase</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -212,77 +152,17 @@
               </div>
             </div>
           </div>
-<a data-name="867338951%2FProperties%2F-529631612" anchor-label="getVelocityModelUseCase" id="867338951%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+<a data-name="-717167139%2FProperties%2F-529631612" anchor-label="positionKitEngineController" id="-717167139%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="get-velocity-model-use-case.html"><span>get</span><wbr><span>Velocity</span><wbr><span>Model</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="867338951%2FProperties%2F-529631612"></span>
+                  <div><a href="position-kit-engine-controller.html"><span>position</span><wbr><span>Kit</span><wbr><span>Engine</span><wbr><span><span>Controller</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-717167139%2FProperties%2F-529631612"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="get-velocity-model-use-case.html">getVelocityModelUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.mlmodel.velocitymodel/GetVelocityModelUseCase///PointingToDeclaration/">GetVelocityModelUseCase</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1593601151%2FProperties%2F-529631612" anchor-label="updateAverageCompassHeadingUseCase" id="1593601151%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="update-average-compass-heading-use-case.html"><span>update</span><wbr><span>Average</span><wbr><span>Compass</span><wbr><span>Heading</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1593601151%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="update-average-compass-heading-use-case.html">updateAverageCompassHeadingUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.status/UpdateAverageCompassHeadingUseCase///PointingToDeclaration/">UpdateAverageCompassHeadingUseCase</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="988423786%2FProperties%2F-529631612" anchor-label="updateCompassHeadingUseCase" id="988423786%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="update-compass-heading-use-case.html"><span>update</span><wbr><span>Compass</span><wbr><span>Heading</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="988423786%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="update-compass-heading-use-case.html">updateCompassHeadingUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.status/UpdateCompassHeadingUseCase///PointingToDeclaration/">UpdateCompassHeadingUseCase</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-504881622%2FProperties%2F-529631612" anchor-label="updateIsVPSRunningUseCase" id="-504881622%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="update-is-v-p-s-running-use-case.html"><span>update</span><wbr><span>Is</span><wbr><span>VPSRunning</span><wbr><span>Use</span><wbr><span><span>Case</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-504881622%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="update-is-v-p-s-running-use-case.html">updateIsVPSRunningUseCase</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.domain.usecase.status/UpdateIsVPSRunningUseCase///PointingToDeclaration/">UpdateIsVPSRunningUseCase</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="432068402%2FProperties%2F-529631612" anchor-label="vpsOutputController" id="432068402%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="vps-output-controller.html"><span>vps</span><wbr><span>Output</span><wbr><span><span>Controller</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="432068402%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="vps-output-controller.html">vpsOutputController</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.positionKit.vps/VPSOutputController///PointingToDeclaration/">VPSOutputController</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="javax.inject/Inject///PointingToDeclaration/"><span class="token annotation builtin">Inject</span></span></div></div><span class="token keyword">lateinit </span><span class="token keyword">var </span><a href="position-kit-engine-controller.html">positionKitEngineController</a><span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.controllers.positionkitengine/InternalPositionKitEngineController///PointingToDeclaration/">InternalPositionKitEngineController</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -1701,47 +1581,17 @@
               </div>
             </div>
           </div>
-<a data-name="881205815%2FFunctions%2F-529631612" anchor-label="onFloorChange" id="881205815%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+<a data-name="1124215747%2FFunctions%2F-529631612" anchor-label="onEvent" id="1124215747%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="on-floor-change.html"><span>on</span><wbr><span>Floor</span><wbr><span><span>Change</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="881205815%2FFunctions%2F-529631612"></span>
+                  <div><a href="on-event.html"><span>on</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1124215747%2FFunctions%2F-529631612"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.BACKGROUND///PointingToDeclaration/">ThreadMode.BACKGROUND</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-floor-change.html"><span class="token function">onFloorChange</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.OnFloorChange///PointingToDeclaration/">PositionKitActionEvent.OnFloorChange</span></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-19368666%2FFunctions%2F-529631612" anchor-label="onInitFloorLevel" id="-19368666%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-init-floor-level.html"><span>on</span><wbr><span>Init</span><wbr><span>Floor</span><wbr><span><span>Level</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-19368666%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.BACKGROUND///PointingToDeclaration/">ThreadMode.BACKGROUND</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-init-floor-level.html"><span class="token function">onInitFloorLevel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.InitFloorLevel///PointingToDeclaration/">PositionKitActionEvent.InitFloorLevel</span></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1579555432%2FFunctions%2F-529631612" anchor-label="onInitStore" id="-1579555432%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-init-store.html"><span>on</span><wbr><span>Init</span><wbr><span><span>Store</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1579555432%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.BACKGROUND///PointingToDeclaration/">ThreadMode.BACKGROUND</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-init-store.html"><span class="token function">onInitStore</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.InitStore///PointingToDeclaration/">PositionKitActionEvent.InitStore</span></span></span><span class="token punctuation">)</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-event.html"><span class="token function">onEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.positionKit/PositionKitEngine.Event///PointingToDeclaration/">PositionKitEngine.Event</span></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
@@ -1806,51 +1656,6 @@
               </div>
             </div>
           </div>
-<a data-name="1368695516%2FFunctions%2F-529631612" anchor-label="onStartNavigation" id="1368695516%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-start-navigation.html"><span>on</span><wbr><span>Start</span><wbr><span><span>Navigation</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1368695516%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.MAIN///PointingToDeclaration/">ThreadMode.MAIN</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-start-navigation.html"><span class="token function">onStartNavigation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.StartEvent///PointingToDeclaration/">PositionKitActionEvent.StartEvent</span></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1535497802%2FFunctions%2F-529631612" anchor-label="onStopNavigation" id="1535497802%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-stop-navigation.html"><span>on</span><wbr><span>Stop</span><wbr><span><span>Navigation</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1535497802%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.MAIN///PointingToDeclaration/">ThreadMode.MAIN</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-stop-navigation.html"><span class="token function">onStopNavigation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.StopEvent///PointingToDeclaration/">PositionKitActionEvent.StopEvent</span></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="1595765806%2FFunctions%2F-529631612" anchor-label="onSyncPosition" id="1595765806%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-sync-position.html"><span>on</span><wbr><span>Sync</span><wbr><span><span>Position</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1595765806%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.MAIN///PointingToDeclaration/">ThreadMode.MAIN</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-sync-position.html"><span class="token function">onSyncPosition</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.SyncPosition///PointingToDeclaration/">PositionKitActionEvent.SyncPosition</span></span></span><span class="token punctuation">)</span></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
 <a data-name="-294387300%2FFunctions%2F-529631612" anchor-label="onTaskRemoved" id="-294387300%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
@@ -1907,21 +1712,6 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-unbind.html"><span class="token function">onUnbind</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">intent<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Intent.html">Intent</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-<a data-name="-1328582632%2FFunctions%2F-529631612" anchor-label="onWifiEvent" id="-1328582632%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="on-wifi-event.html"><span>on</span><wbr><span>Wifi</span><wbr><span><span>Event</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1328582632%2FFunctions%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><span data-unresolved-link="org.greenrobot.eventbus/Subscribe///PointingToDeclaration/"><span class="token annotation builtin">Subscribe</span></span><span class="token punctuation">(</span><span>threadMode<span class="token operator"> = </span><span data-unresolved-link="org.greenrobot.eventbus/ThreadMode.MAIN///PointingToDeclaration/">ThreadMode.MAIN</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword"></span><span class="token keyword">fun </span><a href="on-wifi-event.html"><span class="token function">onWifiEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><span data-unresolved-link="se.virtualstores.tt2.internal.core.common.events.positionkit/PositionKitActionEvent.WifiEvent///PointingToDeclaration/">PositionKitActionEvent.WifiEvent</span></span></span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
