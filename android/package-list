@@ -2,10 +2,12 @@ $dokka.format:html-v1
 $dokka.linkExtension:html
 
 module:lib-map
+se.virtualstores.lib_map.pub
 se.virtualstores.lib_map.pub.controller
 se.virtualstores.lib_map.pub.model
 se.virtualstores.lib_map.pub.model.mapmarks
 se.virtualstores.lib_map.pub.model.pathfinding
+se.virtualstores.lib_map.pub.state
 se.virtualstores.lib_map.pub.view
 module:tt2-android-sdk
 se.virtualstores.tt2.pub
