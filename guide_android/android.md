@@ -24,7 +24,9 @@ description: This guide will help you to get started.
 - [Map SDK](#map-sdk)
   - [Map SDK version is the same as the SDK version](#map-sdk-version-is-the-same-as-the-sdk-version)
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
+  - [Setup](#setup-1)
     - [Example using the map view with a fragment](#example-using-the-map-view-with-a-fragment)
+  - [Usecases](#usecases-1)
   - [MarkerController](#markercontroller)
     - [Guide to MarkerController](#guide-to-markercontroller)
   - [PathfindingController](#pathfindingcontroller)
@@ -333,7 +335,8 @@ class MyMapFragment: Fragment(), MapListener {
 
 ## Usecases
 
-[Shop & Go App](usecase-shop-and-go.html "Example")
+[Single Item Wayfinding](./mapsdk/usecase-single-item-way-finding.html "Example")
+
 
 ## MarkerController
 Documentation: [MarkerController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-marker-controller/index.html)
