@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-description: This use case shows the TT2 integration flow for a Scan & Go moblie app.
+description: Use case Single Item WayFinding
 ---
 
 # Use case Single Item WayFinding
