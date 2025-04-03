@@ -211,7 +211,7 @@ fun stopNavigation(){
 
 # Map SDK
 
-Current record time of implementation: Not set, will you be the first?
+
 
 ## Map SDK version is the same as the SDK version
 
@@ -254,6 +254,24 @@ dependencies {
     android:layout_height="match_parent" />
 ```
 
+## Setup
+
+Initialize the TT2Map SDK and connect it to the TT2 SDK
+
+```kotlin
+
+TT2Map.initialize(
+    applicationContext = context,
+    debugMode = true
+)
+
+TT2.setMapManager(TT2Map.mapManager)
+```
+
+The TT2 SDK needs to have been initialized before you call `TT2.setMapManager(TT2Map.mapManager)`
+
+Dont forget to call `TT2Map.onDestroy()` after `TT2.onDestroy()` 
+
 ### Example using the map view with a fragment
 Documentation: [MapListener](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-map-listener/index.html)
 
@@ -295,16 +313,6 @@ class MyMapFragment: Fragment(), MapListener {
         mapController.onStart()
     }
 
-    override fun onResume() {
-        super.onResume()
-        mapController.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mapController.onPause()
-    }
-
     override fun onStop() {
         super.onStop()
         mapController.onStop()
@@ -322,6 +330,10 @@ class MyMapFragment: Fragment(), MapListener {
 }
 ```
 <br/><br/>
+
+## Usecases
+
+[Shop & Go App](usecase-shop-and-go.html "Example")
 
 ## MarkerController
 Documentation: [MarkerController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-marker-controller/index.html)
