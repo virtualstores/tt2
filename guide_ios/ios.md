@@ -225,35 +225,40 @@ password <secretkey> // Provided by Virtual Stores
 
 Make sure to import the SDK wherever you need to use it by: `import VSMap`
 
+Import of `VSFoundation` is also required in order for `VSTT2` and `VSMap` to be able to communicate with each other.
+
 ## Setup
-1. Create a TT2MapView and add it to your view
-
-    ```swift
-    let mapView = TT2MapView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-    view.insertSubview(mapView, at: 0)
+* Create a TT2Map and connect it to TT2
+  ```swift
+  let map = TT2Map()
+  tt2.set(mapManager: map.manager)
+  ```
+* Create a TT2MapView and add it to your view
     
-    // Add constraints (optional but recommended)
-    mapView.translatesAutoResizingMaskIntoConstraints = false
-    let horizontalConstraint = NSLayoutConstraint(item: mapView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-    let verticalConstraint = NSLayoutConstraint(item: mapView, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
-    let widthConstraint = NSLayoutConstraint(item: mapView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.size.width)
-    let heightConstraint = NSLayoutConstraint(item: mapView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: view.frame.size.height)
-    view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
-    ```
+    {% include ios/tt2-map/code-sample-init.md %}
 
-2. Create a BaseMapController
+* Create a BaseMapController
 	- Your token can be provided by Virtual Stores, otherwise you can find your access token here: [https://account.mapbox.com/access-tokens/](https://account.mapbox.com/access-tokens/)
 	- Use MapOptions to customize the map
 
 	```swift
-	let mapController = BaseMapController(with: "<Your Public MapBox token>", view: TT2MapView, mapOptions: MapOptions)
+	let mapController = BaseMapController(
+      with: "<Your Public MapBox token>", 
+      view: TT2MapView, 
+      mapOptions: MapOptions, 
+      stateOptions: StateOptions
+    )
 	```
 
-3. Connect Map SDK to TT2 SDK
+* Connect Map SDK to TT2 SDK
 
 	```swift
 	tt2.set(map: mapController)
 	```
+
+## Usecases
+
+[Single Item Wayfinding](mapsdk/usecase-single-item-wayfinding.html)
 	
 ## MarkerController
 Example:
@@ -282,8 +287,8 @@ class ViewController: UIViewController {
       }).store(in: &cancellable)
   }
 	
-  func createMarker() {
-    self.tt2?.position.getBy(barcode: "1234567890123") { (result) in
+  func createMarker(for barcode: String) {
+    self.tt2?.position.getBy(barcode: barcode) { [weak self] (result) in
       switch result {
       case .success(let item):
         guard let itemPosition = item.itemPosition else { return }
@@ -297,10 +302,10 @@ class ViewController: UIViewController {
           type: .text(id)
         )
 
-        self.mapController?.marker.add(marker: marker)
+        self?.mapController?.marker.add(marker: marker)
 
         // Function found in PathfindingController chapter
-        self.createGoal(id: id, itemPosition: itemPosition)
+        self?.createGoal(id: id, itemPosition: itemPosition)
       case .failure(let error): // Handle error
       }
     }

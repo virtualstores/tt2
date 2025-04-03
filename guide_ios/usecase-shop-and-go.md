@@ -6,7 +6,7 @@ layout: default
 description: This use case shows the TT2 integration flow for a Scan & Go moblie app.
 ---
 
-# Use case Mobile Shop & Go
+# Use case - Mobile Shop & Go
 ### Table of Contents
 - [Use case Mobile Shop & Go](#use-case-mobile-shop--go)
     - [Table of Contents](#table-of-contents)
@@ -25,7 +25,7 @@ description: This use case shows the TT2 integration flow for a Scan & Go moblie
 ## TT2 Initialization
 <img align="top" src="../res/ios/usecases/shop&go/initialization.svg">
 
-To get the SDK ready to work first initialize `TT2()` and then call initialize method. This will prepare the SDK for all other purposes. Recomended to save TT2 variable in a singleton so that it will be easily accesible allover the app.
+To get the SDK ready to work first initialize `TT2()` and then call initialize method. This will prepare the SDK for all other purposes. Recomended to save TT2 variable in a singleton so that it will be easily accesible all over the app.
 
 {% include ios/code-sample-tt2-initialize.md %}
 
