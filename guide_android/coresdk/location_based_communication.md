@@ -38,9 +38,7 @@ class ExampleActivity : AppCompatActivity() {
 }
 ```
 
-
-You can also register a listener for the trigger event and manually handle the events.
-
+You can also register a listener for the trigger event and manually handle the events allowing to customize the look and feel.
 
 <br/><br/>
 
@@ -123,40 +121,51 @@ override fun onNewTriggerEvent(triggerEvent: TriggerEvent) {
 
 ## Create trigger events with the SDK
 In addition to creating trigger events in the CMS Trigger events can also be created added directly during runtime.
-This is useful if you already have a sofisticated service for personal discounts or other information channels that you want to trigger based on the user location.
+This is useful if you already have a sofisticated service for personal discounts or other information channels that you want to trigger based on the user location. 
 
-TriggerEvents created and added to the SDK will not appear in the CMS(currently). Since this is intended to be used with exsisting services the tracking of analytics should be reported back to the service instead of reporting it to tt2 analytics.
-
+TriggerEvents created and added to the SDK will appear in the tt2 CMS under `external messages` when reporting it to the analytics `TT2.analytics.postEventData(triggerEvent.toMessageShownEvent())` 
 
 Setup trigger events by adding them to the trigger controller.
-In this example shows the creation of an image based trigger event that will trigger when a user enters the `dairy` zone.
+In this example shows the creation of trigger event that will trigger when a user enters the zone: `Zone Identifier 1` or `Zone Identifier 2`.
 
 ```kotlin
-val triggerEvent = TriggerEvent.Builder()
-    .addTags(
-        listOf(
-            TriggerEvent.defaultTags.displayType to TriggerEvent.DefaultTags.DisplayType.IMAGE.name,
-            TriggerEvent.defaultTags.id to "something that identifies the message",
-        )
-    )
-    .addMetaData(
-        listOf(
-            TriggerEvent.defaultMetaData.imageUrl to "https://image-url.png",
-            "CustomKey" to "custom data in string format"
-        )
-    )
-    .setTriggerEventData(
-        TriggerEventType.ZonesTrigger(
+private fun createTriggerEvent() {
+    // the barcodes connected to the offer/message for tracking conversion rate
+    val barcodes = listOf("7318690493099", "2319232300000")
+
+    val triggerEvent = TriggerEvent.Builder()
+        .addTags(
             listOf(
-                TriggerEventType.ZonesTrigger.ZoneTrigger(
-                    "dairy",
-                    TriggerEventType.ZonesTrigger.ZoneTrigger.Type.ENTER
+                TriggerEvent.defaultTags.id to "Example Offer Identifier",
+                TriggerEvent.defaultTags.name to "Example Offer",
+                TriggerEvent.defaultTags.shareOfVoice to "1.0", // optional: desired share of voice, (double value as string)
+            )
+        )
+        .addMetaData(
+            listOf(
+                TriggerEvent.defaultMetaData.title to "Example Offer Title",
+                TriggerEvent.defaultMetaData.startDate to "2025-01-01T00:00:00.000Z", // important date format  
+                TriggerEvent.defaultMetaData.stopDate to "2025-03-01T00:00:00.000Z",  // important date format  
+                TriggerEvent.defaultMetaData.barcodes to barcodes.toJArrayString(),
+            )
+        )
+        .setTriggerEventData(
+            TriggerEventType.ZonesTrigger(
+                listOf(
+                    TriggerEventType.ZonesTrigger.ZoneTrigger(
+                        "Zone Identifier 1",
+                        TriggerEventType.ZonesTrigger.ZoneTrigger.Type.ENTER
+                    ),
+                    TriggerEventType.ZonesTrigger.ZoneTrigger(
+                        "Zone Identifier 2",
+                        TriggerEventType.ZonesTrigger.ZoneTrigger.Type.ENTER
+                    )
                 )
             )
         )
-    )
-    .build()
+        .build()
 
-TT2.triggerEvents.addTriggerEvent(triggerEvent)
+    TT2.triggerEvents.addTriggerEvent(triggerEvent)
+}
 
 ```

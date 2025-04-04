@@ -16,11 +16,14 @@ description: This guide will help you to get started.
 - [Add SDK to your app, latest version: `2.8.4`](#add-sdk-to-your-app-latest-version-284)
   - [Usecases](#usecases)
   - [Setup](#setup)
+    - [Initialise the tt2 SDK](#initialise-the-tt2-sdk)
+    - [Initialize your store, call initStore](#initialize-your-store-call-initstore)
   - [TT2.Navigation](#tt2navigation)
   - [Analytics](#analytics)
   - [Location-Based Commuinication](#location-based-commuinication)
     - [Guide to Location-Based Commuinication](#guide-to-location-based-commuinication)
   - [When Stopping navigation](#when-stopping-navigation)
+  - [Cleanup](#cleanup)
 - [Map SDK](#map-sdk)
   - [Map SDK version is the same as the SDK version](#map-sdk-version-is-the-same-as-the-sdk-version)
   - [Add a the view to your layout](#add-a-the-view-to-your-layout)
@@ -86,7 +89,14 @@ dependencies {
 
 ## Setup
 
-1- To get the SDK ready to work first Call initialize method. This will prepare the SDK for all other purposes.
+### Initialise the tt2 SDK 
+
+To get the SDK ready to work you first need to call the initialize method.
+When initlising the SDK you need to provide the proper `AuthSettings` and `TT2ConnectionSettings` to connect to your tt2 environment.
+
+You will need to configure these settings depending on your environment setup, information about which settings you should use should have been provided by tt2 AB.
+
+{% include android/code-sample-tt2-connection-settings.md %}
 
 {% include android/code-sample-tt2-initialize.md %}
 
@@ -95,7 +105,7 @@ You can access all stores, active or not, by calling `TT2.stores` to test a stor
 
 You can show the list of the stores to the user and choose one.
 
-2- To initialize your store, call initStore
+### Initialize your store, call initStore
 
 When the user chose a store you can initialize the selected store by calling:
 
@@ -127,18 +137,19 @@ TT2.activeStores.find { it.externalId == "Your organisation store ID" }?.let { s
 ## TT2.Navigation
 
 TT2.Navigation handles the TT2 positioning system position input control.
-It's possible to start the positioning system in different ways.
-It's recommended to start with a QR code for the most accurate positioning.
-You can access the navigation functionalities by calling TT2.navigation:
+It's possible to start the positioning system in different ways:
+- Scanning located qr codes in the venue
+- Reacting to device checkout in SelfScanner applications.
+- Scanning located items in a store 
+- 
+It's recommended to start with a QR code or from a checkout station for the most accurate positioning.
 
-IScanLocations can be set up in the TT2 CMS. Filter and find what start qr code has been scanned.
-```kotlin
-// using the input from scanning a qr-code 
-TT2.activeStore.startScanLocations.find { scanLocation ->
-    scanLocation.code == scanResult
-}?.let{ startScanLocation -> 
-    TT2.navigation.syncPosition(startScanLocation)
-}
+You start the positioning by calling `TT2.navigation.sync("identifier")`
+```
+TT2.navigation.syncPosition(
+    identifier = "scanner input / station identifier",
+    callback = null, // optional
+)
 ```
 
 It's recommenden to sycronize the users location when possible, i.e If a user scans a product or shelf can use that information to calibrate the users position. 
@@ -146,14 +157,12 @@ It's recommenden to sycronize the users location when possible, i.e If a user sc
 For example if a user scans a an item:
 ```kotlin
 TT2.navigation.syncPosition(
-        identifier: "<scannerInput>",
-        syncAngle: Boolean = false, // Scenario: You know the user scanned a shelf label set this to true.
-        uncertainAngle: Boolean = true, // Scenario: The user scanned a shelf label and the device was held towards the shelf, set this to false. 
-        withForce: Boolean = false, // Use only for debugging purposes
-        callback: ((OperationResult<String>) -> Unit)? = null,
+        identifier = "<scannerInput>",
+        callback = null, // optional
     )
 ```
-When the positioning should stop just call tt2.navigation.stop()
+
+When the positioning should stop just call TT2.navigation.stop()
 
 ```kotlin
 TT2.navigation.stop()
@@ -177,11 +186,9 @@ fun startNavigation(position: PointF, angle: Double) {
             appVersion = BuildConfig.VERSION_NAME,
             Build.MODEL),
         tags = mapOf(
-                // More tags can be added for more ways of filtering all visits. 
-                // We recommended to use these tags as they are already prepared in the CMS for data filtering.
-                "userID" to user.ID,
-                "userGender" to user.gender,
-                "userAge" to user.age 
+                "userID" to user.ID, // or generate a random id for anonymus collection of analytics
+                // More tags can be added for more ways of filtering all visits. i.e: 
+                "userType" to "employee" / "customer"
             ),
         metaData = mapOf(
             "customTag" to "customData"
@@ -202,13 +209,25 @@ fun startNavigation(position: PointF, angle: Double) {
 When navigation is stopped or the user quits the app, the visit and heatmap collection should be stopped.
 
 ```kotlin
-fun stopNavigation(){
+suspend fun stopNavigation(){
     TT2.navigation.stop()
+
+    // its recommended to add some delay between `TT2.navigation.stop()` and `TT2.analytics.stop()`
+    // About 300 milliseconds should be enough.
+    delay(300)
     TT2.analytics.stopVisit() 
     //stopVisit() will stop the collection heatmap data internaly. If the heatmap collection wants to be stopped alone TT2.analytics.stopCollctingHeatMapData() can be called.
 }
 ```
 <br/><br/>
+
+## Cleanup
+
+```kotlin
+fun onApplicationDestroyed(){
+    TT2.onDestroy()
+}
+```
 
 
 # Map SDK
@@ -264,7 +283,7 @@ Initialize the TT2Map SDK and connect it to the TT2 SDK
 
 TT2Map.initialize(
     applicationContext = context,
-    debugMode = true
+    debugMode = BuildConfig.DEBUG
 )
 
 TT2.setMapManager(TT2Map.mapManager)
@@ -302,10 +321,9 @@ class MyMapFragment: Fragment(), MapListener {
         TT2.setMapController(mapController)
     }
 
-    // the map is now fully loaded and it's now safe to start using it
     override fun onMapLoaded() {
-        super.onMapLoaded()
-        // continue map setup
+        // the map is now fully loaded and it's now safe to start using it to continue map setup
+    
     }
     
 
