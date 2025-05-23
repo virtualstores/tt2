@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../index.html">lib-map</a><span class="delimiter">/</span><a href="../index.html">se.virtualstores.lib_map.pub.controller</a><span class="delimiter">/</span><span class="current">BaseMapController</span></div>
   <div class="cover ">
     <h1 class="cover"><span>Base</span><wbr><span>Map</span><wbr><span><span>Controller</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">BaseMapController</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mapView<span class="token operator">: </span><a href="../../se.virtualstores.lib_map.pub.view/-map-view/index.html">MapView</a><span class="token punctuation">, </span></span><span class="parameter ">options<span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain/-map-options/index.html">MapOptions</a><span class="token punctuation">, </span></span><span class="parameter ">stateOptions<span class="token operator">: </span><a href="../../se.virtualstores.lib_map.pub.state/-state-options/index.html">StateOptions</a><span class="token operator"> = </span>StateOptions()<span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">BaseMapController.Listener</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">manuallySetUserMarkVisibility<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span> : <a href="../../../tt2-domain/se.virtualstores.tt2_domain.map/-map-controller/index.html">MapController</a>, <a href="../../se.virtualstores.lib_map.pub.state/-map-state-machine/-listener/index.html">MapStateMachine.Listener</a></div><p class="paragraph">NewBaseMapController</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">class </span><a href="index.html">BaseMapController</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">mapView<span class="token operator">: </span><a href="../../se.virtualstores.lib_map.pub.view/-map-view/index.html">MapView</a><span class="token punctuation">, </span></span><span class="parameter ">options<span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain/-map-options/index.html">MapOptions</a><span class="token punctuation">, </span></span><span class="parameter ">stateOptions<span class="token operator">: </span><a href="../../se.virtualstores.lib_map.pub.state/-state-options/index.html">StateOptions</a><span class="token operator"> = </span>StateOptions()<span class="token punctuation">, </span></span><span class="parameter ">listener<span class="token operator">: </span><a href="-listener/index.html">BaseMapController.Listener</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">manuallySetUserMarkVisibility<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span> : <a href="../../../tt2-domain/se.virtualstores.tt2_domain.map/-map-controller/index.html">MapController</a>, <a href="../../se.virtualstores.lib_map.pub.state/-map-state-machine/-listener/index.html">MapStateMachine.Listener</a>, <a href="../../se.virtualstores.lib_map.pub.view/-map-view/-listener/index.html">MapView.Listener</a></div><p class="paragraph">NewBaseMapController</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -351,6 +351,21 @@
               </div>
             </div>
           </div>
+<a data-name="-1501702123%2FFunctions%2F-458957359" anchor-label="onMapLifecycleEvent" id="-1501702123%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="on-map-lifecycle-event.html"><span>on</span><wbr><span>Map</span><wbr><span>Lifecycle</span><wbr><span><span>Event</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1501702123%2FFunctions%2F-458957359"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="on-map-lifecycle-event.html"><span class="token function">onMapLifecycleEvent</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">event<span class="token operator">: </span><a href="../../se.virtualstores.lib_map.pub.view/-map-view/-listener/-event/index.html">MapView.Listener.Event</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Map Lifecycle events</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
 <a data-name="-491497024%2FFunctions%2F-458957359" anchor-label="onMapStateChanged" id="-491497024%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
@@ -542,6 +557,21 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="show-debug-text.html"><span class="token function">showDebugText</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1755950973%2FFunctions%2F-458957359" anchor-label="updateDeviceOrientation" id="1755950973%2FFunctions%2F-458957359" data-filterable-set=":lib-map:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":lib-map:dokkaHtmlPartial/release" data-filterable-set=":lib-map:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="update-device-orientation.html"><span>update</span><wbr><span>Device</span><wbr><span><span>Orientation</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1755950973%2FFunctions%2F-458957359"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":lib-map:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="update-device-orientation.html"><span class="token function">updateDeviceOrientation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
