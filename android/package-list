@@ -18,7 +18,6 @@ se.virtualstores.tt2.pub.controllers.navigation
 se.virtualstores.tt2.pub.controllers.position
 se.virtualstores.tt2.pub.controllers.positionkitengine
 se.virtualstores.tt2.pub.controllers.recording
-se.virtualstores.tt2.pub.controllers.sessionfilemanager
 se.virtualstores.tt2.pub.controllers.status
 se.virtualstores.tt2.pub.controllers.triggerevent
 se.virtualstores.tt2.pub.controllers.zones
