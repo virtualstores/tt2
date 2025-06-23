@@ -62,7 +62,7 @@
   <div class="breadcrumbs"><a href="../../index.html">tt2-android-sdk</a><span class="delimiter">/</span><a href="../index.html">se.virtualstores.tt2.pub.positionkit</a><span class="delimiter">/</span><span class="current">TT2GPSLocationService</span></div>
   <div class="cover ">
     <h1 class="cover"><span>TT2GPSLocation</span><wbr><span><span>Service</span></span></h1>
-    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">TT2GPSLocationService</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">TT2GPSLocationService</p></div></div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">TT2GPSLocationService</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></span></span><span class="token punctuation">)</span></div><p class="paragraph">TT2GPSLocationService</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
@@ -105,53 +105,64 @@
           </div>
         </div>
       </div>
-      <div data-togglable="PROPERTY">
-        <h2 class="">Properties</h2>
-        <div class="table"><a data-name="-2079256239%2FProperties%2F-529631612" anchor-label="context" id="-2079256239%2FProperties%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
-          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
-            <div class="main-subrow keyValue ">
-              <div class=""><span class="inline-flex">
-                  <div><a href="context.html"><span><span>context</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2079256239%2FProperties%2F-529631612"></span>
-                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
-                  </span></span></div>
-              <div>
-                <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="context.html">context</a><span class="token operator">: </span><a href="https://developer.android.com/reference/kotlin/android/content/Context.html">Context</a></div></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="498203687%2FFunctions%2F-529631612" anchor-label="getCurrentLocation" id="498203687%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+        <div class="table"><a data-name="449150689%2FFunctions%2F-529631612" anchor-label="dispose" id="449150689%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
-                  <div><a href="get-current-location.html"><span>get</span><wbr><span>Current</span><wbr><span><span>Location</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="498203687%2FFunctions%2F-529631612"></span>
+                  <div><a href="dispose.html"><span><span>dispose</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="449150689%2FFunctions%2F-529631612"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/RequiresPermission.html"><span class="token annotation builtin">RequiresPermission</span></a><span class="token punctuation">(</span><span>anyOf<span class="token operator"> = </span><span class="token punctuation">[</span><span><span class="breakable-word"><span class="token string">"android.permission.ACCESS_COARSE_LOCATION"</span></span><span class="token punctuation">, </span></span><wbr><span><span class="breakable-word"><span class="token string">"android.permission.ACCESS_FINE_LOCATION"</span></span></span><wbr><span class="token punctuation">]</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-current-location.html"><span class="token function">getCurrentLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">usePreciseLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain.model.generic/-lng-lat/index.html">LngLat</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="dispose.html"><span class="token function">dispose</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
                 </div>
               </div>
             </div>
           </div>
-<a data-name="-650387122%2FFunctions%2F-529631612" anchor-label="getLastKnownLocation" id="-650387122%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+<a data-name="59162192%2FFunctions%2F-529631612" anchor-label="getCurrentFusedLocation" id="59162192%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-current-fused-location.html"><span>get</span><wbr><span>Current</span><wbr><span>Fused</span><wbr><span><span>Location</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="59162192%2FFunctions%2F-529631612"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-current-fused-location.html"><span class="token function">getCurrentFusedLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">usePreciseLocation<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">true</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain.model.generic/-lng-lat/index.html">LngLat</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1931765779%2FFunctions%2F-529631612" anchor-label="getLastKnownLocation" id="1931765779%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
           <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
                   <div><a href="get-last-known-location.html"><span>get</span><wbr><span>Last</span><wbr><span>Known</span><wbr><span><span>Location</span></span></a></div>
-<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-650387122%2FFunctions%2F-529631612"></span>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1931765779%2FFunctions%2F-529631612"></span>
                     <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://developer.android.com/reference/kotlin/androidx/annotation/RequiresPermission.html"><span class="token annotation builtin">RequiresPermission</span></a><span class="token punctuation">(</span><span>anyOf<span class="token operator"> = </span><span class="token punctuation">[</span><span><span class="breakable-word"><span class="token string">"android.permission.ACCESS_COARSE_LOCATION"</span></span><span class="token punctuation">, </span></span><wbr><span><span class="breakable-word"><span class="token string">"android.permission.ACCESS_FINE_LOCATION"</span></span></span><wbr><span class="token punctuation">]</span></span><wbr><span class="token punctuation">)</span></div></div><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-last-known-location.html"><span class="token function">getLastKnownLocation</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain.model.generic/-lng-lat/index.html">LngLat</a><span class="token operator">?</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword">suspend </span><span class="token keyword">fun </span><a href="get-last-known-location.html"><span class="token function">getLastKnownLocation</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">useFusedLocationProvider<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../tt2-domain/se.virtualstores.tt2_domain.model.generic/-lng-lat/index.html">LngLat</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="390371586%2FFunctions%2F-529631612" anchor-label="hasLocationPermission" id="390371586%2FFunctions%2F-529631612" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release"></a>
+          <div class="table-row" data-filterable-current=":tt2-android-sdk:dokkaHtmlPartial/release" data-filterable-set=":tt2-android-sdk:dokkaHtmlPartial/release">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="has-location-permission.html"><span>has</span><wbr><span>Location</span><wbr><span><span>Permission</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="390371586%2FFunctions%2F-529631612"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":tt2-android-sdk:dokkaHtmlPartial/release"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="has-location-permission.html"><span class="token function">hasLocationPermission</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
                 </div>
               </div>
             </div>
