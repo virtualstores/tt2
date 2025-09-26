@@ -13,7 +13,7 @@ description: This guide will help you to get started.
   - [Overview](#overview)
   - [Current record time of implementation: 34 min\*](#current-record-time-of-implementation-34-min)
   - [Prerequisites](#prerequisites)
-- [Add SDK to your app, latest version: `2.8.4`](#add-sdk-to-your-app-latest-version-284)
+- [Add SDK to your app, latest version: `2.31.5`](#add-sdk-to-your-app-latest-version-2315)
   - [Usecases](#usecases)
   - [Setup](#setup)
     - [Initialise the tt2 SDK](#initialise-the-tt2-sdk)
@@ -54,7 +54,7 @@ Make sure that your project meets these requirements:
 - Uses Android 7.0 or higher
 <br/><br/>
 
-# Add SDK to your app, latest version: `2.8.4`
+# Add SDK to your app, latest version: `2.31.5`
 
 Add the SDK to your app level `build.gradle` file:
 //Todo: check this info:
@@ -345,6 +345,7 @@ class MyMapFragment: Fragment(), MapListener {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        TT2.setMapController(null)
         mapController.onDestroy()
     }        
 }
