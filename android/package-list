@@ -15,7 +15,6 @@ module:tt2-android-sdk
 se.virtualstores.tt2.pub
 se.virtualstores.tt2.pub.controllers.autostart
 se.virtualstores.tt2.pub.controllers.device
-se.virtualstores.tt2.pub.controllers.gnss
 se.virtualstores.tt2.pub.controllers.lease
 se.virtualstores.tt2.pub.controllers.navigation
 se.virtualstores.tt2.pub.controllers.position
@@ -25,7 +24,6 @@ se.virtualstores.tt2.pub.controllers.sessionfilemanager
 se.virtualstores.tt2.pub.controllers.status
 se.virtualstores.tt2.pub.controllers.triggerevent
 se.virtualstores.tt2.pub.controllers.zones
-se.virtualstores.tt2.pub.model.gnss
 se.virtualstores.tt2.pub.model.item
 se.virtualstores.tt2.pub.model.network
 se.virtualstores.tt2.pub.model.recording
