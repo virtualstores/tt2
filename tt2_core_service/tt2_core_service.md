@@ -27,7 +27,7 @@ description: This guide will help you to get started.
 
 ## Downloads :arrow_down: 
 
-- [TT2_Core_Service_v1.5.1](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.5.1.apk)
+- [TT2_Core_Service_v1.5.2](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.5.2.apk)
 
 
 # How to install the TT2 Core Service
