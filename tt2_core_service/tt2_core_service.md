@@ -13,6 +13,7 @@ description: This guide will help you to get started.
   - [Setup params](#setup-params)
     - [TT2Params](#tt2params)
       - [Mandatory TT2Params:](#mandatory-tt2params)
+        - [Connection params:](#connection-params)
       - [Optional TT2Params:](#optional-tt2params)
     - [ServiceParams](#serviceparams)
     - [Other params](#other-params)
@@ -26,12 +27,7 @@ description: This guide will help you to get started.
 
 ## Downloads :arrow_down: 
 
-- [TT2_Core_Service_v1.4.2](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.4.2.apk)
-- [TT2_Core_Service_v1.4.1](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.4.1.apk)
-- [TT2_Core_Service_v1.4](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.4.apk)
-- [TT2_Core_Service_v1.3](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.3.apk)
-- [TT2_Core_Service_v1.2](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.2.apk)
-- [TT2_Core_Service_v1.0](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.0.apk)
+- [TT2_Core_Service_v1.5.1](https://virtualstores-assets.s3.eu-north-1.amazonaws.com/tt2-core-service/apks/tt2-core-service-v1.5.1.apk)
 
 
 # How to install the TT2 Core Service
@@ -44,25 +40,22 @@ Use the Android adb tool to install the `.apk` file.
 
 The TT2 Core Service is started using adb start command along with setup parameters.
 
-On devices running <= Android 12 the tt2 core service can be started directly:
-
-```
-adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
-< additional params >
-```
-
-On devices running Android 13 and above the tt2 core service needs to be started from an activity:
-
 ```
 adb shell 'am start -n se.tt2.tt2service/.activity.MainActivity \
 < additional params >
 --ez autoFinish true'
 ```
 
-If unsure of what Android version the device is running use start the service using the activity.
+
+On devices running <= Android 12 the tt2 core service can be started directly without starting the activity, however we recommend to user the "start activity" approach since some device configurations might restrict services to start in the background:
+```
+adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
+< additional params >
+```
+
 
 The TT2 Core Service is configured to automatically start itself when the device has finished
-booting up but needs to have been started with the setup parameters manually once for this to work.
+booting up (i.e device restart) but needs to have been started with the setup parameters manually once for this to work.
 
 ## Setup params
 
@@ -78,24 +71,42 @@ The params are categorised into TT2Params and ServiceParams.
 
 #### Mandatory TT2Params:
 
-- `centralServerUrl` type `string` nullable = `false`
-- `centralServerApiKey` type `string` nullable = `false`\
 - `clientId` type `long` nullable = `false`
 - `storeId` type `long` nullable = `true` if externalStoreId is provided
 - `externalStoreId` type `long` nullable = `true` if storeId is provided
 
+##### Connection params:
+The connection parameters tells the service how to establish the connection for the tt2 system.
+It's specified into two parts, the `connectionType` and the `authType`. Depending on which types are declared the service expects additional params.
+
+Connection params (GATEWAY, DIRECT):
+- Type: GATEWAY
+  - `connectionType` type `string` nullable = `false`
+    - Example: `--es connectionType GATEWAY`
+      -  `gatewayBaseUrl` type `string` nullable = `false`
+         - Example:  `--es gatewayBaseUrl "https://gateway.example.se"`
+- Type: DIRECT
+  - `connectionType` type `string` nullable = `false`
+    - Example: `--es connectionType DIRECT`
+      - `centralServerUrl` type `string` nullable = `false`
+        - Example: `--es centralServerUrl "https://central.example.se"`
+  
+Authentication params (TOKEN_BASED, API_KEY):
+- Type: TOKEN_BASED
+  - `authType` type `string` nullable = `false`
+    - Example:  `--es authType TOKEN_BASED`
+      - `username` type `string` nullable = `false`
+        - Example: `--es username "userName"`
+      - `password` type `string` nullable = `false`
+        - Example: `--es password "passwordXYZ"`
+  
+- Type: API_KEY
+  - `authType` type `string` nullable = `false`
+    - Example: `--es authType API_KEY`
+      - `apiKey` type `string` nullable = `false`
+        - Example: `--es apiKey "apiKeyXYZ"`
+
 #### Optional TT2Params:
-
-TT2 can be configured to use a proxy connection for it's resources making it easier to configure
-firewall whitelist.
-If opting in for this the following parameters are used to configure the proxy connections:
-
-- `dataServerUrl` type `string` nullable = `true`
-- `dataServerApiKey` type `string` nullable = `true`
-- `mlModelServerUrl` type `string` nullable = `true`
-- `mlModelServerApiKey` type `string` nullable = `true`
-- `tt2ResourceUrl` type `string` nullable = `true`
-- `tt2MLResourceUrl` type `string` nullable = `true`
 
 TT2 can be configured to use specific trained models for certain environments, overriding default settings.
 If opting in for this the following params are used to configure targets and specific versions to use:
@@ -148,28 +159,33 @@ Location-based communication section of the TT2 CMS.
 
 ## Example: Start intent with setup params
 
-Example start Service Command
+Example setup Command Using GATEWAY connection and TOKEN_BASED authentication:
 
-```
-adb shell "am broadcast -a se.tt2.tt2service.START -n se.tt2.tt2service/.Start" \
---ei tt2Params 1 \
---es centralServerUrl "https://example-central-server.se" \
---es centralServerApiKey "example-api-key" \
---el clientId 12 \
---el storeId 62 \
---ei serviceParams 1 \
---es scanIntentAction com.example.SCAN
-```
-
-Example start Activity Command
-
-```
+``` shell
 adb shell 'am start -n se.tt2.tt2service/.activity.MainActivity \
---es centralServerUrl "https://example-central-server.se" \
---es centralServerApiKey "example-api-key" \
---el clientId 12 \
---el storeId 62 \
---es scanIntentAction com.example.SCAN \ 
+--ei tt2Params 1 \
+--el clientId 1 \
+--el storeId 1 \
+--es connectionType GATEWAY \
+--es gatewayBaseUrl "https://gateway.example.se/v1" \
+--es authType TOKEN_BASED \
+--es username "userName" \
+--es password "Password" \
+--ez debugMode true \
+--ez autoFinish true'
+```
+
+Example setup Command Using DIRECT connection and API_KEY authentication
+``` shell
+adb shell 'am start -n se.tt2.tt2service/.activity.MainActivity \
+--ei tt2Params 1 \
+--el clientId 1 \
+--el storeId 1 \
+--es connectionType DIRECT \
+--es centralServerUrl "https://central.example.se/v1" \
+--es authType API_KEY \
+--es apiKey "apiKeyXYZ" \
+--ez debugMode true \
 --ez autoFinish true'
 ```
 
