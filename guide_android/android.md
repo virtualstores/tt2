@@ -352,6 +352,14 @@ class MyMapFragment: Fragment(), MapListener {
 ```
 <br/><br/>
 
+## Item locations
+
+When working with the MapController a common use case is to mark out product locations on the map and provide route guidance. In this case we need to get the information about the product location which can be done by using the `TT2.position` controller.
+
+{% include android/code-sample-tt2-get-item-position.md %}
+
+With the item location information you can use the MarkerController and PathfiningController to manage the map content for the user.
+
 ## Usecases
 
 [Single Item Wayfinding](./mapsdk/usecase-single-item-way-finding.html "Example")

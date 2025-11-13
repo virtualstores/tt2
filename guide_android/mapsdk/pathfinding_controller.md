@@ -13,6 +13,7 @@ description: Guide to TT2 Android PathfindingController.
   - [Summary](#summary)
     - [PathfindingController](#pathfindingcontroller)
     - [Controlling the path components:](#controlling-the-path-components)
+    - [Serach for Zones](#serach-for-zones)
 
 ## Summary
 Documentation: [PathfindingController](https://virtualstores.github.io/tt2/android/tt2-domain/se.virtualstores.tt2_domain.map/-pathfinding-controller/index.html)
@@ -153,5 +154,65 @@ class MyMapFragment: Fragment(), MapListener, PathfindingController.Listener {
         mapController.pathfinding.showHead()
 
     }
+    
+```
+
+### Serach for Zones
+
+If you want to guide a user to a specific zone you can do so by adding the ZonesController into the mix.
+
+<img align="top" src="../../res/android/pathfindercontroller/pathfinder-search-for-zone.png" height="500" >
+
+Example:
+```kotlin
+// Implement interface PathfindingController.Listener
+class MyMapFragment: Fragment(), MapListener, PathfindingController.Listener {
+    
+    ...
+
+    // Using the pathfinder to to a zone
+    fun addPathfinderGoalToMap(data: AnyDataClass, zonePosition: ZonePosition) {        
+        
+        // Setup the desired zone layer visibility, i.e only showing the fill layer (like in the example image above)
+        mapController?.zones?.showFillLayer()
+        mapController?.zones?.hideLineLayer()
+        mapController?.zones?.hideTextLayer()
+
+        // Makes sure that the only zones visible are the ones we are searching for.
+        mapController?.zones?.hideAll()
+        mapController?.zones?.deselectAll()
+
+
+        val goal = BasePathfindingGoal(
+            id = data.id,
+            position =  zonePosition.point,
+            floorLevelId = zonePosition.floorLevelId,
+            data = data,
+            zoneId = zonePosition.id
+        )
+
+        mapController.pathfinding.addGoal(goal)
+
+        // use the zoneController to highlight the zone.
+
+        mapController.zones?.show(zonePosition.id)
+        mapController.zones?.select(zonePosition.id)
+
+    }
+
+    // listening for pathfinder updates
+    override val pathfindingListenerId: String
+        get() = <choose an id for this listener>
+
+    override fun onCurrentGoalChange(goal: PathfindingController.PathfindingGoal<out Any>?) {
+         (goal.data as? AnyDataClass)?.let {
+            
+        }   
+    }
+
+    override fun onSortedGoalChange(goals: List<PathfindingController.PathfindingGoal<out Any>>) {
+            
+    }
+
     
 ```
