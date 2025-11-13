@@ -1,5 +1,5 @@
 {% highlight kotlin %}
-fun stopGetItemPosition(barcode: String) {
+fun getItemPosition(barcode: String) {
     
     // items can have either a itemPosition or a  zonePosition.
     // if it has an itemPosition that means the item has a known location on a specific shelf in the store.
