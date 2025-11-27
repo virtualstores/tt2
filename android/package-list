@@ -14,6 +14,7 @@ se.virtualstores.lib_map.pub.view
 module:tt2-android-sdk
 se.virtualstores.tt2.pub
 se.virtualstores.tt2.pub.controllers.autostart
+se.virtualstores.tt2.pub.controllers.debug
 se.virtualstores.tt2.pub.controllers.device
 se.virtualstores.tt2.pub.controllers.gnss
 se.virtualstores.tt2.pub.controllers.lease
