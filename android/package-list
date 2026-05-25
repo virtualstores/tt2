@@ -18,6 +18,7 @@ se.virtualstores.tt2.pub.controllers.debug
 se.virtualstores.tt2.pub.controllers.device
 se.virtualstores.tt2.pub.controllers.gnss
 se.virtualstores.tt2.pub.controllers.lease
+se.virtualstores.tt2.pub.controllers.magnoise
 se.virtualstores.tt2.pub.controllers.navigation
 se.virtualstores.tt2.pub.controllers.position
 se.virtualstores.tt2.pub.controllers.positionkitengine
@@ -25,11 +26,13 @@ se.virtualstores.tt2.pub.controllers.recording
 se.virtualstores.tt2.pub.controllers.sessionfilemanager
 se.virtualstores.tt2.pub.controllers.status
 se.virtualstores.tt2.pub.controllers.triggerevent
+se.virtualstores.tt2.pub.controllers.usermode
+se.virtualstores.tt2.pub.controllers.usersettings
 se.virtualstores.tt2.pub.controllers.zones
-se.virtualstores.tt2.pub.model
-se.virtualstores.tt2.pub.model.gnss
+se.virtualstores.tt2.pub.info
 se.virtualstores.tt2.pub.model.item
 se.virtualstores.tt2.pub.model.network
+se.virtualstores.tt2.pub.model.profile
 se.virtualstores.tt2.pub.model.recording
 se.virtualstores.tt2.pub.model.settings
 se.virtualstores.tt2.pub.model.store
@@ -39,8 +42,6 @@ se.virtualstores.tt2.pub.positionkit.settings
 module:tt2-domain
 se.virtualstores.tt2_domain
 se.virtualstores.tt2_domain.analytics
-se.virtualstores.tt2_domain.converter
-se.virtualstores.tt2_domain.converter.real
 se.virtualstores.tt2_domain.datasource.remote.api
 se.virtualstores.tt2_domain.map
 se.virtualstores.tt2_domain.model.central
@@ -54,8 +55,6 @@ se.virtualstores.tt2_domain.model.central.triggerevents
 se.virtualstores.tt2_domain.model.central.wifi
 se.virtualstores.tt2_domain.model.central.zone
 se.virtualstores.tt2_domain.model.generic
-se.virtualstores.tt2_domain.model.generic.geojson
-se.virtualstores.tt2_domain.model.generic.geojson.extensions
 se.virtualstores.tt2_domain.model.generic.inandout
 se.virtualstores.tt2_domain.model.map
 se.virtualstores.tt2_domain.model.stat
@@ -70,6 +69,5 @@ se.virtualstores.tt2_domain.pathfinder
 se.virtualstores.tt2_domain.shelftool
 se.virtualstores.tt2_domain.triggerevents.model
 se.virtualstores.tt2_domain.triggerevents.model.pollevent
-se.virtualstores.tt2_domain.usersettings
 se.virtualstores.tt2_domain.util
 se.virtualstores.tt2_domain.util.extensions
